@@ -1,0 +1,102 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 60px auto; 
+
+  .orderProcessingForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    height: auto;
+    margin: 30px auto 50px auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px #6e5454;
+    background-color: white;
+    .orderProcessingForm__titleBlock {
+      margin: 10px 0;
+      text-align: center;
+      h1 {
+        color: #6e5454;
+        font-size: calc(22px + 6 * (100vw / 1872));
+      }
+      p {
+        margin: 0 auto;
+        width: 90%;
+        font-size: calc(18px + 2 * (100vw / 1872));
+      }
+    }
+
+    h3 {
+      font-size: calc(20px + 4 * (100vw / 1872));
+      text-align: center;
+      color: #6e5454;
+    }
+    .closeOrderingBlock {
+      position: absolute;
+      top: 5px;
+      left: 93%;
+      border: none;
+      font-size: calc(19px + 3 * (100vw / 1872));
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .orderProcessingForm__inputFieldWrapper {
+      .inputFieldWrapper__elem {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+
+        label {
+          line-height: 30px;
+          font-size: calc(17px + 1 * (100vw / 1872));
+        }
+
+        input {
+          border: 1px solid black;
+          border-radius: 150px;
+          padding: 0 8px;
+          margin-bottom: 10px;
+          height: 30px;
+          font-size: calc(17px + 1 * (100vw / 1872));
+        }
+      }
+    }
+    .orderProcessingForm__formSubmitButton {
+      background-color: #6e5454;
+      color: white;
+      border-radius: 15px;
+      border: none;
+      height: 50px;
+      width: 90%;
+      margin: 10px auto;
+      font-size: calc(18px + 2 * (100vw / 1872));
+      transition: all 0.5s;
+      &:hover {
+        background-color: #8f7979;
+      }
+    }
+  }
+
+  .modalIfDataExists {
+    position: relative;
+    top: 10px;
+    left: 100px;
+    width: 300px;
+    h1 {
+      font-size: calc(23px + 7 * (100vw / 1872));
+      color: #6e5454;
+    }
+    p {
+      font-size: calc(21px + 5 * (100vw / 1872));
+    }
+    img {
+      position: absolute;
+      left: -500px;
+      top: 80px;
+    }
+  }
+}

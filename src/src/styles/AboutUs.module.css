@@ -1,0 +1,102 @@
+.ourMission {
+  position: relative;
+  background-image: url("../imgs/icons//tort-napoleon-klassicheskii_1610347025_25_max.jpg");
+  width: 80%;
+  height: 730px;
+  margin: 50px auto;
+  border-radius: 15px;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+}
+.ourMission .ourMission__textPart {
+  background-color: white;
+  opacity: 0.9;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  width: 40%;
+  height: auto;
+  padding: 40px 30px;
+  border-radius: inherit;
+}
+.ourMission .ourMission__textPart h1 {
+  font-size: calc(23px + 0.3739316239vw);
+  color: #5c4343;
+  margin-bottom: 15px;
+}
+.ourMission .ourMission__textPart p {
+  font-size: calc(17px + 0.0534188034vw);
+  line-height: 1.3em;
+}
+
+.aboutUs {
+  width: 80%;
+  margin: 100px auto 60px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.aboutUs .informationBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 150px;
+  width: 100%;
+}
+.aboutUs .informationBlock .informationBlock__textPart {
+  width: 35%;
+  margin: 0 30px;
+}
+.aboutUs .informationBlock .informationBlock__textPart h2 {
+  color: #5c4343;
+  font-size: calc(24px + 0.4273504274vw);
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+.aboutUs .informationBlock .informationBlock__textPart p {
+  font-size: calc(18px + 0.1068376068vw);
+  line-height: 1.3em;
+}
+.aboutUs .informationBlock .informationBlock__textPart p span {
+  font-weight: 600;
+  color: #6e5454;
+}
+.aboutUs .informationBlock .informationBlock__textPart ul {
+  margin: 20px 0;
+  width: 400px;
+}
+.aboutUs .informationBlock .informationBlock__textPart ul li {
+  list-style: none;
+  line-height: 1.7em;
+  font-size: calc(17px + 0.0534188034vw);
+  margin-bottom: 10px;
+}
+.aboutUs .informationBlock .informationBlock__textPart ul li span {
+  color: #5c4343;
+  font-weight: 600;
+}
+.aboutUs .informationBlock img {
+  width: 35%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-size: cover;
+  border-radius: 20px;
+}
