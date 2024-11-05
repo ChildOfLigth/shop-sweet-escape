@@ -1,14 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import classes from "./styles/Register.module.css";
 import CustomButton from "./CustomButton";
-import registrationSuccessful from "./imgs/icons/man.png";
 
 export default function Register() {
-  const blockAboutRegistrConfirmation = useRef();
   const registrForm = useRef();
-  const [localStorageData, setLocalStorageData] = useState(
-    JSON.parse(localStorage.getItem("userAccount")) || {}
-  );
+
   const inputRefs = {
     nickname: useRef(),
     phoneNumber: useRef(),
@@ -24,32 +20,7 @@ export default function Register() {
       homeAdress: inputRefs.homeAdress.current.value,
     };
     localStorage.setItem("userAccount", JSON.stringify(newData));
-    setLocalStorageData(newData);
   }
-
-  const checkLocalStorageData = () => {
-    if (
-      localStorageData.nickname &&
-      localStorageData.phoneNumber &&
-      localStorageData.email &&
-      localStorageData.homeAdress
-    ) {
-      blockAboutRegistrConfirmation.current.style.display = "block";
-      registrForm.current.style.display = "none";
-    } else {
-      blockAboutRegistrConfirmation.current.style.display = "none";
-      registrForm.current.style.display = "flex";
-    }
-  };
-
-  useEffect(() => {
-    checkLocalStorageData();
-  }, [localStorageData]);
-
-  const handleRemoveData = () => {
-    localStorage.removeItem("userAccount");
-    setLocalStorageData({});
-  };
 
   return (
     <>
@@ -118,22 +89,13 @@ export default function Register() {
             </li>
           </ul>
 
-          <button
-            className={classes.orderProcessingForm__formSubmitButton}
+          <CustomButton
+            style={{ width: "300px", margin: "10px auto"}}
             onClick={handleSubmit}
           >
             Send
-          </button>
+          </CustomButton>
         </form>
-        <div
-          className={classes.modalIfDataExists}
-          ref={blockAboutRegistrConfirmation}
-        >
-          <h1>You are already registered!</h1>
-          <p>If you want to update the data, click on the button below</p>
-          <CustomButton onClick={handleRemoveData}>Rewrite data</CustomButton>
-          <img src={registrationSuccessful} alt="" />
-        </div>
       </div>
     </>
   );

@@ -41,7 +41,7 @@ export default function CartProduct() {
                     className={classes.buttonToGoProductPage}
                     title="Go to product page"
                     onClick={() =>
-                      navigate(`/shop-sweet-escape/${elem.name}`)
+                      navigate(`/shop-sweet-escape/product/${elem.name}`)
                     }
                   >
                     <img src={visibleIco} alt="" />
@@ -99,7 +99,6 @@ export default function CartProduct() {
                 Total amount: <span>{parseFloat(allPrices.toFixed(2))}$</span>
               </p>
               <CustomButton
-                className={classes.cart_total__placingAnOrder}
                 onClick={() =>
                   navigate("/shop-sweet-escape/checkout-page", {
                     state: goodsStoredInStorage,

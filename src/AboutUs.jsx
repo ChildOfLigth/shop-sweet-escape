@@ -96,7 +96,7 @@ export default function AboutUs() {
               <span> 305 Oxford Street</span> and will be happy to become a part
               of your holidays, celebrations and ordinary everyday life.
             </p>
-            <CustomButton onClick={() => navigate("/confectionery-store/menu")}>
+            <CustomButton onClick={() => navigate("/shop-sweet-escape/menu")}>
               Go to order
             </CustomButton>
           </div>

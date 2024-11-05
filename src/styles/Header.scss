@@ -1,6 +1,6 @@
 header {
   width: 100%;
-  height: 90px;
+  height: 100px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -11,18 +11,17 @@ header {
     align-items: center;
     justify-content: center;
     position: relative;
-    justify-content: space-between;
-    width: 70%;
+    width: 60%;
     height: 100%;
     margin: 0 auto;
 
     .header_content_linkBlock {
       display: flex;
       align-items: center;
-      width: 50%;
+      margin-right: auto;
 
       a {
-        font-size: calc(17px + 3 * (100vw / 1872));
+        font-size: calc(19px + 3 * (100vw / 1872));
         color: black;
         text-decoration: none;
         position: relative;
@@ -45,23 +44,39 @@ header {
       }
     }
 
+    .header__iconForWebsite {
+      width: 90px;
+      height: 90%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
     .header__buttonBlock {
-      width: 230px;
+      width: 200px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      margin-left: auto;
+
       button {
-        width: 120px;
+        width: 60px;
         height: 100%;
-        text-align: center;
         font-weight: 600;
         border: none;
         border-radius: 24px;
         cursor: pointer;
         overflow: hidden;
         z-index: 1000;
+
         img {
-          width: 50%;
+          width: 100%;
           height: auto;
+        }
+
+        &:nth-of-type(1) {
+          width: 70px;
+          height: 100%;
         }
       }
     }

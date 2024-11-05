@@ -1,7 +1,7 @@
 .presentingUnit {
   position: relative;
   width: 85%;
-  height: 680px;
+  height: 750px;
   border-radius: 15px;
   background-size: cover;
   background-attachment: fixed;
@@ -41,10 +41,10 @@
   text-align: center;
   width: 100%;
   max-width: 1700px;
-  margin: 0 auto 150px auto;
+  margin: 0 auto 180px auto;
 }
 .listRecomendedProduct h2 {
-  font-size: calc(27px + 1.1217948718vw);
+  font-size: calc(27px + 0.5876068376vw);
   font-weight: 600;
   margin-bottom: 10px;
   color: #6e5454;
@@ -78,7 +78,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 220px;
+  width: 370px;
   height: 500px;
   padding: 15px 20px;
   list-style: none;
@@ -111,9 +111,16 @@
           transform: scale(1.4);
 }
 .listRecomendedProduct .listProduct .listProduct_elem h3 {
+  position: relative;
   text-align: center;
   font-size: calc(19px + 0.1602564103vw);
   color: #6e5454;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.listRecomendedProduct .listProduct .listProduct_elem h3:hover {
+  color: #412f2f;
 }
 .listRecomendedProduct .listProduct .listProduct_elem .dataProduct {
   font-size: calc(18px + 0.1068376068vw);
@@ -131,7 +138,7 @@
 .presentGalery {
   width: 100%;
   height: auto;
-  margin-bottom: 90px;
+  margin-bottom: 200px;
 }
 .presentGalery .presentGalery_textBlock {
   text-align: center;
@@ -139,7 +146,7 @@
   margin: 0 auto 55px auto;
 }
 .presentGalery .presentGalery_textBlock h2 {
-  font-size: calc(25px + 1.1217948718vw);
+  font-size: calc(27px + 0.5876068376vw);
   margin-bottom: 10px;
   color: #6e5454;
 }
@@ -217,7 +224,7 @@
 .featuring {
   width: 90%;
   height: auto;
-  margin: 0 auto;
+  margin: 0 auto 250px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -227,9 +234,9 @@
           flex-direction: column;
 }
 .featuring h2 {
-  font-size: calc(24px + 0.4273504274vw);
+  font-size: calc(27px + 0.5876068376vw);
   font-weight: 600;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   text-align: center;
   color: #6e5454;
 }
@@ -253,14 +260,14 @@
   margin: 0 10px;
 }
 .featuring .featuring_wrapperElem .featuring_elem h3 {
-  font-size: calc(20px + 0.2136752137vw);
+  font-size: calc(22px + 0.3205128205vw);
 }
 .featuring .featuring_wrapperElem .featuring_elem img {
   width: 40%;
   margin: 10px auto;
 }
 .featuring .featuring_wrapperElem .featuring_elem p {
-  font-size: calc(18px + 0.1068376068vw);
+  font-size: calc(19px + 0.1602564103vw);
   width: 240px;
   margin: 0 auto;
 }
@@ -268,10 +275,10 @@
 .reviews {
   width: 90%;
   height: auto;
-  margin: 0 auto;
+  margin: 0 auto 250px auto;
 }
 .reviews h2 {
-  font-size: calc(24px + 0.6944444444vw);
+  font-size: calc(27px + 0.5876068376vw);
   text-align: center;
   color: #6e5454;
 }
@@ -344,7 +351,7 @@
   width: 70%;
 }
 .ourLocation .ourLocation_infoLocation h2 {
-  font-size: calc(24px + 0.4273504274vw);
+  font-size: calc(27px + 0.5876068376vw);
   color: #6e5454;
 }
 .ourLocation .ourLocation_infoLocation p {

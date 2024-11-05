@@ -1,14 +1,23 @@
-import { popularProd, candies, chocolate, cake, cakes } from "./listProducts";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import {
+  popularProd,
+  candies,
+  chocolate,
+  cake,
+  cakes,
+  macaroon,
+} from "./listProducts";
+import classes from "./styles/Menu.module.css";
 import presentPhotoCakes from "./imgs/icons/cakesPresentForMenu.jpg";
 import presentPhotoCandies from "./imgs/icons/candiesPresentForMenu.jpg";
 import searchIco from "./imgs/icons/magnifying-glass.png";
-import classes from "./styles/Menu.module.css";
-import { useCallback, useContext, useEffect, useRef, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import clearInput from "./imgs/icons/cross.png";
+import arowToTop from "./imgs/icons/arowTop.png";
 import { UserDataContext } from "./UserDataProvider";
 
 export default function Menu() {
-  const allProducts = [cakes, cake, candies, chocolate];
+  const allProducts = [cakes, cake, candies, chocolate, macaroon];
   const location = useLocation();
   const [productsArray, setProductArray] = useState(allProducts);
   const [indexLi, setIndexLi] = useState("all");
@@ -17,6 +26,8 @@ export default function Menu() {
   const inputElement = useRef(null);
   const searchIcoElem = useRef(null);
   const { dataAvailabilityCheck } = useContext(UserDataContext);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const scrollToUp = useRef(null);
 
   function generateLiElementForLists(products) {
     return products.map((elem) => (
@@ -44,52 +55,87 @@ export default function Menu() {
     ));
   }
 
-  const filterProductsArrayByCategory = useCallback((category) => {
-    setIsSearching(false);
-    if (category === "all") {
-      setProductArray(allProducts);
-      setIndexLi("all");
-      return;
-    }
-    const filterArr = allProducts.map((array) =>
-      array.filter((product) => product.typeProd === category)
-    );
-    setProductArray(filterArr);
-    setIndexLi(category);
-  }, [allProducts]);
+  const filterProductsArrayByCategory = useCallback(
+    (category) => {
+      setIsSearching(false);
+      inputElement.current.value = "";
+      if (category === "all") {
+        setProductArray(allProducts);
+        setIndexLi("all");
+        return;
+      }
+      const filterArr = allProducts.map((array) =>
+        array.filter((product) => product.typeProd === category)
+      );
+      setProductArray(filterArr);
+      setIndexLi(category);
+    },
+    [allProducts]
+  );
 
   useEffect(() => {
-    if (location.state) {
-      filterProductsArrayByCategory(location.state);
+    if (location.state && location.state.types) {
+      filterProductsArrayByCategory(location.state.types);
     }
   }, [location.state]);
+  
+
+  useEffect(() => {
+    if (scrollPosition > 1600) {
+      scrollToUp.current.style.opacity = "1";
+    } else {
+      scrollToUp.current.style.opacity = "0";
+    }
+  }, [scrollPosition]);
 
   function searchProductByName() {
     if (inputElement.current.tagName === "INPUT") {
       const currentValue = inputElement.current.value.toLowerCase();
-      const filterArrByInputValue = allProducts
-        .flat()
-        .filter((product) =>
-          product.ingredients.some((ingredient) =>
-            ingredient.toLowerCase().includes(currentValue)
-          )
-        );
+      const mergedArray = allProducts.flat();
+      const filterArrByInputValue = mergedArray.filter((elem) =>
+        elem.name.toLowerCase().includes(currentValue)
+      );
       setIsSearching(true);
       setProductArray(filterArrByInputValue);
     }
   }
 
+  const handleScroll = () => {
+    setScrollPosition(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (scrollToUp.current) {
+      scrollToUp.current.style.opacity = scrollPosition > 1600 ? '1' : '0';
+    }
+  }, [scrollPosition]);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 1500,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <>
       <div className={classes.presentableUnit}>
         <div className={classes.presentableUnit__card}>
-          <div className={classes.wrapperImg}>
-            <img src={presentPhotoCakes} alt="" />
-          </div>
           <h1>
             A variety of sweets at
             <span> Sweet Escape Cafe</span>
           </h1>
+          <div className={classes.wrapperImg}>
+            <img src={presentPhotoCakes} alt="" />
+          </div>
         </div>
         <div className={classes.presentableUnit__card}>
           <div className={classes.wrapperImg}>
@@ -109,8 +155,15 @@ export default function Menu() {
             <li
               key={elem.name}
               className={classes.listElems__elem}
-              style={{ backgroundImage: `url(${elem.imgProd})` }}
+              onClick={() =>
+                dataAvailabilityCheck
+                  ? navigate(`/shop-sweet-escape/product/${elem.name}`)
+                  : navigate("/shop-sweet-escape/registration")
+              }
             >
+              <div className={classes.elem__wrapperForPhoto}>
+                <img src={elem.imgProd} alt="" />
+              </div>
               <div className={classes.elem__productData}>
                 <h3>{elem.name}</h3>
                 <p>{elem.price}</p>
@@ -141,6 +194,16 @@ export default function Menu() {
                 }
               }}
             />
+            <button
+              className={classes.clearInputValue}
+              onClick={() => {
+                inputElement.current.value = "";
+                setProductArray(allProducts);
+                setIsSearching(false);
+              }}
+            >
+              <img src={clearInput} alt="" />
+            </button>
           </div>
 
           <ul className={classes.listSortingOptions}>
@@ -194,6 +257,16 @@ export default function Menu() {
             >
               Chocolate
             </li>
+            <li
+              onClick={() => filterProductsArrayByCategory("macaroon")}
+              className={
+                indexLi === "macaroon"
+                  ? `${classes.categoryLink} ${classes.active}`
+                  : classes.categoryLink
+              }
+            >
+              Macaroons
+            </li>
           </ul>
         </div>
       </div>
@@ -217,7 +290,13 @@ export default function Menu() {
               }
             >
               <div className={classes.wrapperListProds__textContent}>
-                <h2>{["Cakes", "Cake", "Candies", "Chocolate"][index]}</h2>
+                <h2>
+                  {
+                    ["Cakes", "Cake", "Candies", "Chocolate", "Macaroons"][
+                      index
+                    ]
+                  }
+                </h2>
                 <p>
                   {
                     [
@@ -225,6 +304,7 @@ export default function Menu() {
                       "Cakes for any celebration from classic recipes to unique flavors with juicy fillings and smooth cream.",
                       "An assortment of candies with nuts, fruits, and creamy fillings. Little delights for every day!",
                       "Our natural chocolate with a rich taste and unique add-ins. Pure enjoyment in every bite!",
+                      "Macaroons are gourmet French confections consisting of two light and crispy almond meringues held together with a sweet filling such as ganache, cream or jam.",
                     ][index]
                   }
                 </p>
@@ -236,6 +316,15 @@ export default function Menu() {
           ))
         )}
       </div>
+
+      <button
+      ref={scrollToUp}
+      onClick={scrollToTop}
+      className={classes.buttonToScrollUp}
+      style={{ opacity: 0, transition: 'opacity 0.5s' }}
+    >
+      <img src={arowToTop} alt="Scroll to top" />
+    </button>
     </>
   );
 }

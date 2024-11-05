@@ -4,13 +4,14 @@ import { UserDataContext } from "./UserDataProvider";
 import { useNavigate } from "react-router-dom";
 import { recomendedProduct } from "./listProducts";
 import presentChoco from "./imgs/icons/presentChocolate.jpg";
-import presentMaffins from "./imgs/icons/imgPresentProd1.webp";
+import presentMaffins from "./imgs/icons/imgPresentProdMuffins.jpg";
 import presentMacaron from "./imgs/icons/presentMacaron.jpg";
 import presentCakes from "./imgs/icons/presentCakes.png";
 import presentCake from "./imgs/icons/presentCake.jpg";
 import fraisierCake from "./imgs/icons/сakes.jpg";
 import homemadeChoco from "./imgs/icons/homemadeChocolate.jpg";
 import craftCandy from "./imgs/icons/craftCandy.jpg";
+import macaroonsForCard from "./imgs/icons/presentMacaronForCard.png";
 import icoNaturalProduct from "./imgs/icons/ingredients.png";
 import icoDelivery from "./imgs/icons/delivery-man.png";
 import icoHealth from "./imgs/icons/protection.png";
@@ -20,10 +21,10 @@ import user3 from "./imgs/icons/girlPhoto.jpg";
 import CustomButton from "./CustomButton";
 
 const arrayPresentProdPhoto = [
-  presentMaffins,
+  presentCake,
   presentChoco,
   presentMacaron,
-  presentCake,
+  presentMaffins,
 ];
 
 const dataProductCategories = [
@@ -55,6 +56,13 @@ const dataProductCategories = [
     img: craftCandy,
     types: "candies",
   },
+  {
+    id: 5,
+    nameCategory: "Macaroons",
+    data: "Macarons are gourmet desserts consisting of two crispy almond cakes filled with delicate cream, ganache or jam. Their bright colors and diverse flavors, such as vanilla, chocolate, raspberry, or pistachio, make pasta the perfect treat for any occasion",
+    img: macaroonsForCard,
+    types: "macaroon",
+  },
 ];
 
 export default function MainPage() {
@@ -68,7 +76,7 @@ export default function MainPage() {
       setCurrentImageIndex(
         (prevIndex) => (prevIndex + 1) % arrayPresentProdPhoto.length
       );
-    }, 60000);
+    }, 20000);
 
     return () => clearInterval(interval);
   }, []);
@@ -117,19 +125,20 @@ export default function MainPage() {
                   }
                 />
               </div>
-              <h3>
-                {product.name.length >= 30
-                  ? product.name.slice(0, 30) + "..."
-                  : product.name}
+              <h3
+                title="Go to the product page"
+                onClick={() =>
+                  dataAvailabilityCheck
+                    ? navigate(`/shop-sweet-escape/product/${product.fullName}`)
+                    : navigate("/shop-sweet-escape/registration")
+                }
+              >
+                {product.name}
               </h3>
 
               <p className={classes.price}>{product.price}</p>
 
-              <p className={classes.dataProduct}>
-                {product.data.length >= 90
-                  ? product.data.slice(0, 90) + "..."
-                  : product.data}
-              </p>
+              <p className={classes.dataProduct}>{product.data}</p>
             </li>
           ))}
         </ul>
@@ -148,9 +157,11 @@ export default function MainPage() {
                 <h3>{obg.nameCategory}</h3>
                 <p>{obg.data}</p>
                 <CustomButton
-                  onClick={() =>
-                    navigate("/shop-sweet-escape/menu", { state: obg.types })
-                  }
+                  onClick={() => {
+                    navigate("/shop-sweet-escape/menu", {
+                      state: { types: obg.types, scrollPosition: 1480 },
+                    });
+                  }}
                 >
                   Order
                 </CustomButton>
@@ -265,7 +276,7 @@ export default function MainPage() {
             <p>From 10:00-19:00 days off Saturday-Sunday</p>
 
             <h3>Contacts</h3>
-            <p>+44 20 7946 0958</p>
+            <p>+44 20 7946 1234</p>
             <p>sweetesc@gmail.com</p>
           </div>
         </div>

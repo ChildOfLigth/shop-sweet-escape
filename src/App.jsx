@@ -7,7 +7,7 @@ import Menu from "./Menu";
 import Footer from "./Footer";
 import CartProduct from "./CartProduct";
 import ProductPage from "./ProductPage";
-import { cakes, cake, chocolate, candies } from "./listProducts";
+import { cakes, cake, chocolate, candies, macaroon } from "./listProducts";
 import OrderForm from "./OrderForm";
 import Register from "./Register";
 import UserDataProvider from "./UserDataProvider";
@@ -15,7 +15,7 @@ import IsNotDefined from "./IsNotDefined";
 import ScrollToTop from "./ScrollTop";
 
 function AppContent() {
-  const allProducts = [...cakes, ...cake, ...chocolate, ...candies];
+  const allProducts = [...cakes, ...cake, ...chocolate, ...candies, ...macaroon];
   return (
     <>
       <div className="wrapper">

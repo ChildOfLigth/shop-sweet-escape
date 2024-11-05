@@ -19,7 +19,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 400px;
+  width: 500px;
   height: auto;
   margin: 30px auto 50px auto;
   padding: 20px;
@@ -66,31 +66,16 @@
           flex-direction: column;
 }
 .wrapper .orderProcessingForm .orderProcessingForm__inputFieldWrapper .inputFieldWrapper__elem label {
-  line-height: 30px;
+  line-height: 40px;
   font-size: calc(17px + 0.0534188034vw);
 }
 .wrapper .orderProcessingForm .orderProcessingForm__inputFieldWrapper .inputFieldWrapper__elem input {
   border: 1px solid black;
-  border-radius: 150px;
+  border-radius: 10px;
   padding: 0 8px;
   margin-bottom: 10px;
   height: 30px;
-  font-size: calc(17px + 0.0534188034vw);
-}
-.wrapper .orderProcessingForm .orderProcessingForm__formSubmitButton {
-  background-color: #6e5454;
-  color: white;
-  border-radius: 15px;
-  border: none;
-  height: 50px;
-  width: 90%;
-  margin: 10px auto;
-  font-size: calc(18px + 0.1068376068vw);
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-.wrapper .orderProcessingForm .orderProcessingForm__formSubmitButton:hover {
-  background-color: #8f7979;
+  font-size: calc(19px + 0.1602564103vw);
 }
 .wrapper .modalIfDataExists {
   position: relative;
