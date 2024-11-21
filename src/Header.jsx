@@ -22,13 +22,8 @@ export default function Header() {
         <span></span>
         <span></span>
       </div>
-      <div className="header_content">
-        <div className="header_content_linkBlock">
-          <NavLink to={"/shop-sweet-escape"}>Home</NavLink>
-          <NavLink to={"/shop-sweet-escape/menu"}>Menu</NavLink>
-          <NavLink to={"/shop-sweet-escape/about-us"}>About us</NavLink>
-        </div>
 
+      <div className="header_content">
         <img
           src={iconForwebsite}
           alt=""
@@ -37,7 +32,12 @@ export default function Header() {
           title="Go to the main page"
         />
 
-        <div className="header__buttonBlock">
+        <div className="header_content_linkBlock">
+          <NavLink to={"/shop-sweet-escape"}>Home</NavLink>
+          <NavLink to={"/shop-sweet-escape/menu"}>Menu</NavLink>
+          <NavLink to={"/shop-sweet-escape/about-us"}>About us</NavLink>
+
+          <div className="linkBlock__buttonBlock">
           <button
             onClick={() =>
               dataAvailabilityCheck
@@ -62,6 +62,9 @@ export default function Header() {
             <img src={registrationUser} alt="" />
           </button>
         </div>
+        </div>
+
+        
       </div>
 
       {registrationBlockVisibility && (
@@ -72,7 +75,10 @@ export default function Header() {
       )}
 
       {!registrationBlockVisibility && (
-        <ModalWindowIfOkRegister modalWindVisibility={modalWindowvisibilite} setModalWindVisibility={setModalWindowVisibilite}/>
+        <ModalWindowIfOkRegister
+          modalWindVisibility={modalWindowvisibilite}
+          setModalWindVisibility={setModalWindowVisibilite}
+        />
       )}
 
       <Outlet />

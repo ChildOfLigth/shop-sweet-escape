@@ -90,7 +90,7 @@
   border: none;
   width: 50px;
   height: auto;
-  font-size: calc(19px + 0.1602564103vw);
+  font-size: calc(19px + 0.1569037657vw);
 }
 .wrapper .productLict .productLict__productCard .productCard__productInfo {
   display: -webkit-box;
@@ -107,11 +107,11 @@
 }
 .wrapper .productLict .productLict__productCard .productCard__productInfo h3 {
   color: #5c4343;
-  font-size: calc(19px + 0.1602564103vw);
+  font-size: calc(19px + 0.1569037657vw);
   margin-bottom: 7px;
 }
 .wrapper .productLict .productLict__productCard .productCard__productInfo p {
-  font-size: calc(18px + 0.1068376068vw);
+  font-size: calc(18px + 0.1046025105vw);
   line-height: 26px;
 }
 .wrapper .productLict .productLict__productCard .productCard__productInfo .price {
@@ -131,7 +131,7 @@
   margin-top: 20px;
 }
 .wrapper .cart_total p {
-  font-size: calc(20px + 0.2136752137vw);
+  font-size: calc(20px + 0.2092050209vw);
   margin-bottom: 10px;
 }
 
@@ -152,11 +152,11 @@
 }
 .inCaseOfAnEmptyCart h2 {
   color: #5c4343;
-  font-size: calc(23px + 0.3739316239vw);
+  font-size: calc(23px + 0.3661087866vw);
   margin-bottom: 10px;
 }
 .inCaseOfAnEmptyCart p {
-  font-size: calc(21px + 0.2670940171vw);
+  font-size: calc(21px + 0.2615062762vw);
 }
 .inCaseOfAnEmptyCart img {
   width: 260px;

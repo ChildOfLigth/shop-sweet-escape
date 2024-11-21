@@ -10,7 +10,7 @@
       height: 40px;
       border: none;
       border-radius: 10px;
-      font-size: calc(18px + 2 * (100vw / 1872));
+      font-size: calc(18px + 2 * (100vw / 1912));
       color: white;
       transition: all 0.5s;
       &:hover {
@@ -18,7 +18,7 @@
       }
     }
     p {
-      font-size: calc(19px + 3 * (100vw / 1872));
+      font-size: calc(19px + 3 * (100vw / 1912));
       font-weight: 600;
       color: black;
     }

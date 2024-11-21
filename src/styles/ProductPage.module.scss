@@ -27,19 +27,19 @@
       width: 500px;
       margin: 30px 0;
       h2 {
-        font-size: calc(23px + 7 * (100vw / 1872));
+        font-size: calc(23px + 7 * (100vw / 1912));
         color: #6e5454;
         margin-bottom: 15px;
       }
       p {
-        font-size: calc(20px + 4 * (100vw / 1872));
+        font-size: calc(20px + 4 * (100vw / 1912));
       }
     }
   }
   .dataProduct__extendedData {
     ul {
       h3 {
-        font-size: calc(24px + 8 * (100vw / 1872));
+        font-size: calc(24px + 8 * (100vw / 1912));
         color: #6e5454;
         margin-bottom: 20px;
         position: relative;
@@ -68,7 +68,7 @@
         }
       }
       h4 {
-        font-size: calc(20px + 4 * (100vw / 1872));
+        font-size: calc(20px + 4 * (100vw / 1912));
         color: #6e5454;
         margin: 20px 0;
       }
@@ -76,7 +76,7 @@
         display: flex;
         align-items: center;
         list-style: none;
-        font-size: calc(20px + 4 * (100vw / 1872));
+        font-size: calc(20px + 4 * (100vw / 1912));
         line-height: 35px;
 
         input {
@@ -90,7 +90,7 @@
   .datProduct__priceBlcok {
     margin: 20px 0;
     p {
-      font-size: calc(20px + 4 * (100vw / 1872));
+      font-size: calc(20px + 4 * (100vw / 1912));
       span {
         font-weight: 600;
       }
@@ -105,7 +105,7 @@
       background-color: #6e5454;
       height: 50px;
       color: white;
-      font-size: calc(19px + 3 * (100vw / 1872));
+      font-size: calc(19px + 3 * (100vw / 1912));
       border: none;
       border-radius: 12px;
       padding: 5px 12px;
@@ -152,7 +152,7 @@
       position: absolute;
       top: 5px;
       left: 90%;
-      font-size: calc(23px + 7 * (100vw / 1872));
+      font-size: calc(23px + 7 * (100vw / 1912));
       border: none;
       cursor: pointer;
     }
@@ -168,7 +168,7 @@
       height: auto;
     }
     h2 {
-      font-size: calc(20px + 4 * (100vw / 1872));
+      font-size: calc(20px + 4 * (100vw / 1912));
     }
   }
 }

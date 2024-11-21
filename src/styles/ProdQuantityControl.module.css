@@ -17,7 +17,7 @@
   height: 40px;
   border: none;
   border-radius: 10px;
-  font-size: calc(18px + 0.1068376068vw);
+  font-size: calc(18px + 0.1046025105vw);
   color: white;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -26,7 +26,7 @@
   background-color: #8f7979;
 }
 .productQuantityControl p {
-  font-size: calc(19px + 0.1602564103vw);
+  font-size: calc(19px + 0.1569037657vw);
   font-weight: 600;
   color: black;
 }

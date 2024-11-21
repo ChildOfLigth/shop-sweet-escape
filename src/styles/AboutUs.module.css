@@ -22,12 +22,12 @@
   border-radius: inherit;
 }
 .ourMission .ourMission__textPart h1 {
-  font-size: calc(26px + 0.5341880342vw);
+  font-size: calc(26px + 0.5230125523vw);
   color: #5c4343;
   margin-bottom: 15px;
 }
 .ourMission .ourMission__textPart p {
-  font-size: calc(19px + 0.1602564103vw);
+  font-size: calc(19px + 0.1569037657vw);
   line-height: 1.5em;
 }
 
@@ -66,11 +66,11 @@
 }
 .aboutUs .informationBlock .informationBlock__textPart h2 {
   color: #5c4343;
-  font-size: calc(24px + 0.4273504274vw);
+  font-size: calc(24px + 0.4184100418vw);
   margin-bottom: 15px;
 }
 .aboutUs .informationBlock .informationBlock__textPart p {
-  font-size: calc(18px + 0.1068376068vw);
+  font-size: calc(18px + 0.1046025105vw);
   line-height: 1.3em;
 }
 .aboutUs .informationBlock .informationBlock__textPart p span {
@@ -84,7 +84,7 @@
 .aboutUs .informationBlock .informationBlock__textPart ul li {
   list-style: none;
   line-height: 1.7em;
-  font-size: calc(17px + 0.0534188034vw);
+  font-size: calc(17px + 0.0523012552vw);
   margin-bottom: 10px;
 }
 .aboutUs .informationBlock .informationBlock__textPart ul li span {

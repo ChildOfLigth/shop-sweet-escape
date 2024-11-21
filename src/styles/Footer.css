@@ -45,7 +45,7 @@ footer .footer__content div {
 }
 footer .footer__content div h3 {
   margin-bottom: 10px;
-  font-size: calc(19px + 0.1602564103vw);
+  font-size: calc(19px + 0.1569037657vw);
   color: #5c4343;
 }
 footer .footer__content .footer__linkBlock {
@@ -58,7 +58,7 @@ footer .footer__content .footer__linkBlock {
 footer .footer__content .footer__linkBlock a {
   position: relative;
   text-decoration: none;
-  font-size: calc(19px + 0.1602564103vw);
+  font-size: calc(19px + 0.1569037657vw);
   color: #5c4343;
 }
 footer .footer__content .footer__linkBlock a::after {
@@ -93,7 +93,7 @@ footer .footer__content .foter__adress_info {
 }
 footer .footer__content .foter__adress_info p {
   margin-bottom: 10px;
-  font-size: calc(18px + 0.1068376068vw);
+  font-size: calc(18px + 0.1046025105vw);
 }
 footer .footer__content .footer__contacts {
   -webkit-box-orient: vertical;
@@ -103,7 +103,7 @@ footer .footer__content .footer__contacts {
   width: 210px;
 }
 footer .footer__content .footer__contacts p {
-  font-size: calc(18px + 0.1068376068vw);
+  font-size: calc(18px + 0.1046025105vw);
   line-height: 33px;
 }
 footer .footer__content .footer_socialMedia {
@@ -132,8 +132,8 @@ footer .footer__content .footer_socialMedia .socialMedia__icons img:hover {
 
 @media (max-width: 480px) {
   footer .footer__content {
-    -webkit-box-pack: left;
-        -ms-flex-pack: left;
-            justify-content: left;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }

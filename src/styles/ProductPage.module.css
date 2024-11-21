@@ -45,15 +45,15 @@
   margin: 30px 0;
 }
 .dataProduct .dataProduct__incompleteProductDescription .infoBlock h2 {
-  font-size: calc(23px + 0.3739316239vw);
+  font-size: calc(23px + 0.3661087866vw);
   color: #6e5454;
   margin-bottom: 15px;
 }
 .dataProduct .dataProduct__incompleteProductDescription .infoBlock p {
-  font-size: calc(20px + 0.2136752137vw);
+  font-size: calc(20px + 0.2092050209vw);
 }
 .dataProduct .dataProduct__extendedData ul h3 {
-  font-size: calc(24px + 0.4273504274vw);
+  font-size: calc(24px + 0.4184100418vw);
   color: #6e5454;
   margin-bottom: 20px;
   position: relative;
@@ -83,7 +83,7 @@
           transform: translateY(-50%);
 }
 .dataProduct .dataProduct__extendedData ul h4 {
-  font-size: calc(20px + 0.2136752137vw);
+  font-size: calc(20px + 0.2092050209vw);
   color: #6e5454;
   margin: 20px 0;
 }
@@ -95,7 +95,7 @@
       -ms-flex-align: center;
           align-items: center;
   list-style: none;
-  font-size: calc(20px + 0.2136752137vw);
+  font-size: calc(20px + 0.2092050209vw);
   line-height: 35px;
 }
 .dataProduct .dataProduct__extendedData ul li input {
@@ -107,7 +107,7 @@
   margin: 20px 0;
 }
 .dataProduct .datProduct__priceBlcok p {
-  font-size: calc(20px + 0.2136752137vw);
+  font-size: calc(20px + 0.2092050209vw);
 }
 .dataProduct .datProduct__priceBlcok p span {
   font-weight: 600;
@@ -127,7 +127,7 @@
   background-color: #6e5454;
   height: 50px;
   color: white;
-  font-size: calc(19px + 0.1602564103vw);
+  font-size: calc(19px + 0.1569037657vw);
   border: none;
   border-radius: 12px;
   padding: 5px 12px;
@@ -185,7 +185,7 @@
   position: absolute;
   top: 5px;
   left: 90%;
-  font-size: calc(23px + 0.3739316239vw);
+  font-size: calc(23px + 0.3661087866vw);
   border: none;
   cursor: pointer;
 }
@@ -201,5 +201,5 @@
   height: auto;
 }
 .modalWindowWhenAddingCart .content h2 {
-  font-size: calc(20px + 0.2136752137vw);
+  font-size: calc(20px + 0.2092050209vw);
 }

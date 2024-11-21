@@ -19,12 +19,12 @@
     padding: 40px 30px;
     border-radius: inherit;
     h1 {
-      font-size: calc(26px + 10 * (100vw / 1872));
+      font-size: calc(26px + 10 * (100vw / 1912));
       color: #5c4343;
       margin-bottom: 15px;
     }
     p {
-      font-size: calc(19px + 3 * (100vw / 1872));
+      font-size: calc(19px + 3 * (100vw / 1912));
       line-height: 1.5em;
     }
   }
@@ -48,11 +48,11 @@
       margin: 0 30px;
       h2 {
         color: #5c4343;
-        font-size: calc(24px + 8 * (100vw / 1872));
+        font-size: calc(24px + 8 * (100vw / 1912));
         margin-bottom: 15px;
       }
       p {
-        font-size: calc(18px + 2 * (100vw / 1872));
+        font-size: calc(18px + 2 * (100vw / 1912));
         line-height: 1.3em;
         span {
           font-weight: 600;
@@ -65,7 +65,7 @@
         li {
           list-style: none;
           line-height: 1.7em;
-          font-size: calc(17px + 1 * (100vw / 1872));
+          font-size: calc(17px + 1 * (100vw / 1912));
           margin-bottom: 10px;
           span {
             color: #5c4343;

@@ -42,7 +42,7 @@
   height: auto;
 }
 .orderProcessingForm h2 {
-  font-size: calc(24px + 0.4273504274vw);
+  font-size: calc(24px + 0.4184100418vw);
   text-align: center;
   margin-bottom: 20px;
   color: #5c4343;
@@ -76,7 +76,7 @@
 }
 .orderProcessingForm .orderProcessingForm__inputFieldWrapper .inputFieldWrapper__elem label {
   line-height: 40px;
-  font-size: calc(18px + 0.1068376068vw);
+  font-size: calc(18px + 0.1046025105vw);
 }
 .orderProcessingForm .orderProcessingForm__inputFieldWrapper .inputFieldWrapper__elem input {
   border: 1px solid #5c4343;
@@ -84,7 +84,7 @@
   padding: 8px 15px;
   width: 400px;
   height: 25px;
-  font-size: calc(20px + 0.2136752137vw);
+  font-size: calc(20px + 0.2092050209vw);
   color: #5c4343;
   outline: none;
 }
@@ -105,7 +105,7 @@
   margin-top: 20px;
 }
 .orderProcessingForm .orderProcessingForm__otherRegistratioOptions h3 {
-  font-size: calc(17px + 0.0534188034vw);
+  font-size: calc(17px + 0.0523012552vw);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -197,12 +197,12 @@
   z-index: 100000;
 }
 .wrapper__modal_completeRegistration h2 {
-  font-size: calc(21px + 0.2670940171vw);
+  font-size: calc(21px + 0.2615062762vw);
   color: #5c4343;
   margin-bottom: 20px;
 }
 .wrapper__modal_completeRegistration p {
-  font-size: calc(20px + 0.2136752137vw);
+  font-size: calc(20px + 0.2092050209vw);
 }
 .wrapper__modal_completeRegistration img {
   width: 200px;

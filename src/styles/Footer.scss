@@ -1,4 +1,4 @@
-$defaultFsz: calc(18px + 2 * (100vw / 1872));
+$defaultFsz: calc(18px + 2 * (100vw / 1912));
 
 footer {
   display: flex;
@@ -32,7 +32,7 @@ footer {
       margin: 0 30px 30px 30px;
       h3 {
         margin-bottom: 10px;
-        font-size: calc(19px + 3 * (100vw / 1872));
+        font-size: calc(19px + 3 * (100vw / 1912));
         color: #5c4343;
       }
     }
@@ -42,7 +42,7 @@ footer {
       a {
         position: relative;
         text-decoration: none;
-        font-size: calc(19px + 3 * (100vw / 1872));
+        font-size: calc(19px + 3 * (100vw / 1912));
         color: #5c4343;
         &::after {
           content: "";
@@ -109,7 +109,7 @@ footer {
 @media (max-width: 480px) {
   footer {
     .footer__content {
-      justify-content: left;
+      justify-content: center;
     }
   }
 }

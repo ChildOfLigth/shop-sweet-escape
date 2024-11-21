@@ -1,4 +1,4 @@
-$defaultFsz: calc(36px + 20 * (100vw / 1872));
+$defaultFsz: calc(36px + 20 * (100vw / 1912));
 
 .presentableUnit {
   width: 70%;
@@ -39,7 +39,7 @@ $defaultFsz: calc(36px + 20 * (100vw / 1872));
       }
 
       p {
-        font-size: calc(22px + 6 * (100vw / 1872));
+        font-size: calc(22px + 6 * (100vw / 1912));
 
         span {
           font-weight: 600;
@@ -57,7 +57,7 @@ $defaultFsz: calc(36px + 20 * (100vw / 1872));
   h2 {
     text-align: center;
     margin-bottom: 25px;
-    font-size: calc(27px + 21 * (100vw / 1872));
+    font-size: calc(27px + 21 * (100vw / 1912));
     color: #6e5454;
   }
   .popularProducts__listElems {
@@ -117,11 +117,11 @@ $defaultFsz: calc(36px + 20 * (100vw / 1872));
         z-index: 10;
 
         h3 {
-          font-size: calc(13px + 5 * (100vw / 1872));
+          font-size: calc(13px + 5 * (100vw / 1912));
         }
 
         p {
-          font-size: calc(13px + 5 * (100vw / 1872));
+          font-size: calc(13px + 5 * (100vw / 1912));
         }
       }
     }
@@ -194,12 +194,12 @@ $defaultFsz: calc(36px + 20 * (100vw / 1872));
       li {
         list-style: none;
         cursor: pointer;
-        font-size: calc(18px + 2 * (100vw / 1872));
+        font-size: calc(18px + 2 * (100vw / 1912));
 
         &.active {
           color: #6e5454;
           font-weight: 700;
-          font-size: calc(18px + 2 * (100vw / 1872));
+          font-size: calc(18px + 2 * (100vw / 1912));
         }
       }
     }
@@ -234,7 +234,7 @@ $defaultFsz: calc(36px + 20 * (100vw / 1872));
         color: #be9292;
       }
       p {
-        font-size: calc(19px + 3 * (100vw / 1872));
+        font-size: calc(19px + 3 * (100vw / 1912));
       }
     }
 
@@ -288,11 +288,11 @@ $defaultFsz: calc(36px + 20 * (100vw / 1872));
           z-index: 2;
           h3 {
             color: #ffffff;
-            font-size: calc(15px + 5 * (100vw / 1872));
+            font-size: calc(15px + 5 * (100vw / 1912));
           }
           .price {
             margin: 10px 0;
-            font-size: calc(15px + 5 * (100vw / 1872));
+            font-size: calc(15px + 5 * (100vw / 1912));
           }
         }
 
