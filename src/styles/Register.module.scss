@@ -1,3 +1,18 @@
+@mixin modalWindow($padding) {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: white;
+  width: auto;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: $padding;
+  border-radius: 15px;
+}
+
 .dimmingContent {
   position: fixed;
   top: 0;
@@ -9,19 +24,8 @@
 }
 
 .orderProcessingForm {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 25%;
-  height: auto;
-  background-color: white;
-  border-radius: 10px;
-  padding: 30px 10px;
+  @include modalWindow(30px 20px);
   z-index: 10000;
-  
 
   .closeForm {
     position: absolute;
@@ -105,7 +109,7 @@
     .otherRegistratioOptions__blockOptions {
       display: flex;
       justify-content: space-between;
-      width: 80%;
+      width: 90%;
       margin-top: 20px;
 
       .blockOptions__elem {
@@ -128,6 +132,10 @@
       }
     }
   }
+  .hiddenForm {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .modalBackdrop {
@@ -141,19 +149,19 @@
 }
 
 .wrapper__modal_completeRegistration {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  background-color: white;
-  width: 360px;
-  height: auto;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px 20px;
-  border-radius: 15px;
-  z-index: 1000;
+  @include modalWindow(10px 20px);
+  width: 400px;
+  z-index: 100000;
+
+  h2 {
+    font-size: calc(21px + 5 * (100vw / 1872));
+    color: #5c4343;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: calc(20px + 4 * (100vw / 1872));
+  }
 
   img {
     width: 200px;
@@ -162,6 +170,31 @@
   }
 
   button {
-    margin: 7px auto;
+    margin: 30px auto 20px auto;
+  }
+}
+
+.blockIfRegistrAvailable {
+  z-index: 100001;
+  background-color: #5c4343;
+  width: 500px;
+  height: 300px;
+
+  h2 {
+    font-size: calc(23px + 7 * (100vw / 1912));
+    color: #5c4343;
+  }
+
+  ul {
+    margin: 15px auto;
+
+    h3 {
+      font-size: calc(21px + 5 * (100vw));
+    }
+
+    li {
+      list-style: none;
+      font-size: calc(19px + 3 * (100vw / 1912));
+    }
   }
 }

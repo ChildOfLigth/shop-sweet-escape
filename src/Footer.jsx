@@ -16,7 +16,6 @@ export default function Footer() {
             <NavLink to={"/shop-sweet-escape"}>Home</NavLink>
             <NavLink to={"/shop-sweet-escape/menu"}>Menu</NavLink>
             <NavLink to={"/shop-sweet-escape/about-us"}>About us</NavLink>
-            <NavLink to={"/shop-sweet-escape/registration"}>Register</NavLink>
           </div>
 
           <div className="footer__paymentMethodBlock">

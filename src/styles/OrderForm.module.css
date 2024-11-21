@@ -48,13 +48,14 @@
   pointer-events: none;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo h3 {
-  font-size: calc(19.5px + 0.186965812vw);
+  font-size: calc(22px + 0.3205128205vw);
   width: 80%;
   color: #6e5454;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo p {
-  font-size: calc(19px + 0.1602564103vw);
-  margin: 7px 0 10px 0;
+  font-size: calc(20px + 0.2136752137vw);
+  font-weight: 600;
+  margin: 15px 0 10px 0;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo .productInfo__quantityChange {
   display: -webkit-box;

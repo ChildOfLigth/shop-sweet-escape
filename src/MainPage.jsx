@@ -1,5 +1,5 @@
 import classes from "./styles/MainPage.module.css";
-import { useState, useEffect, useContext, useMemo } from "react";
+import { useState, useEffect, useContext } from "react";
 import { UserDataContext } from "./UserDataProvider";
 import { useNavigate } from "react-router-dom";
 import { recomendedProduct } from "./listProducts";
@@ -7,13 +7,13 @@ import presentChoco from "./imgs/icons/presentChocolate.jpg";
 import presentMaffins from "./imgs/icons/imgPresentProdMuffins.jpg";
 import presentMacaron from "./imgs/icons/presentMacaron.jpg";
 import presentCakes from "./imgs/icons/presentCakes.png";
-import presentCake from "./imgs/icons/presentCake.jpg";
-import fraisierCake from "./imgs/icons/сakes.jpg";
+import presentCake from "./imgs/icons/cakeForPresentBlock.jpg";
+import fraisierCake from "./imgs/icons/presentCake.jpg";
 import homemadeChoco from "./imgs/icons/homemadeChocolate.jpg";
 import craftCandy from "./imgs/icons/craftCandy.jpg";
 import macaroonsForCard from "./imgs/icons/presentMacaronForCard.png";
 import icoNaturalProduct from "./imgs/icons/ingredients.png";
-import icoDelivery from "./imgs/icons/delivery-man.png";
+import icoDelivery from "./imgs/icons/delivery.png";
 import icoHealth from "./imgs/icons/protection.png";
 import user1 from "./imgs/icons/manPhoto.jpg";
 import user2 from "./imgs/icons/manPhoto2.jpg";
@@ -21,6 +21,10 @@ import user3 from "./imgs/icons/girlPhoto.jpg";
 import CustomButton from "./CustomButton";
 import ArrowUp from "./ArrowUp";
 import Register from "./Register";
+import strawberry_décor from "./imgs/icons/47690747a86124ad6934e8909eac1264-removebg-preview.png";
+import raspberry_décor from "./imgs/icons/c1db3ef5ab3a8eb886bdba00d70b0d81-removebg-preview.png";
+import blueberry_décor from "./imgs/icons/a1d28148e4cae4de493fd2872fd8f906-removebg-preview.png";
+import cakesPhoto from "./imgs/icons/cakes.svg";
 
 const arrayPresentProdPhoto = [
   presentCake,
@@ -72,6 +76,24 @@ export default function MainPage() {
   const { dataAvailabilityCheck } = useContext(UserDataContext);
   const [isVisibleForm, setIsVisibleForm] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [opacityDecorationBlock, setOpacityDecorationBlock] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 540) {
+        setOpacityDecorationBlock(true);
+      } else {
+        setOpacityDecorationBlock(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {}, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -110,6 +132,23 @@ export default function MainPage() {
         <p>
           perhaps they will be included in the list of your favorite goodies
         </p>
+        <div
+          className={
+            opacityDecorationBlock
+              ? classes.listRecomendedProduct__back_decor
+              : `${classes.listRecomendedProduct__back_decor} ${classes.hidden}`
+          }
+        >
+          <img src={strawberry_décor} alt="" />
+          <img src={strawberry_décor} alt="" />
+          <img src={strawberry_décor} alt="" />
+          <img src={raspberry_décor} alt="" />
+          <img src={raspberry_décor} alt="" />
+          <img src={raspberry_décor} alt="" />
+          <img src={blueberry_décor} alt="" />
+          <img src={blueberry_décor} alt="" />
+          <img src={blueberry_décor} alt="" />
+        </div>
         <ul className={classes.listProduct}>
           {recomendedProduct.map((product) => (
             <li key={product.id} className={classes.listProduct_elem}>
@@ -132,7 +171,7 @@ export default function MainPage() {
                 onClick={() =>
                   dataAvailabilityCheck
                     ? navigate(`/shop-sweet-escape/product/${product.fullName}`)
-                    : navigate("/shop-sweet-escape/registration")
+                    : setIsVisibleForm(true)
                 }
               >
                 {product.name}
@@ -144,6 +183,45 @@ export default function MainPage() {
             </li>
           ))}
         </ul>
+      </div>
+
+      <div className={classes.featuring}>
+        <h2>How are we different from others?</h2>
+        <div className={classes.featuring__content}>
+          <img src={cakesPhoto} alt="Cream" className={classes.imeg} />
+          <ul className={classes.content_wrapperElem}>
+            <li className={classes.wrapperElem_elem}>
+              <img src={icoNaturalProduct} alt="" />
+              <div className={classes.elem__textContent}>
+                <h3>Natural ingredients</h3>
+                <p>
+                  For the preparation of dishes, we use natural and high-quality
+                  ingredients tested by experts
+                </p>
+              </div>
+            </li>
+            <li className={classes.wrapperElem_elem}>
+              <img src={icoDelivery} alt="" />
+              <div className={classes.elem__textContent}>
+                <h3>Fast and safe delivery</h3>
+                <p>
+                  We will deliver your order to any point safe and sound in a
+                  short time at a low cost
+                </p>
+              </div>
+            </li>
+            <li className={classes.wrapperElem_elem}>
+              <img src={icoHealth} alt="" />
+              <div className={classes.elem__textContent}>
+                <h3>For your health</h3>
+                <p>
+                  We have products that will not harm your health and support
+                  your lifestyle
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div className={classes.presentGalery}>
@@ -173,38 +251,8 @@ export default function MainPage() {
         </ul>
       </div>
 
-      <ul className={classes.featuring}>
-        <h2>How are we different from others?</h2>
-        <div className={classes.featuring_wrapperElem}>
-          <li className={classes.featuring_elem}>
-            <h3>Natural ingredients</h3>
-            <img src={icoNaturalProduct} alt="" />
-            <p>
-              For the preparation of dishes, we use natural and high-quality
-              ingredients tested by experts
-            </p>
-          </li>
-          <li className={classes.featuring_elem}>
-            <h3>Fast and safe delivery</h3>
-            <img src={icoDelivery} alt="" />
-            <p>
-              We will deliver your order to any point safe and sound in a short
-              time at a low cost
-            </p>
-          </li>
-          <li className={classes.featuring_elem}>
-            <h3>For your health</h3>
-            <img src={icoHealth} alt="" />
-            <p>
-              We have products that will not harm your health and support your
-              lifestyle
-            </p>
-          </li>
-        </div>
-      </ul>
-
       <div className={classes.reviews}>
-        <h2>We hope you will be as happy as our recent customers!</h2>
+        <h2>We hope you’ll be as satisfied as our recent customers!</h2>
         <div className={classes.listBlock}>
           <div className={classes.listBlock_comentBlock}>
             <div className={classes.userAccount}>

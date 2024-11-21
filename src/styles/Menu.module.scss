@@ -1,4 +1,4 @@
-$defaultFsz: calc(27px + 11 * (100vw / 1872));
+$defaultFsz: calc(36px + 20 * (100vw / 1872));
 
 .presentableUnit {
   width: 70%;
@@ -34,7 +34,7 @@ $defaultFsz: calc(27px + 11 * (100vw / 1872));
       h2 {
         font-size: $defaultFsz;
         font-weight: 600;
-        color: #5c4343;
+        color: #be9292;
         margin-bottom: 10px;
       }
 
@@ -219,7 +219,7 @@ $defaultFsz: calc(27px + 11 * (100vw / 1872));
     align-items: center;
     h2 {
       font-size: $defaultFsz;
-      color: #6e5454;
+      color: #be9292;
       margin-bottom: 15px;
     }
     .wrapperListProds__textContent {
@@ -231,7 +231,7 @@ $defaultFsz: calc(27px + 11 * (100vw / 1872));
       h2 {
         font-size: $defaultFsz;
         margin-bottom: 15px;
-        color: #6e5454;
+        color: #be9292;
       }
       p {
         font-size: calc(19px + 3 * (100vw / 1872));

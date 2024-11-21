@@ -1,0 +1,67 @@
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.blockIfRegistrAvailable {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: white;
+  width: 450px;
+  height: auto;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 45px 20px;
+  border-radius: 15px;
+  z-index: 10000;
+
+  .closeModalWind {
+    position: absolute;
+    top: 10px;
+    left: 93%;
+    width: 20px;
+    height: 20px;
+    border: none;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  h2 {
+    font-size: calc(24px + 8 * (100vw / 1912));
+    color: #5c4343;
+    margin-bottom: 15px;
+  }
+
+  h3 {
+    font-size: calc(22px + 6 * (100vw / 1912));
+    color: #be9292;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    margin: 15px auto;
+    padding: 0;
+    list-style: none;
+    color: #5c4343;
+    text-align: left;
+
+    li {
+      font-size: calc(21px + 5 * (100vw / 1912));
+      line-height: 40px;
+      color: #5c4343;
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+}

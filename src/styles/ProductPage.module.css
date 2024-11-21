@@ -11,7 +11,7 @@
   margin: 40px auto;
   width: 60%;
 }
-.dataProduct .dataProduct__condesedProductDescr {
+.dataProduct .dataProduct__incompleteProductDescription {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,20 +19,21 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 50%;
 }
-.dataProduct .dataProduct__condesedProductDescr .wrapperPhoto {
+.dataProduct .dataProduct__incompleteProductDescription .wrapperPhoto {
   width: 500px;
   height: 380px;
   background-size: cover;
 }
-.dataProduct .dataProduct__condesedProductDescr .wrapperPhoto img {
+.dataProduct .dataProduct__incompleteProductDescription .wrapperPhoto img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 15px;
 }
-.dataProduct .dataProduct__condesedProductDescr .infoBlock {
+.dataProduct .dataProduct__incompleteProductDescription .infoBlock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,26 +41,51 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 450px;
+  width: 500px;
   margin: 30px 0;
 }
-.dataProduct .dataProduct__condesedProductDescr .infoBlock h2 {
-  font-size: calc(23px + 0.2136752137vw);
+.dataProduct .dataProduct__incompleteProductDescription .infoBlock h2 {
+  font-size: calc(23px + 0.3739316239vw);
   color: #6e5454;
   margin-bottom: 15px;
 }
-.dataProduct .dataProduct__condesedProductDescr .infoBlock .infoBlock__price {
-  font-weight: 700;
-  font-size: calc(19px + 0.1602564103vw);
-  margin: 12px auto;
-}
-.dataProduct .dataProduct__condesedProductDescr .infoBlock p {
-  font-size: calc(17px + 0.0534188034vw);
+.dataProduct .dataProduct__incompleteProductDescription .infoBlock p {
+  font-size: calc(20px + 0.2136752137vw);
 }
 .dataProduct .dataProduct__extendedData ul h3 {
-  font-size: calc(19px + 0.1602564103vw);
+  font-size: calc(24px + 0.4273504274vw);
   color: #6e5454;
-  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  padding: 0 30px;
+  width: 200px;
+}
+.dataProduct .dataProduct__extendedData ul h3::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #8f7979;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.dataProduct .dataProduct__extendedData ul h3::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #8f7979;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.dataProduct .dataProduct__extendedData ul h4 {
+  font-size: calc(20px + 0.2136752137vw);
+  color: #6e5454;
+  margin: 20px 0;
 }
 .dataProduct .dataProduct__extendedData ul li {
   display: -webkit-box;
@@ -69,8 +95,8 @@
       -ms-flex-align: center;
           align-items: center;
   list-style: none;
-  font-size: calc(18px + 0.1068376068vw);
-  line-height: 30px;
+  font-size: calc(20px + 0.2136752137vw);
+  line-height: 35px;
 }
 .dataProduct .dataProduct__extendedData ul li input {
   width: 20px;
@@ -83,6 +109,9 @@
 .dataProduct .datProduct__priceBlcok p {
   font-size: calc(20px + 0.2136752137vw);
 }
+.dataProduct .datProduct__priceBlcok p span {
+  font-weight: 600;
+}
 .dataProduct .dataProduct__operationsWithGoods {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -91,14 +120,14 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 220px;
+  width: 250px;
   margin: 20px 0;
 }
 .dataProduct .dataProduct__operationsWithGoods button {
   background-color: #6e5454;
   height: 50px;
   color: white;
-  font-size: calc(17px + 0.0534188034vw);
+  font-size: calc(19px + 0.1602564103vw);
   border: none;
   border-radius: 12px;
   padding: 5px 12px;

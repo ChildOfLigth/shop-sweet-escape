@@ -6,12 +6,15 @@ import registrationUser from "./imgs/icons/registrationUser.png";
 import iconForwebsite from "./imgs/icons/Sweet_Escape_Circular_Icon.png";
 import { UserDataContext } from "./UserDataProvider";
 import Register from "./Register";
+import ModalWindowIfOkRegister from "./ModalWindowIfOkRegistr";
 
 export default function Header() {
   const navigate = useNavigate();
   const { dataAvailabilityCheck } = useContext(UserDataContext);
   const [registrationBlockVisibility, setRegistrationBlockVisibility] =
     useState(false);
+  const [modalWindowvisibilite, setModalWindowVisibilite] = useState(false);
+
   return (
     <header>
       <div className="menu-burger">
@@ -46,13 +49,32 @@ export default function Header() {
             <img src={shoppingBascketIco} alt="" />
           </button>
 
-          <button onClick={() => setRegistrationBlockVisibility(!registrationBlockVisibility)}>
+          <button
+            onClick={() => {
+              if (dataAvailabilityCheck) {
+                setModalWindowVisibilite(true);
+                setRegistrationBlockVisibility(false);
+              } else {
+                setRegistrationBlockVisibility(!registrationBlockVisibility);
+              }
+            }}
+          >
             <img src={registrationUser} alt="" />
           </button>
         </div>
       </div>
 
-      {registrationBlockVisibility && <Register isFormVisible={registrationBlockVisibility} setIsFormVisible={setRegistrationBlockVisibility}/>}
+      {registrationBlockVisibility && (
+        <Register
+          isFormVisible={registrationBlockVisibility}
+          setIsFormVisible={setRegistrationBlockVisibility}
+        />
+      )}
+
+      {!registrationBlockVisibility && (
+        <ModalWindowIfOkRegister modalWindVisibility={modalWindowvisibilite} setModalWindVisibility={setModalWindowVisibilite}/>
+      )}
+
       <Outlet />
     </header>
   );

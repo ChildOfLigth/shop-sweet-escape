@@ -24,11 +24,20 @@ export default function ProductPage({ arrayProducts }) {
       setSelectedSupplements(
         selectedSupplements.filter((id) => id !== supplement.id)
       );
-      setDefPrice((prevPrice) => prevPrice - supplement.price);
+      setDefPrice((prevPrice) => prevPrice - supplement.price * quantity);
     } else {
       setSelectedSupplements([...selectedSupplements, supplement.id]);
-      setDefPrice((prevPrice) => prevPrice + supplement.price);
+      setDefPrice((prevPrice) => prevPrice + supplement.price * quantity);
     }
+  };
+
+  const calculateSupplementsPrice = () => {
+    return selectedSupplements.reduce((total, supplementId) => {
+      const supplement = currentProduct.supplements.find(
+        (supp) => supp.id === supplementId
+      );
+      return total + (supplement ? supplement.price : 0);
+    }, 0);
   };
 
   const productDataObject = {
@@ -64,7 +73,7 @@ export default function ProductPage({ arrayProducts }) {
   return (
     <>
       <div className={classes.dataProduct}>
-        <div className={classes.dataProduct__condesedProductDescr}>
+        <div className={classes.dataProduct__incompleteProductDescription}>
           <div className={classes.wrapperPhoto}>
             <img src={currentProduct.imgProd} alt="product" />
           </div>
@@ -87,7 +96,7 @@ export default function ProductPage({ arrayProducts }) {
 
             {currentProduct.supplements && (
               <>
-                <h3>Additions or substitutions of ingredients</h3>
+                <h4>Additions or substitutions of ingredients</h4>
                 {currentProduct.supplements.map((elem) => (
                   <li key={elem.id}>
                     <input
@@ -105,8 +114,8 @@ export default function ProductPage({ arrayProducts }) {
 
           <div className={classes.datProduct__priceBlcok}>
             <p className={classes.priceBlcok__price}>
-              <span>Final price:</span>
-              {parseFloat(defPrice.toFixed(2))}$
+              Final price:
+              <span> {parseFloat(defPrice.toFixed(2))}$</span>
             </p>
           </div>
 
@@ -114,14 +123,25 @@ export default function ProductPage({ arrayProducts }) {
             <ProdQuantityControl
               quantityProd={quantity}
               callbackFirst={() => {
-                setQuantity((q) => q - 1);
-                setDefPrice((defP) => defP - currentProduct.price);
+                if (quantity > 1) {
+                  setQuantity((q) => q - 1);
+                  setDefPrice(
+                    (prevPrice) =>
+                      prevPrice -
+                      (currentProduct.price + calculateSupplementsPrice())
+                  );
+                }
               }}
               callbackSecond={() => {
                 setQuantity((q) => q + 1);
-                setDefPrice((defP) => defP + currentProduct.price);
+                setDefPrice(
+                  (prevPrice) =>
+                    prevPrice +
+                    (currentProduct.price + calculateSupplementsPrice())
+                );
               }}
             />
+
             <div className={classes.goodsProcessingOperations}>
               <button
                 onClick={() =>
@@ -151,7 +171,7 @@ export default function ProductPage({ arrayProducts }) {
             onClick={() => setActiveClassForModalWind(false)}
             className={classes.hideModalWind}
           >
-            <img src={closeIco} alt="" className={classes.closeModal}/>
+            <img src={closeIco} alt="" className={classes.closeModal} />
           </button>
           <img src={cartIcon} alt="" />
           <h2>Item added to cart!</h2>

@@ -5,9 +5,10 @@
   justify-content: space-between;
   margin: 40px auto;
   width: 60%;
-  .dataProduct__condesedProductDescr {
+  .dataProduct__incompleteProductDescription {
     display: flex;
     flex-direction: column;
+    width: 50%;
     .wrapperPhoto {
       width: 500px;
       height: 380px;
@@ -23,36 +24,61 @@
     .infoBlock {
       display: flex;
       flex-direction: column;
-      width: 450px;
+      width: 500px;
       margin: 30px 0;
       h2 {
-        font-size: calc(23px + 4 * (100vw / 1872));
+        font-size: calc(23px + 7 * (100vw / 1872));
         color: #6e5454;
         margin-bottom: 15px;
       }
-      .infoBlock__price {
-        font-weight: 700;
-        font-size: calc(19px + 3 * (100vw / 1872));
-        margin: 12px auto;
-      }
       p {
-        font-size: calc(17px + 1 * (100vw / 1872));
+        font-size: calc(20px + 4 * (100vw / 1872));
       }
     }
   }
   .dataProduct__extendedData {
     ul {
       h3 {
-        font-size: calc(19px + 3 * (100vw / 1872));
+        font-size: calc(24px + 8 * (100vw / 1872));
         color: #6e5454;
-        margin-top: 20px;
+        margin-bottom: 20px;
+        position: relative;
+        padding: 0 30px;
+        width: 200px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 20px;
+          height: 2px;
+          background-color: #8f7979;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 20px;
+          height: 2px;
+          background-color: #8f7979;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+        }
+      }
+      h4 {
+        font-size: calc(20px + 4 * (100vw / 1872));
+        color: #6e5454;
+        margin: 20px 0;
       }
       li {
         display: flex;
         align-items: center;
         list-style: none;
-        font-size: calc(18px + 2 * (100vw / 1872));
-        line-height: 30px;
+        font-size: calc(20px + 4 * (100vw / 1872));
+        line-height: 35px;
+
         input {
           width: 20px;
           height: 19px;
@@ -65,18 +91,21 @@
     margin: 20px 0;
     p {
       font-size: calc(20px + 4 * (100vw / 1872));
+      span {
+        font-weight: 600;
+      }
     }
   }
   .dataProduct__operationsWithGoods {
     display: flex;
     flex-direction: column;
-    width: 220px;
+    width: 250px;
     margin: 20px 0;
     button {
       background-color: #6e5454;
       height: 50px;
       color: white;
-      font-size: calc(17px + 1 * (100vw / 1872));
+      font-size: calc(19px + 3 * (100vw / 1872));
       border: none;
       border-radius: 12px;
       padding: 5px 12px;

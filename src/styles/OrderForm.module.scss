@@ -36,13 +36,14 @@
         }
       }
       h3 {
-        font-size: calc(19.5px + 3.5 * (100vw / 1872));
+        font-size: calc(22px + 6 * (100vw / 1872));
         width: 80%;
         color: #6e5454;
       }
       p {
-        font-size: calc(19px + 3 * (100vw / 1872));
-        margin: 7px 0 10px 0;
+        font-size: calc(20px + 4 * (100vw / 1872));
+        font-weight: 600;
+        margin: 15px 0 10px 0;
       }
       .productInfo__quantityChange {
         display: flex;

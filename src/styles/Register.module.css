@@ -16,16 +16,17 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  text-align: center;
+  background-color: white;
+  width: auto;
+  height: auto;
   position: fixed;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 25%;
-  height: auto;
-  background-color: white;
-  border-radius: 10px;
-  padding: 30px 10px;
+  padding: 30px 20px;
+  border-radius: 15px;
   z-index: 10000;
 }
 .orderProcessingForm .closeForm {
@@ -130,7 +131,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 80%;
+  width: 90%;
   margin-top: 20px;
 }
 .orderProcessingForm .orderProcessingForm__otherRegistratioOptions .otherRegistratioOptions__blockOptions .blockOptions__elem {
@@ -158,6 +159,10 @@
 .orderProcessingForm .orderProcessingForm__otherRegistratioOptions .otherRegistratioOptions__blockOptions .blockOptions__elem p {
   font-weight: 600;
 }
+.orderProcessingForm .hiddenForm {
+  opacity: 0;
+  visibility: hidden;
+}
 
 .modalBackdrop {
   position: fixed;
@@ -179,7 +184,7 @@
           flex-direction: column;
   text-align: center;
   background-color: white;
-  width: 360px;
+  width: auto;
   height: auto;
   position: fixed;
   top: 50%;
@@ -188,7 +193,16 @@
           transform: translate(-50%, -50%);
   padding: 10px 20px;
   border-radius: 15px;
-  z-index: 1000;
+  width: 400px;
+  z-index: 100000;
+}
+.wrapper__modal_completeRegistration h2 {
+  font-size: calc(21px + 0.2670940171vw);
+  color: #5c4343;
+  margin-bottom: 20px;
+}
+.wrapper__modal_completeRegistration p {
+  font-size: calc(20px + 0.2136752137vw);
 }
 .wrapper__modal_completeRegistration img {
   width: 200px;
@@ -196,5 +210,26 @@
   margin: 0 auto;
 }
 .wrapper__modal_completeRegistration button {
-  margin: 7px auto;
+  margin: 30px auto 20px auto;
+}
+
+.blockIfRegistrAvailable {
+  z-index: 100001;
+  background-color: #5c4343;
+  width: 500px;
+  height: 300px;
+}
+.blockIfRegistrAvailable h2 {
+  font-size: calc(23px + 0.3661087866vw);
+  color: #5c4343;
+}
+.blockIfRegistrAvailable ul {
+  margin: 15px auto;
+}
+.blockIfRegistrAvailable ul h3 {
+  font-size: calc(21px + 500vw);
+}
+.blockIfRegistrAvailable ul li {
+  list-style: none;
+  font-size: calc(19px + 0.1569037657vw);
 }

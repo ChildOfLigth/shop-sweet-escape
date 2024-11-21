@@ -46,9 +46,9 @@
   margin: 30px 0;
 }
 .presentableUnit .presentableUnit__card .card__textContent h2 {
-  font-size: calc(27px + 0.5876068376vw);
+  font-size: calc(36px + 1.0683760684vw);
   font-weight: 600;
-  color: #5c4343;
+  color: #be9292;
   margin-bottom: 10px;
 }
 .presentableUnit .presentableUnit__card .card__textContent p {
@@ -255,8 +255,8 @@
           align-items: center;
 }
 .wrapperAllListsProducts .wrapperListProds h2 {
-  font-size: calc(27px + 0.5876068376vw);
-  color: #6e5454;
+  font-size: calc(36px + 1.0683760684vw);
+  color: #be9292;
   margin-bottom: 15px;
 }
 .wrapperAllListsProducts .wrapperListProds .wrapperListProds__textContent {
@@ -267,9 +267,9 @@
   margin-bottom: 20px;
 }
 .wrapperAllListsProducts .wrapperListProds .wrapperListProds__textContent h2 {
-  font-size: calc(27px + 0.5876068376vw);
+  font-size: calc(36px + 1.0683760684vw);
   margin-bottom: 15px;
-  color: #6e5454;
+  color: #be9292;
 }
 .wrapperAllListsProducts .wrapperListProds .wrapperListProds__textContent p {
   font-size: calc(19px + 0.1602564103vw);

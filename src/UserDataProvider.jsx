@@ -7,29 +7,26 @@ export default function UserDataProvider({ children }) {
 
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("userAccount"));
-
-    if (!storedData) {
-      const templateFillingInUserData = {
-        nickname: "",
-        phoneNumber: "",
-        email: "",
-        homeAddress: ""
-      };
-      localStorage.setItem("userAccount", JSON.stringify(templateFillingInUserData));
-      setDataAvailabilityCheck(false);
-    } else {
+    if (storedData) {
       const isDataComplete =
         storedData.nickname &&
         storedData.phoneNumber &&
         storedData.email &&
         storedData.homeAddress;
+
       setDataAvailabilityCheck(!!isDataComplete);
+    } else {
+      setDataAvailabilityCheck(false);
     }
   }, []);
 
   return (
     <UserDataContext.Provider
-      value={{ dataAvailabilityCheck, userDataFromStorage: JSON.parse(localStorage.getItem("userAccount")) }}
+      value={{
+        dataAvailabilityCheck,
+        setDataAvailabilityCheck,
+        userDataFromStorage: JSON.parse(localStorage.getItem("userAccount")),
+      }}
     >
       {children}
     </UserDataContext.Provider>

@@ -1,14 +1,14 @@
-$defoltFsz: calc(27px + 11 * (100vw / 1872));
+$defoltFsz: calc(36px + 20 * (100vw / 1872));
+$defoltFszForP: calc(26px + 10 * (100vw / 1872));
 
 .presentingUnit {
   position: relative;
-  width: 85%;
+  width: 100%;
   height: 750px;
-  border-radius: 15px;
   background-size: cover;
   background-attachment: fixed;
   object-fit: cover;
-  margin: 40px auto 180px auto;
+  margin: 0 auto 180px auto;
   .decorationBlock {
     position: absolute;
     top: 0;
@@ -38,6 +38,7 @@ $defoltFsz: calc(27px + 11 * (100vw / 1872));
       font-weight: 600;
       width: 650px;
       margin-bottom: 20px;
+      text-align: left;
     }
 
     button {
@@ -55,6 +56,7 @@ $defoltFsz: calc(27px + 11 * (100vw / 1872));
 }
 
 .listRecomendedProduct {
+  position: relative;
   text-align: center;
   width: 100%;
   max-width: 1700px;
@@ -62,15 +64,100 @@ $defoltFsz: calc(27px + 11 * (100vw / 1872));
 
   h2 {
     font-size: $defoltFsz;
+    color: #be9292;
     font-weight: 600;
-    margin-bottom: 10px;
-    color: #6e5454;
   }
 
   p {
-    font-size: calc(17px + 5 * (100vw / 1872));
+    font-size: $defoltFszForP;
     width: 80%;
     margin: 0 auto;
+  }
+
+  .listRecomendedProduct__back_decor {
+    position: absolute;
+    z-index: -1;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s, transform 0.5s;
+
+    &.hidden {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+
+    img {
+      position: absolute;
+      &:nth-child(1) {
+        top: -130px;
+        left: -160px;
+        width: 425px;
+        height: auto;
+        filter: blur(3px);
+        transform: rotate(-9.77deg);
+      }
+      &:nth-child(2) {
+        top: 200px;
+        left: 1510px;
+        width: 210.38px;
+        height: auto;
+        filter: blur(2px);
+        transform: rotate(24.27deg);
+      }
+      &:nth-child(3) {
+        top: 480px;
+        left: 450px;
+        width: 300px;
+        height: auto;
+        filter: blur(3px);
+        transform: rotate(40.27deg);
+      }
+      &:nth-child(4) {
+        width: 265.61px;
+        height: auto;
+        left: 800px;
+        top: -150px;
+        filter: blur(2px);
+        transform: rotate(15.53deg);
+      }
+      &:nth-child(5) {
+        width: 375px;
+        height: auto;
+        left: -130px;
+        top: 820px;
+        filter: blur(1.5px);
+        transform: rotate(17.96deg);
+      }
+      &:nth-child(6) {
+        width: 300px;
+        top: 450px;
+        left: 1390px;
+        filter: blur(1.8px);
+        transform: rotate(20deg);
+      }
+      &:nth-child(7) {
+        width: 280px;
+        height: auto;
+        left: -280px;
+        top: 400px;
+        filter: blur(1.7px);
+      }
+      &:nth-child(8) {
+        top: 800px;
+        left: 1550px;
+        width: 400px;
+      }
+    }
+    @keyframes fadeInSlide {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   }
 
   .listProduct {
@@ -80,26 +167,33 @@ $defoltFsz: calc(27px + 11 * (100vw / 1872));
     width: 100%;
     height: auto;
     margin: 50px auto;
+    z-index: 1000;
 
     .listProduct_elem {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 370px;
-      height: 500px;
+      height: 520px;
       padding: 15px 20px;
       list-style: none;
       border-radius: 15px;
-      background: linear-gradient(to bottom, #977979 2%, white 98%);
+      background: linear-gradient(
+        to bottom,
+        #be9292 0%,
+        #e6c6c6 40%,
+        #f8eeee 80%,
+        white 100%
+      );
       overflow: hidden;
       margin: 20px 10px;
 
       .wrapperByPhoto {
         width: 100%;
-        height: 210px;
+        height: 240px;
         overflow: hidden;
         border-radius: 8px;
-        box-shadow: 5px 5px 12px #8a7e7e;
+        box-shadow: 5px 5px 12px #a37575;
         margin-bottom: 10px;
         cursor: pointer;
 
@@ -117,7 +211,7 @@ $defoltFsz: calc(27px + 11 * (100vw / 1872));
       h3 {
         text-align: center;
         font-size: calc(19px + 3 * (100vw / 1872));
-        color: #6e5454;
+        color: #885959;
         transition: all 0.5s;
         cursor: pointer;
 
@@ -130,14 +224,14 @@ $defoltFsz: calc(27px + 11 * (100vw / 1872));
         font-size: calc(18px + 2 * (100vw / 1872));
         color: #6e5454;
         height: 30px;
-        line-height: 1.2em;
+        line-height: 1.15em;
       }
 
       .price {
         font-size: calc(19px + 3 * (100vw / 1872));
         font-weight: 600;
         color: #6e5454;
-        margin: 15px auto;
+        margin: 10px auto;
       }
     }
   }
@@ -154,12 +248,12 @@ $defoltFsz: calc(27px + 11 * (100vw / 1872));
     margin: 0 auto 55px auto;
     h2 {
       font-size: $defoltFsz;
+      color: #be9292;
       font-weight: 600;
-      margin-bottom: 10px;
-      color: #6e5454;
     }
+
     p {
-      font-size: calc(17px + 5 * (100vw / 1872));
+      font-size: $defoltFszForP;
     }
   }
 
@@ -197,7 +291,7 @@ $defoltFsz: calc(27px + 11 * (100vw / 1872));
 
         h3 {
           font-size: calc(22px + 6 * (100vw / 1872));
-          color: #f3d1d1;
+          color: white;
           font-weight: 700;
           margin-bottom: 7px;
         }
@@ -229,44 +323,62 @@ $defoltFsz: calc(27px + 11 * (100vw / 1872));
 .featuring {
   width: 90%;
   height: auto;
-  margin: 0 auto 250px auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 250px auto;
 
   h2 {
     font-size: $defoltFsz;
+    color: #be9292;
     font-weight: 600;
-    margin-bottom: 50px;
-    text-align: center;
-    color: #6e5454;
   }
 
-  .featuring_wrapperElem {
+  .featuring__content {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
+    position: relative;
+    top: 50px;
+    .imeg {
+      width: 50%;
+      height: auto;
+    }
 
-    .featuring_elem {
-      list-style: none;
-      width: 400px;
-      height: 400px;
-      text-align: center;
-      margin: 0 10px;
+    .content_wrapperElem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      min-width: 300px;
 
-      h3 {
-        font-size: calc(22px + 6 * (100vw / 1872));
-      }
+      .wrapperElem_elem {
+        display: flex;
+        list-style: none;
+        height: auto;
+        margin-bottom: 40px;
 
-      img {
-        width: 45%;
-        margin: 10px auto;
-      }
+        img {
+          width: 17%;
+          height: auto;
+          margin-right: 25px;
+        }
 
-      p {
-        font-size: calc(20px + 4 * (100vw / 1872));
-        width: 240px;
-        margin: 0 auto;
+        .elem__textContent {
+          text-align: left;
+          h3 {
+            font-size: calc(24px + 8 * (100vw / 1872));
+            color: #be9292;
+          }
+          p {
+            font-size: calc(22px + 5 * (100vw / 1872));
+            max-width: 550px;
+            min-width: 300px;
+          }
+        }
       }
     }
   }
@@ -277,15 +389,14 @@ $defoltFsz: calc(27px + 11 * (100vw / 1872));
   height: auto;
   margin: 0 auto 250px auto;
   padding: 70px 0;
-  background-color: #b3abab;
   border-radius: 15px;
 
   h2 {
-    font-size: $defoltFsz;
-    font-weight: 600;
     text-align: center;
-    color: #6e5454;
-    margin-bottom: 30px;
+    font-size: $defoltFsz;
+    color: #be9292;
+    font-weight: 600;
+    margin-bottom: 50px;
   }
 
   .listBlock {
@@ -349,11 +460,11 @@ $defoltFsz: calc(27px + 11 * (100vw / 1872));
   .ourLocation_infoLocation {
     margin: 0 auto;
     width: 70%;
+    text-align: center;
     h2 {
       font-size: $defoltFsz;
+      color: #be9292;
       font-weight: 600;
-      color: #6e5454;
-      margin-bottom: 10px;
     }
     p {
       font-size: calc(19px + 1 * (100vw / 1872));
@@ -366,11 +477,10 @@ $defoltFsz: calc(27px + 11 * (100vw / 1872));
     margin: 0 auto;
     padding: 20px 0;
     border-radius: 15px;
-    background-color: #b3abab;
     width: 70%;
 
     iframe {
-      width: 400px;
+      width: 600px;
       height: 360px;
       border: none;
       border-radius: 15px;
@@ -383,7 +493,7 @@ $defoltFsz: calc(27px + 11 * (100vw / 1872));
 
       h3 {
         text-align: left;
-        color: #5c4343;
+        color: #be9292;
         font-size: calc(19px + 3 * (100vw / 1872));
       }
       p {
