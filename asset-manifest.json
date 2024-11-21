@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shop-sweet-escape/static/css/main.9aeb90ed.css",
-    "main.js": "/shop-sweet-escape/static/js/main.9bd65f80.js",
+    "main.css": "/shop-sweet-escape/static/css/main.d33b78aa.css",
+    "main.js": "/shop-sweet-escape/static/js/main.4e104572.js",
     "static/media/imgPresentProdMuffins.jpg": "/shop-sweet-escape/static/media/imgPresentProdMuffins.25d082f6058f65ee6f44.jpg",
     "static/media/delivery-scooter.gif": "/shop-sweet-escape/static/media/delivery-scooter.bd827407af469735a73a.gif",
     "static/media/presentMacaronForCard.png": "/shop-sweet-escape/static/media/presentMacaronForCard.5c60ec51554553a17228.png",
@@ -77,11 +77,11 @@
     "static/media/arowTop.png": "/shop-sweet-escape/static/media/arowTop.a627d668ffee1664fceb.png",
     "static/media/visible.png": "/shop-sweet-escape/static/media/visible.956dd5aa572221bccd5c.png",
     "index.html": "/shop-sweet-escape/index.html",
-    "main.9aeb90ed.css.map": "/shop-sweet-escape/static/css/main.9aeb90ed.css.map",
-    "main.9bd65f80.js.map": "/shop-sweet-escape/static/js/main.9bd65f80.js.map"
+    "main.d33b78aa.css.map": "/shop-sweet-escape/static/css/main.d33b78aa.css.map",
+    "main.4e104572.js.map": "/shop-sweet-escape/static/js/main.4e104572.js.map"
   },
   "entrypoints": [
-    "static/css/main.9aeb90ed.css",
-    "static/js/main.9bd65f80.js"
+    "static/css/main.d33b78aa.css",
+    "static/js/main.4e104572.js"
   ]
 }
