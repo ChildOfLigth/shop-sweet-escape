@@ -4,8 +4,8 @@
   width: 200px;
   height: 40px;
   margin-top: 20px;
-  font-size: calc(18px + 2 * (100vw / 1872));
-  border-radius: 15px;
+  font-size: calc(19px + 3 * (100vw / 1872));
+  border-radius: 10px;
   border: 2px solid transparent;
   transition: all 0.6s;
 }

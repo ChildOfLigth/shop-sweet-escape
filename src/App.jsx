@@ -9,7 +9,6 @@ import CartProduct from "./CartProduct";
 import ProductPage from "./ProductPage";
 import { cakes, cake, chocolate, candies, macaroon } from "./listProducts";
 import OrderForm from "./OrderForm";
-import Register from "./Register";
 import UserDataProvider from "./UserDataProvider";
 import IsNotDefined from "./IsNotDefined";
 import ScrollToTop from "./ScrollTop";
@@ -25,10 +24,6 @@ function AppContent() {
           <main className="App">
             <Routes>
               <Route path="/shop-sweet-escape" element={<MainPage />} />
-              <Route
-                path="/shop-sweet-escape/registration"
-                element={<Register />}
-              />
               <Route
                 path="/shop-sweet-escape/product/:name"
                 element={<ProductPage arrayProducts={allProducts} />}

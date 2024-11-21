@@ -153,6 +153,7 @@
 .inCaseOfAnEmptyCart h2 {
   color: #5c4343;
   font-size: calc(23px + 0.3739316239vw);
+  margin-bottom: 10px;
 }
 .inCaseOfAnEmptyCart p {
   font-size: calc(21px + 0.2670940171vw);

@@ -1,14 +1,65 @@
-.wrapper {
+.dimmingContent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.orderProcessingForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-  margin: 60px auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 25%;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px 10px;
+  z-index: 10000;
 }
-.wrapper .orderProcessingForm {
+.orderProcessingForm .closeForm {
+  position: absolute;
+  top: 15px;
+  left: 90%;
+  border: none;
+  width: 20px;
+  height: auto;
+}
+.orderProcessingForm .closeForm img {
+  width: 100%;
+  height: auto;
+}
+.orderProcessingForm h2 {
+  font-size: calc(24px + 0.4273504274vw);
+  text-align: center;
+  margin-bottom: 20px;
+  color: #5c4343;
+}
+.orderProcessingForm .orderProcessingForm__inputFieldWrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.orderProcessingForm .orderProcessingForm__inputFieldWrapper .inputFieldWrapper__elem {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,44 +70,27 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 500px;
-  height: auto;
-  margin: 30px auto 50px auto;
-  padding: 20px;
-  border-radius: 20px;
-  -webkit-box-shadow: 10px 10px 30px #6e5454;
-          box-shadow: 10px 10px 30px #6e5454;
-  background-color: white;
+  list-style: none;
+  margin-bottom: 15px;
 }
-.wrapper .orderProcessingForm .orderProcessingForm__titleBlock {
-  margin: 10px 0;
-  text-align: center;
-}
-.wrapper .orderProcessingForm .orderProcessingForm__titleBlock h1 {
-  color: #6e5454;
-  font-size: calc(22px + 0.3205128205vw);
-}
-.wrapper .orderProcessingForm .orderProcessingForm__titleBlock p {
-  margin: 0 auto;
-  width: 90%;
+.orderProcessingForm .orderProcessingForm__inputFieldWrapper .inputFieldWrapper__elem label {
+  line-height: 40px;
   font-size: calc(18px + 0.1068376068vw);
 }
-.wrapper .orderProcessingForm h3 {
+.orderProcessingForm .orderProcessingForm__inputFieldWrapper .inputFieldWrapper__elem input {
+  border: 1px solid #5c4343;
+  border-radius: 5px;
+  padding: 8px 15px;
+  width: 400px;
+  height: 25px;
   font-size: calc(20px + 0.2136752137vw);
-  text-align: center;
-  color: #6e5454;
+  color: #5c4343;
+  outline: none;
 }
-.wrapper .orderProcessingForm .closeOrderingBlock {
-  position: absolute;
-  top: 5px;
-  left: 93%;
-  border: none;
-  font-size: calc(19px + 0.1602564103vw);
-  font-weight: 700;
-  cursor: pointer;
+.orderProcessingForm .orderProcessingForm__inputFieldWrapper .inputFieldWrapper__elem input:focus, .orderProcessingForm .orderProcessingForm__inputFieldWrapper .inputFieldWrapper__elem input:valid {
+  outline: 2px solid #5c4343;
 }
-.wrapper .orderProcessingForm .orderProcessingForm__inputFieldWrapper .inputFieldWrapper__elem {
-  list-style: none;
+.orderProcessingForm .orderProcessingForm__otherRegistratioOptions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,34 +98,103 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
 }
-.wrapper .orderProcessingForm .orderProcessingForm__inputFieldWrapper .inputFieldWrapper__elem label {
-  line-height: 40px;
+.orderProcessingForm .orderProcessingForm__otherRegistratioOptions h3 {
   font-size: calc(17px + 0.0534188034vw);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-.wrapper .orderProcessingForm .orderProcessingForm__inputFieldWrapper .inputFieldWrapper__elem input {
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 0 8px;
-  margin-bottom: 10px;
-  height: 30px;
-  font-size: calc(19px + 0.1602564103vw);
+.orderProcessingForm .orderProcessingForm__otherRegistratioOptions h3::before, .orderProcessingForm .orderProcessingForm__otherRegistratioOptions h3::after {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  background-color: #5c4343;
+  margin: 0 10px;
 }
-.wrapper .modalIfDataExists {
-  position: relative;
-  top: 10px;
-  left: 100px;
-  width: 300px;
+.orderProcessingForm .orderProcessingForm__otherRegistratioOptions .otherRegistratioOptions__blockOptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  margin-top: 20px;
 }
-.wrapper .modalIfDataExists h1 {
-  font-size: calc(23px + 0.3739316239vw);
-  color: #6e5454;
+.orderProcessingForm .orderProcessingForm__otherRegistratioOptions .otherRegistratioOptions__blockOptions .blockOptions__elem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #5c4343;
+  padding: 7px;
+  border-radius: 5px;
+  width: 165px;
+  cursor: pointer;
 }
-.wrapper .modalIfDataExists p {
-  font-size: calc(21px + 0.2670940171vw);
+.orderProcessingForm .orderProcessingForm__otherRegistratioOptions .otherRegistratioOptions__blockOptions .blockOptions__elem img {
+  margin-right: 6px;
 }
-.wrapper .modalIfDataExists img {
-  position: absolute;
-  left: -500px;
-  top: 80px;
+.orderProcessingForm .orderProcessingForm__otherRegistratioOptions .otherRegistratioOptions__blockOptions .blockOptions__elem p {
+  font-weight: 600;
+}
+
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.wrapper__modal_completeRegistration {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  background-color: white;
+  width: 360px;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  border-radius: 15px;
+  z-index: 1000;
+}
+.wrapper__modal_completeRegistration img {
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
+}
+.wrapper__modal_completeRegistration button {
+  margin: 7px auto;
 }

@@ -1,0 +1,11 @@
+.buttonToScrollUp {
+  position: fixed;
+  top: 700px;
+  left: 92%;
+  cursor: pointer;
+  border: none;
+  img {
+    width: 70px;
+    height: auto;
+  }
+}

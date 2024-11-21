@@ -8,7 +8,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 20px auto;
+  margin: 40px auto;
   width: 60%;
 }
 .dataProduct .dataProduct__condesedProductDescr {
@@ -46,6 +46,7 @@
 .dataProduct .dataProduct__condesedProductDescr .infoBlock h2 {
   font-size: calc(23px + 0.2136752137vw);
   color: #6e5454;
+  margin-bottom: 15px;
 }
 .dataProduct .dataProduct__condesedProductDescr .infoBlock .infoBlock__price {
   font-weight: 700;

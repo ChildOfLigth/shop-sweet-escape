@@ -1,15 +1,17 @@
 import "./styles/Header.css";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
 import shoppingBascketIco from "./imgs/icons/shopping-basket.png";
 import registrationUser from "./imgs/icons/registrationUser.png";
 import iconForwebsite from "./imgs/icons/Sweet_Escape_Circular_Icon.png";
-import { useContext } from "react";
 import { UserDataContext } from "./UserDataProvider";
+import Register from "./Register";
 
 export default function Header() {
   const navigate = useNavigate();
   const { dataAvailabilityCheck } = useContext(UserDataContext);
-
+  const [registrationBlockVisibility, setRegistrationBlockVisibility] =
+    useState(false);
   return (
     <header>
       <div className="menu-burger">
@@ -24,22 +26,33 @@ export default function Header() {
           <NavLink to={"/shop-sweet-escape/about-us"}>About us</NavLink>
         </div>
 
-        <img src={iconForwebsite} alt="" className="header__iconForWebsite" />
+        <img
+          src={iconForwebsite}
+          alt=""
+          className="header__iconForWebsite"
+          onClick={() => navigate("/shop-sweet-escape")}
+          title="Go to the main page"
+        />
 
         <div className="header__buttonBlock">
           <button
-            onClick={() => navigate("/shop-sweet-escape/shopping-cart")}
+            onClick={() =>
+              dataAvailabilityCheck
+                ? navigate("/shop-sweet-escape/shopping-cart")
+                : setRegistrationBlockVisibility(!registrationBlockVisibility)
+            }
             title="Go to cart"
           >
             <img src={shoppingBascketIco} alt="" />
           </button>
 
-          <button onClick={() => navigate("/shop-sweet-escape/registration")} style={{display: dataAvailabilityCheck ? "none" : "block"}}>
-              <img src={registrationUser} alt="" />
-            </button>
-          
+          <button onClick={() => setRegistrationBlockVisibility(!registrationBlockVisibility)}>
+            <img src={registrationUser} alt="" />
+          </button>
         </div>
       </div>
+
+      {registrationBlockVisibility && <Register isFormVisible={registrationBlockVisibility} setIsFormVisible={setRegistrationBlockVisibility}/>}
       <Outlet />
     </header>
   );

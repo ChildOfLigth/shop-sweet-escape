@@ -1,5 +1,5 @@
 import classes from "./styles/MainPage.module.css";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useMemo } from "react";
 import { UserDataContext } from "./UserDataProvider";
 import { useNavigate } from "react-router-dom";
 import { recomendedProduct } from "./listProducts";
@@ -19,6 +19,8 @@ import user1 from "./imgs/icons/manPhoto.jpg";
 import user2 from "./imgs/icons/manPhoto2.jpg";
 import user3 from "./imgs/icons/girlPhoto.jpg";
 import CustomButton from "./CustomButton";
+import ArrowUp from "./ArrowUp";
+import Register from "./Register";
 
 const arrayPresentProdPhoto = [
   presentCake,
@@ -68,7 +70,7 @@ const dataProductCategories = [
 export default function MainPage() {
   const navigate = useNavigate();
   const { dataAvailabilityCheck } = useContext(UserDataContext);
-
+  const [isVisibleForm, setIsVisibleForm] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -97,9 +99,9 @@ export default function MainPage() {
             store is a corner of sweet happiness, for those who appreciate
             taste, quality and a cozy atmosphere.
           </h2>
-          <CustomButton onClick={() => navigate("/shop-sweet-escape/menu")}>
+          <button onClick={() => navigate("/shop-sweet-escape/menu")}>
             Order now
-          </CustomButton>
+          </button>
         </div>
       </div>
 
@@ -121,7 +123,7 @@ export default function MainPage() {
                       ? navigate(
                           `/shop-sweet-escape/product/${product.fullName}`
                         )
-                      : navigate("/shop-sweet-escape/registration")
+                      : setIsVisibleForm(true)
                   }
                 />
               </div>
@@ -280,6 +282,14 @@ export default function MainPage() {
             <p>sweetesc@gmail.com</p>
           </div>
         </div>
+
+        {isVisibleForm && (
+          <Register
+            isFormVisible={isVisibleForm}
+            setIsFormVisible={setIsVisibleForm}
+          />
+        )}
+        <ArrowUp coordinat={10} coordinatesToHide={900} />
       </div>
     </>
   );

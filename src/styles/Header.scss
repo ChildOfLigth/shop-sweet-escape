@@ -45,11 +45,12 @@ header {
     }
 
     .header__iconForWebsite {
-      width: 90px;
-      height: 90%;
+      width: 80px;
+      height: auto;
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
+      cursor: pointer;
     }
 
     .header__buttonBlock {

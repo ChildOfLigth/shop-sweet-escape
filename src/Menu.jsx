@@ -13,8 +13,9 @@ import presentPhotoCakes from "./imgs/icons/cakesPresentForMenu.jpg";
 import presentPhotoCandies from "./imgs/icons/candiesPresentForMenu.jpg";
 import searchIco from "./imgs/icons/magnifying-glass.png";
 import clearInput from "./imgs/icons/cross.png";
-import arowToTop from "./imgs/icons/arowTop.png";
 import { UserDataContext } from "./UserDataProvider";
+import ArrowUp from "./ArrowUp";
+import Register from "./Register";
 
 export default function Menu() {
   const allProducts = [cakes, cake, candies, chocolate, macaroon];
@@ -22,12 +23,11 @@ export default function Menu() {
   const [productsArray, setProductArray] = useState(allProducts);
   const [indexLi, setIndexLi] = useState("all");
   const [isSearching, setIsSearching] = useState(false);
+  const [isFormVisible, setIsFormVisible] = useState(false);
   const navigate = useNavigate();
   const inputElement = useRef(null);
   const searchIcoElem = useRef(null);
   const { dataAvailabilityCheck } = useContext(UserDataContext);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const scrollToUp = useRef(null);
 
   function generateLiElementForLists(products) {
     return products.map((elem) => (
@@ -36,7 +36,7 @@ export default function Menu() {
         onClick={() =>
           dataAvailabilityCheck
             ? navigate(`/shop-sweet-escape/product/${elem.name}`)
-            : navigate("/shop-sweet-escape/registration")
+            : setIsFormVisible(true)
         }
       >
         <div className={classes.productImgBlock}>
@@ -78,15 +78,6 @@ export default function Menu() {
       filterProductsArrayByCategory(location.state.types);
     }
   }, [location.state]);
-  
-
-  useEffect(() => {
-    if (scrollPosition > 1600) {
-      scrollToUp.current.style.opacity = "1";
-    } else {
-      scrollToUp.current.style.opacity = "0";
-    }
-  }, [scrollPosition]);
 
   function searchProductByName() {
     if (inputElement.current.tagName === "INPUT") {
@@ -100,39 +91,17 @@ export default function Menu() {
     }
   }
 
-  const handleScroll = () => {
-    setScrollPosition(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (scrollToUp.current) {
-      scrollToUp.current.style.opacity = scrollPosition > 1600 ? '1' : '0';
-    }
-  }, [scrollPosition]);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 1500,
-      behavior: 'smooth',
-    });
-  };
-
   return (
     <>
       <div className={classes.presentableUnit}>
         <div className={classes.presentableUnit__card}>
-          <h1>
-            A variety of sweets at
-            <span> Sweet Escape Cafe</span>
-          </h1>
+          <div className={classes.card__textContent}>
+            <h2>Variety of flavors</h2>
+            <p>
+              We offer a variety of flavours so that you can indulge in what you
+              have been dreaming of.
+            </p>
+          </div>
           <div className={classes.wrapperImg}>
             <img src={presentPhotoCakes} alt="" />
           </div>
@@ -141,10 +110,13 @@ export default function Menu() {
           <div className={classes.wrapperImg}>
             <img src={presentPhotoCandies} alt="" />
           </div>
-          <h1>
-            <span>Shop-Café Sweet Escape Cafe</span> - will make your dreams
-            come true!
-          </h1>
+          <div className={classes.card__textContent}>
+            <h2>Come to us, and..</h2>
+            <p>
+              <span>Shop-Café Sweet Escape Cafe</span> - will make your dreams
+              come true!
+            </p>
+          </div>
         </div>
       </div>
 
@@ -158,7 +130,7 @@ export default function Menu() {
               onClick={() =>
                 dataAvailabilityCheck
                   ? navigate(`/shop-sweet-escape/product/${elem.name}`)
-                  : navigate("/shop-sweet-escape/registration")
+                  : setIsFormVisible(true)
               }
             >
               <div className={classes.elem__wrapperForPhoto}>
@@ -317,14 +289,10 @@ export default function Menu() {
         )}
       </div>
 
-      <button
-      ref={scrollToUp}
-      onClick={scrollToTop}
-      className={classes.buttonToScrollUp}
-      style={{ opacity: 0, transition: 'opacity 0.5s' }}
-    >
-      <img src={arowToTop} alt="Scroll to top" />
-    </button>
+      {isFormVisible && (
+        <Register isFormVisible={isFormVisible} setIsFormVisible={setIsFormVisible} />
+      )}
+      <ArrowUp coordinat={1400} coordinatesToHide={1500} />
     </>
   );
 }

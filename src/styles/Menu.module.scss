@@ -1,33 +1,50 @@
+$defaultFsz: calc(27px + 11 * (100vw / 1872));
+
 .presentableUnit {
-  width: 45%;
+  width: 70%;
   height: 60%;
-  margin: 95px auto 120px auto;
+  margin: 95px auto 160px auto;
+  display: flex;
+
   .presentableUnit__card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    width: 50%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .wrapperImg {
-      width: 50%;
+      width: 80%;
       height: 320px;
       overflow: visible;
       img {
-        width: 380px;
+        width: 100%;
         height: 100%;
-        border-radius: 24px;
+        border-radius: 15px;
         object-fit: cover;
-        box-shadow: 0px 20px 25px #6e5454;
+        box-shadow: 0px 15px 20px #6e5454;
       }
     }
 
-    h1 {
-      font-size: calc(25px + 9 * (100vw / 1872));
-      font-weight: 600;
-      width: 400px;
-      span {
-        color: #6e5454;
+    .card__textContent {
+      display: flex;
+      flex-direction: column;
+      width: 500px;
+      margin: 30px 0;
+      h2 {
+        font-size: $defaultFsz;
+        font-weight: 600;
+        color: #5c4343;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: calc(22px + 6 * (100vw / 1872));
+
+        span {
+          font-weight: 600;
+          color: #6e5454;
+        }
       }
     }
   }
@@ -41,6 +58,7 @@
     text-align: center;
     margin-bottom: 25px;
     font-size: calc(27px + 21 * (100vw / 1872));
+    color: #6e5454;
   }
   .popularProducts__listElems {
     width: 100%;
@@ -117,7 +135,7 @@
   align-items: center;
   position: sticky;
   background-color: white;
-  z-index: 1000;
+  z-index: 999;
   transition: all 0.5s;
   top: 95px;
 
@@ -200,7 +218,7 @@
     flex-direction: column;
     align-items: center;
     h2 {
-      font-size: calc(25px + 9 * (100vw / 1872));
+      font-size: $defaultFsz;
       color: #6e5454;
       margin-bottom: 15px;
     }
@@ -211,7 +229,7 @@
       left: -290px;
       margin-bottom: 20px;
       h2 {
-        font-size: calc(25px + 9 * (100vw / 1872));
+        font-size: $defaultFsz;
         margin-bottom: 15px;
         color: #6e5454;
       }
@@ -285,17 +303,5 @@
         }
       }
     }
-  }
-}
-
-.buttonToScrollUp {
-  position: fixed;
-  top: 200px;
-  left: 87%;
-  cursor: pointer;
-  border: none;
-  img {
-    width: 70px;
-    height: auto;
   }
 }
