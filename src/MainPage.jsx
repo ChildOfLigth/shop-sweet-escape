@@ -2,6 +2,10 @@ import classes from "./styles/MainPage.module.css";
 import { useState, useEffect, useContext } from "react";
 import { UserDataContext } from "./UserDataProvider";
 import { useNavigate } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/bundle";
 import { recomendedProduct } from "./listProducts";
 import presentChoco from "./imgs/icons/presentChocolate.jpg";
 import presentMaffins from "./imgs/icons/imgPresentProdMuffins.jpg";
@@ -25,12 +29,26 @@ import strawberry_décor from "./imgs/icons/47690747a86124ad6934e8909eac1264-rem
 import raspberry_décor from "./imgs/icons/c1db3ef5ab3a8eb886bdba00d70b0d81-removebg-preview.png";
 import blueberry_décor from "./imgs/icons/a1d28148e4cae4de493fd2872fd8f906-removebg-preview.png";
 import cakesPhoto from "./imgs/icons/cakes.svg";
+import location from "./imgs/icons/location.png";
+import schedule from "./imgs/icons/calendar.png";
+import contacts from "./imgs/icons/contact-mail.png";
+import cakesForMobile from "./imgs/icons/cakeForPhoneAdapt.jpg";
+import cakeForMobile from "./imgs/icons/cakesForMobileAdapt.jpg";
+import eclerForMobile from "./imgs/icons/eclersForModileAdapt.jpg";
+import candiesForMobile from "./imgs/icons/candiesForMobileAdapt.jpg";
 
 const arrayPresentProdPhoto = [
   presentCake,
   presentChoco,
   presentMacaron,
   presentMaffins,
+];
+
+const arrayPresentProdPhotoForMobile = [
+  cakesForMobile,
+  cakeForMobile,
+  eclerForMobile,
+  candiesForMobile,
 ];
 
 const dataProductCategories = [
@@ -77,6 +95,10 @@ export default function MainPage() {
   const [isVisibleForm, setIsVisibleForm] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [opacityDecorationBlock, setOpacityDecorationBlock] = useState(false);
+  const [isActiveSwiper, setIsActiveSwiper] = useState(false);
+  const [isActiveSwiperForPresentGalery, setIsActiveSwiperForPresentGalery] =
+    useState(false);
+  const [photoEditing, setPhotoEditing] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,16 +115,48 @@ export default function MainPage() {
     };
   }, []);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const updateSwiperState = () => {
+      setIsActiveSwiper(window.innerWidth <= 860);
+    };
+    updateSwiperState();
+    window.addEventListener("resize", updateSwiperState);
+    return () => {
+      window.removeEventListener("resize", updateSwiperState);
+    };
+  }, []);
 
   useEffect(() => {
+    const updateSwiperState = () => {
+      setIsActiveSwiperForPresentGalery(window.innerWidth <= 1640);
+    };
+
+    window.addEventListener("resize", updateSwiperState);
+    return () => {
+      window.removeEventListener("resize", updateSwiperState);
+    };
+  }, []);
+
+  useEffect(() => {
+    const arrayToUse = photoEditing
+      ? arrayPresentProdPhotoForMobile
+      : arrayPresentProdPhoto;
+
     const interval = setInterval(() => {
-      setCurrentImageIndex(
-        (prevIndex) => (prevIndex + 1) % arrayPresentProdPhoto.length
-      );
-    }, 20000);
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % arrayToUse.length);
+    }, 7000);
 
     return () => clearInterval(interval);
+  }, [photoEditing]);
+
+  useEffect(() => {
+    const updatePhotoForPresentingUnit = () => {
+      setPhotoEditing(window.innerWidth <= 626);
+    };
+    window.addEventListener("resize", updatePhotoForPresentingUnit);
+    return () => {
+      window.removeEventListener("resize", updatePhotoForPresentingUnit);
+    };
   }, []);
 
   return (
@@ -110,7 +164,11 @@ export default function MainPage() {
       <div
         className={classes.presentingUnit}
         style={{
-          backgroundImage: `url(${arrayPresentProdPhoto[currentImageIndex]})`,
+          backgroundImage: `${
+            !photoEditing
+              ? `url(${arrayPresentProdPhoto[currentImageIndex]})`
+              : `url(${arrayPresentProdPhotoForMobile[currentImageIndex]})`
+          }`,
         }}
       >
         <div className={classes.decorationBlock}></div>
@@ -149,13 +207,25 @@ export default function MainPage() {
           <img src={blueberry_décor} alt="" />
           <img src={blueberry_décor} alt="" />
         </div>
-        <ul className={classes.listProduct}>
-          {recomendedProduct.map((product) => (
-            <li key={product.id} className={classes.listProduct_elem}>
-              <div className={classes.wrapperByPhoto}>
-                <img
-                  src={product.imgProd}
-                  alt="product"
+        {!isActiveSwiper ? (
+          <ul className={classes.listProduct}>
+            {recomendedProduct.map((product) => (
+              <li key={product.id} className={classes.listProduct_elem}>
+                <div className={classes.wrapperByPhoto}>
+                  <img
+                    src={product.imgProd}
+                    alt="product"
+                    title="Go to the product page"
+                    onClick={() =>
+                      dataAvailabilityCheck
+                        ? navigate(
+                            `/shop-sweet-escape/product/${product.fullName}`
+                          )
+                        : setIsVisibleForm(true)
+                    }
+                  />
+                </div>
+                <h3
                   title="Go to the product page"
                   onClick={() =>
                     dataAvailabilityCheck
@@ -164,25 +234,66 @@ export default function MainPage() {
                         )
                       : setIsVisibleForm(true)
                   }
-                />
-              </div>
-              <h3
-                title="Go to the product page"
-                onClick={() =>
-                  dataAvailabilityCheck
-                    ? navigate(`/shop-sweet-escape/product/${product.fullName}`)
-                    : setIsVisibleForm(true)
-                }
-              >
-                {product.name}
-              </h3>
+                >
+                  {product.name}
+                </h3>
 
-              <p className={classes.price}>{product.price}</p>
+                <p className={classes.price}>{product.price}</p>
 
-              <p className={classes.dataProduct}>{product.data}</p>
-            </li>
-          ))}
-        </ul>
+                <p className={classes.dataProduct}>{product.data}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <Swiper
+            effect={"coverflow"}
+            centeredSlides={true}
+            slidesPerView={"auto"}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 100,
+              modifier: 2.5,
+            }}
+            modules={[EffectCoverflow]}
+            className={classes.swipper_conteiner}
+          >
+            {recomendedProduct.map((product) => (
+              <SwiperSlide key={product.id} className={classes.swipper_slide}>
+                <div className={classes.wrapperByPhoto}>
+                  <img
+                    src={product.imgProd}
+                    alt="product"
+                    title="Go to the product page"
+                    onClick={() =>
+                      dataAvailabilityCheck
+                        ? navigate(
+                            `/shop-sweet-escape/product/${product.fullName}`
+                          )
+                        : setIsVisibleForm(true)
+                    }
+                  />
+                </div>
+                <h3
+                  title="Go to the product page"
+                  onClick={() =>
+                    dataAvailabilityCheck
+                      ? navigate(
+                          `      /shop-sweet-escape/product/${product.fullName}`
+                        )
+                      : setIsVisibleForm(true)
+                  }
+                >
+                  {product.name}
+                </h3>
+
+                <p className={classes.price}>{product.price}</p>
+
+                <p className={classes.dataProduct}>{product.data}</p>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </div>
 
       <div className={classes.featuring}>
@@ -229,26 +340,66 @@ export default function MainPage() {
           <h2>Look at the products we made ourselves</h2>
           <p>you can also order any product to your taste!</p>
         </div>
-        <ul className={classes.presentGalery_listElems}>
-          {dataProductCategories.map((obg) => (
-            <li className={classes.listElems_elem} key={obg.id}>
-              <img src={obg.img} alt="" />
-              <div className={classes.infoProduct}>
-                <h3>{obg.nameCategory}</h3>
-                <p>{obg.data}</p>
-                <CustomButton
-                  onClick={() => {
-                    navigate("/shop-sweet-escape/menu", {
-                      state: { types: obg.types, scrollPosition: 1480 },
-                    });
-                  }}
-                >
-                  Order
-                </CustomButton>
-              </div>
-            </li>
-          ))}
-        </ul>
+        {!isActiveSwiperForPresentGalery ? (
+          <ul className={classes.presentGalery_listElems}>
+            {dataProductCategories.map((obg) => (
+              <li className={classes.listElems_elem} key={obg.id}>
+                <img src={obg.img} alt="" />
+                <div className={classes.infoProduct}>
+                  <h3>{obg.nameCategory}</h3>
+                  <p>{obg.data}</p>
+                  <CustomButton
+                    onClick={() => {
+                      navigate("/shop-sweet-escape/menu", {
+                        state: { types: obg.types, scrollPosition: 1480 },
+                      });
+                    }}
+                  >
+                    Order
+                  </CustomButton>
+                </div>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <Swiper
+            effect={"coverflow"}
+            centeredSlides={true}
+            slidesPerView={"auto"}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 100,
+              modifier: 2.5,
+            }}
+            initialSlide={2}
+            modules={[EffectCoverflow]}
+            className={classes.swipper_conteiner}
+          >
+            {dataProductCategories.map((obg) => (
+              <SwiperSlide
+                className={classes.swipper_slide}
+                key={obg.id}
+                style={{ borderRadius: "5px" }}
+              >
+                <img src={obg.img} alt="" />
+                <div className={classes.infoProduct}>
+                  <h3>{obg.nameCategory}</h3>
+                  <p>{obg.data}</p>
+                  <CustomButton
+                    onClick={() => {
+                      navigate("/shop-sweet-escape/menu", {
+                        state: { types: obg.types, scrollPosition: 1480 },
+                      });
+                    }}
+                  >
+                    Order
+                  </CustomButton>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </div>
 
       <div className={classes.reviews}>
@@ -309,6 +460,33 @@ export default function MainPage() {
         </div>
 
         <div className={classes.ourLocation_locationPopularEstablishm}>
+          <div className={classes.contactDetails}>
+            <div className={classes.contactDetails__elem}>
+              <div className={classes.elem__titleBlock}>
+                <img src={location} alt="" />
+                <h3>Address</h3>
+              </div>
+              <p>305 Oxford Street</p>
+            </div>
+
+            <div className={classes.contactDetails__elem}>
+              <div className={classes.elem__titleBlock}>
+                <img src={schedule} alt="" />
+                <h3>Schedule</h3>
+              </div>
+              <p>From 10:00-19:00 days off Saturday-Sunday</p>
+            </div>
+
+            <div className={classes.contactDetails__elem}>
+              <div className={classes.elem__titleBlock}>
+                <img src={contacts} alt="" />
+                <h3>Contacts</h3>
+              </div>
+              <p>+44 20 7946 1234</p>
+              <p>sweetesc@gmail.com</p>
+            </div>
+          </div>
+
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.889001107581!2d-0.1446150228012483!3d51.51525237181512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ad554c335c1%3A0xda2164b934c67c1a!2zT3hmb3JkIFN0LCBMb25kb24sINCS0LXQu9C40LrQvtCx0YDQuNGC0LDQvdC40Y8!5e0!3m2!1sru!2sua!4v1724779657603!5m2!1sru!2sua"
             height="450"
@@ -317,18 +495,6 @@ export default function MainPage() {
             referrerPolicy="no-referrer-when-downgrade"
             title="Location of our café"
           ></iframe>
-
-          <div className={classes.contactDetails}>
-            <h3>Address</h3>
-            <p>305 Oxford Street</p>
-
-            <h3>Schedule</h3>
-            <p>From 10:00-19:00 days off Saturday-Sunday</p>
-
-            <h3>Contacts</h3>
-            <p>+44 20 7946 1234</p>
-            <p>sweetesc@gmail.com</p>
-          </div>
         </div>
 
         {isVisibleForm && (
