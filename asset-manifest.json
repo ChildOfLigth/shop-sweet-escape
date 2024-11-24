@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shop-sweet-escape/static/css/main.d33b78aa.css",
-    "main.js": "/shop-sweet-escape/static/js/main.4e104572.js",
+    "main.css": "/shop-sweet-escape/static/css/main.508865cf.css",
+    "main.js": "/shop-sweet-escape/static/js/main.130c6c42.js",
     "static/media/imgPresentProdMuffins.jpg": "/shop-sweet-escape/static/media/imgPresentProdMuffins.25d082f6058f65ee6f44.jpg",
     "static/media/delivery-scooter.gif": "/shop-sweet-escape/static/media/delivery-scooter.bd827407af469735a73a.gif",
     "static/media/presentMacaronForCard.png": "/shop-sweet-escape/static/media/presentMacaronForCard.5c60ec51554553a17228.png",
@@ -26,19 +26,23 @@
     "static/media/presentPhoto.webp": "/shop-sweet-escape/static/media/presentPhoto.d5fd0202638f271a5c5a.webp",
     "static/media/cakeForPresentBlock.jpg": "/shop-sweet-escape/static/media/cakeForPresentBlock.5f0bcf13a7636596a9a6.jpg",
     "static/media/verified.gif": "/shop-sweet-escape/static/media/verified.8592370a7c099585a0fb.gif",
+    "static/media/cakesForMobileAdapt.jpg": "/shop-sweet-escape/static/media/cakesForMobileAdapt.d44e03ddbb0224aa957d.jpg",
     "static/media/tort-napoleon-klassicheskii_1610347025_25_max.jpg": "/shop-sweet-escape/static/media/tort-napoleon-klassicheskii_1610347025_25_max.6495a375bc082a803294.jpg",
     "static/media/visaIco.png": "/shop-sweet-escape/static/media/visaIco.94d06b5ab5a245cce8da.png",
     "static/media/dybaiChoco.jpg": "/shop-sweet-escape/static/media/dybaiChoco.7dee3aa2ec94d77d2e02.jpg",
+    "static/media/eclersForModileAdapt.jpg": "/shop-sweet-escape/static/media/eclersForModileAdapt.24d17ea1370365605a96.jpg",
     "static/media/chocoCupcakes.jpg": "/shop-sweet-escape/static/media/chocoCupcakes.39c97028269f988200de.jpg",
     "static/media/blackberryfeature1_zps6d5c6b22.jpg": "/shop-sweet-escape/static/media/blackberryfeature1_zps6d5c6b22.fd0ab84bb2f770f1feb7.jpg",
     "static/media/redValvetCake.jpg": "/shop-sweet-escape/static/media/redValvetCake.ef304274607d47bcd1b4.jpg",
     "static/media/orangeChocolate.jpg": "/shop-sweet-escape/static/media/orangeChocolate.acc5ada35167d4572fc5.jpg",
+    "static/media/candiesForMobileAdapt.jpg": "/shop-sweet-escape/static/media/candiesForMobileAdapt.252151ef46ad4c280bc6.jpg",
     "static/media/vintageCandi.jpg": "/shop-sweet-escape/static/media/vintageCandi.64b02b1db03b92e8b1e7.jpg",
     "static/media/PistachioMacaroon.jpg": "/shop-sweet-escape/static/media/PistachioMacaroon.4e15e1b2bb601ea17903.jpg",
     "static/media/chocoBananCake.jpg": "/shop-sweet-escape/static/media/chocoBananCake.a5ef13f51cfc0bca9d4b.jpg",
     "static/media/greatChoco.jpg": "/shop-sweet-escape/static/media/greatChoco.5d46503fd4524a55c1d5.jpg",
     "static/media/presentCake.jpg": "/shop-sweet-escape/static/media/presentCake.628cf15492343deba022.jpg",
     "static/media/homemadeChocolate.jpg": "/shop-sweet-escape/static/media/homemadeChocolate.17b21ab8aa45db118f3b.jpg",
+    "static/media/cakeForPhoneAdapt.jpg": "/shop-sweet-escape/static/media/cakeForPhoneAdapt.6f1e4a5a8a9bb38bde10.jpg",
     "static/media/blueberryCake.jpg": "/shop-sweet-escape/static/media/blueberryCake.c8465085a5c47efaedca.jpg",
     "static/media/cakesPresentForMenu.jpg": "/shop-sweet-escape/static/media/cakesPresentForMenu.e0d5fff1eaa97e3606d7.jpg",
     "static/media/manPhoto.jpg": "/shop-sweet-escape/static/media/manPhoto.c3ea2455594a66b6c280.jpg",
@@ -70,18 +74,21 @@
     "static/media/ingredients.png": "/shop-sweet-escape/static/media/ingredients.8c66957e52ce904fe554.png",
     "static/media/cakesRaspberryMousse.jpg": "/shop-sweet-escape/static/media/cakesRaspberryMousse.f5087b9dc25ee9693a93.jpg",
     "static/media/BerryMacarons.jpg": "/shop-sweet-escape/static/media/BerryMacarons.5b1249f464d349098577.jpg",
+    "static/media/location.png": "/shop-sweet-escape/static/media/location.4ba2450b71e973e57b09.png",
     "static/media/delivery.png": "/shop-sweet-escape/static/media/delivery.91343c9df0c049608920.png",
     "static/media/limeMacaroon.jpg": "/shop-sweet-escape/static/media/limeMacaroon.c99c1c525f31ebc7107e.jpg",
     "static/media/registrationUser.png": "/shop-sweet-escape/static/media/registrationUser.5ac40acd492c1d3e946e.png",
     "static/media/protection.png": "/shop-sweet-escape/static/media/protection.5aae4fdb48003defb61b.png",
+    "static/media/contact-mail.png": "/shop-sweet-escape/static/media/contact-mail.85b72314fa30bc76799a.png",
     "static/media/arowTop.png": "/shop-sweet-escape/static/media/arowTop.a627d668ffee1664fceb.png",
     "static/media/visible.png": "/shop-sweet-escape/static/media/visible.956dd5aa572221bccd5c.png",
+    "static/media/calendar.png": "/shop-sweet-escape/static/media/calendar.4ae537284fd0eb90fa1b.png",
     "index.html": "/shop-sweet-escape/index.html",
-    "main.d33b78aa.css.map": "/shop-sweet-escape/static/css/main.d33b78aa.css.map",
-    "main.4e104572.js.map": "/shop-sweet-escape/static/js/main.4e104572.js.map"
+    "main.508865cf.css.map": "/shop-sweet-escape/static/css/main.508865cf.css.map",
+    "main.130c6c42.js.map": "/shop-sweet-escape/static/js/main.130c6c42.js.map"
   },
   "entrypoints": [
-    "static/css/main.d33b78aa.css",
-    "static/js/main.4e104572.js"
+    "static/css/main.508865cf.css",
+    "static/js/main.130c6c42.js"
   ]
 }
