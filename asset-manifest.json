@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/shop-sweet-escape/static/css/main.508865cf.css",
+    "main.css": "/shop-sweet-escape/static/css/main.6185ca83.css",
     "main.js": "/shop-sweet-escape/static/js/main.130c6c42.js",
     "static/media/imgPresentProdMuffins.jpg": "/shop-sweet-escape/static/media/imgPresentProdMuffins.25d082f6058f65ee6f44.jpg",
     "static/media/delivery-scooter.gif": "/shop-sweet-escape/static/media/delivery-scooter.bd827407af469735a73a.gif",
@@ -84,11 +84,11 @@
     "static/media/visible.png": "/shop-sweet-escape/static/media/visible.956dd5aa572221bccd5c.png",
     "static/media/calendar.png": "/shop-sweet-escape/static/media/calendar.4ae537284fd0eb90fa1b.png",
     "index.html": "/shop-sweet-escape/index.html",
-    "main.508865cf.css.map": "/shop-sweet-escape/static/css/main.508865cf.css.map",
+    "main.6185ca83.css.map": "/shop-sweet-escape/static/css/main.6185ca83.css.map",
     "main.130c6c42.js.map": "/shop-sweet-escape/static/js/main.130c6c42.js.map"
   },
   "entrypoints": [
-    "static/css/main.508865cf.css",
+    "static/css/main.6185ca83.css",
     "static/js/main.130c6c42.js"
   ]
 }
