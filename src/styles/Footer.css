@@ -129,11 +129,3 @@ footer .footer__content .footer_socialMedia .socialMedia__icons img:hover {
   -webkit-filter: none;
           filter: none;
 }
-
-@media (max-width: 480px) {
-  footer .footer__content {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-}

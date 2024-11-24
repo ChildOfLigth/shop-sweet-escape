@@ -1,12 +1,28 @@
 .buttonToScrollUp {
   position: fixed;
-  top: 700px;
-  left:auto;
+  top: 80%;
+  left: 94%;
   cursor: pointer;
   border: none;
   z-index: 10000;
-  img {
-    width: 70px;
+}
+.buttonToScrollUp img {
+  width: 70px;
+  height: auto;
+}
+
+@media (max-width: 1322px) {
+  .buttonToScrollUp {
+    left: 88%;
+  }
+  .buttonToScrollUp img {
+    width: 60px;
     height: auto;
+  }
+}
+
+@media (max-width: 568px) {
+  .buttonToScrollUp {
+    left: 82%;
   }
 }

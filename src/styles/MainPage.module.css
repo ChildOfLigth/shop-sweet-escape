@@ -220,7 +220,7 @@
           align-items: center;
   width: 23%;
   max-width: 370px;
-  min-width: 300px;
+  min-width: 270px;
   height: 520px;
   padding: 15px 20px;
   list-style: none;
@@ -338,8 +338,9 @@
   position: relative;
   width: 15%;
   max-width: 350px;
-  min-width: 320px;
+  min-width: 300px;
   height: 550px;
+  min-height: 480px;
   list-style: none;
   overflow: hidden;
   -webkit-transition: all 0.6s;
@@ -635,6 +636,18 @@
 }
 
 @media (max-width: 1130px) {
+  .ourLocation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   .ourLocation .ourLocation_infoLocation {
     text-align: left;
   }
@@ -646,7 +659,19 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
+  }
+  .ourLocation .ourLocation_locationPopularEstablishm .iframe {
+    margin: 0;
+  }
+  .ourLocation .ourLocation_locationPopularEstablishm .contactDetails {
+    margin-left: 0;
   }
 }
 @media (max-width: 1112px) {
@@ -661,6 +686,20 @@
   }
   .featuring .featuring__content .content_wrapperElem {
     width: 70%;
+  }
+}
+@media (max-width: 854px) {
+  .reviews {
+    margin: 0 auto 100px auto;
+  }
+  .reviews .listBlock .listBlock_comentBlock {
+    width: 500px;
+    height: auto;
+    padding: 15px 15px 40px 15px;
+    margin: 20px 0;
+  }
+  .reviews .listBlock .listBlock_comentBlock .userAccount .wrapperPhoto {
+    width: 15%;
   }
 }
 @media (max-width: 480px) {

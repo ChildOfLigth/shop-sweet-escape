@@ -185,7 +185,7 @@ $defoltFszForP: calc(22px + 6 * (100vw / 1912));
       align-items: center;
       width: 23%;
       max-width: 370px;
-      min-width: 300px;
+      min-width: 270px;
       height: 520px;
       padding: 15px 20px;
       list-style: none;
@@ -283,8 +283,9 @@ $defoltFszForP: calc(22px + 6 * (100vw / 1912));
       position: relative;
       width: 15%;
       max-width: 350px;
-      min-width: 320px;
+      min-width: 300px;
       height: 550px;
+      min-height: 480px;
       list-style: none;
       overflow: hidden;
       transition: all 0.6s;
@@ -539,13 +540,24 @@ $defoltFszForP: calc(22px + 6 * (100vw / 1912));
 
 @media (max-width: 1130px) {
   .ourLocation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     .ourLocation_infoLocation {
       text-align: left;
     }
     .ourLocation_locationPopularEstablishm {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       width: 100%;
+      .iframe {
+        margin: 0;
+      }
+      .contactDetails {
+        margin-left: 0;
+      }
     }
   }
 }
@@ -568,6 +580,23 @@ $defoltFszForP: calc(22px + 6 * (100vw / 1912));
 }
 
 @media (max-width: 854px) {
+  .reviews {
+    margin: 0 auto 100px auto;
+    .listBlock {
+      .listBlock_comentBlock {
+        width: 500px;
+        height: auto;
+        padding: 15px 15px 40px 15px;
+        margin: 20px 0;
+
+        .userAccount {
+          .wrapperPhoto {
+            width: 15%;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
