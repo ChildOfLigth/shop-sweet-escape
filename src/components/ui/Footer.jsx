@@ -1,10 +1,10 @@
 import { NavLink, Outlet } from "react-router-dom";
-import "./styles/Footer.css";
-import discoverIco from "./imgs/icons/discoverIco.jpg";
-import visaIco from "./imgs/icons/visaIco.png";
-import viberIco from "./imgs/icons/viber.png";
-import telegramIco from "./imgs/icons/telegram.png";
-import instIco from "./imgs/icons/instagram.png";
+import "../../styles/Footer.css";
+import discoverIco from "../../imgs/icons/discoverIco.jpg";
+import visaIco from "../../imgs/icons/visaIco.png";
+import viberIco from "../../imgs/icons/viber.png";
+import telegramIco from "../../imgs/icons/telegram.png";
+import instIco from "../../imgs/icons/instagram.png";
 
 export default function Footer() {
   return (

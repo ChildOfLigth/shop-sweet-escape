@@ -5,6 +5,9 @@ header {
   top: 0;
   z-index: 1000;
   background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .header_content {
     display: flex;
@@ -81,16 +84,15 @@ header {
 
   .menu-burger {
     position: absolute;
-    top: 40px;
     right: 30px;
     display: none;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
     width: 50px;
-    height: 35%;
+    height: 25%;
     cursor: pointer;
-    z-index: 100000;
+    z-index: 100;
     span {
       width: 40px;
       height: 2px;
@@ -98,14 +100,16 @@ header {
       transition: all 0.3s;
     }
   }
+
   .blockMenuBurger {
     display: block;
-    position: relative;
-    top: 0;
-    width: 100%;
-    height: auto;
-    padding: 70px 10px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100vw;
+    box-sizing: border-box;
     background-color: white;
+    padding: 20px 0;
 
     .menu-burger_linkBlock {
       display: flex;
@@ -113,6 +117,7 @@ header {
       justify-content: center;
       flex-direction: column;
       gap: 10px;
+      width: 100%;
 
       a {
         font-size: calc(19px + 3 * (100vw / 1912));
@@ -172,7 +177,7 @@ header {
 
 @media (max-width: 846px) {
   header {
-    align-items: center;
+    height: 80px;
     .menu-burger {
       display: flex;
     }
@@ -182,6 +187,9 @@ header {
 
       .header_content_linkBlock {
         display: none;
+      }
+      .header__iconForWebsite {
+        width: 60px;
       }
     }
   }

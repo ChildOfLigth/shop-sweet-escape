@@ -1,12 +1,12 @@
-import "./styles/Header.css";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
-import shoppingBascketIco from "./imgs/icons/shopping-basket.png";
-import registrationUser from "./imgs/icons/registrationUser.png";
-import iconForwebsite from "./imgs/icons/Sweet_Escape_Circular_Icon.png";
-import { UserDataContext } from "./UserDataProvider";
+import { useContext, useEffect, useState } from "react";
+import shoppingBascketIco from "../../imgs/icons/shopping-basket.png";
+import registrationUser from "../../imgs/icons/registrationUser.png";
+import iconForwebsite from "../../imgs/icons/Sweet_Escape_Circular_Icon.png";
+import { UserDataContext } from "../UserDataProvider";
 import Register from "./Register";
 import ModalWindowIfOkRegister from "./ModalWindowIfOkRegistr";
+import "../../styles/Header.css";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -15,6 +15,14 @@ export default function Header() {
     useState(false);
   const [modalWindowvisibilite, setModalWindowVisibilite] = useState(false);
   const [openMenuBurger, setOpenMenuBurger] = useState(false);
+
+  useEffect(() => {
+    if (modalWindowvisibilite == true) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
+  }, [modalWindowvisibilite]);
 
   return (
     <header>
@@ -58,7 +66,7 @@ export default function Header() {
                 dataAvailabilityCheck
                   ? navigate("/shop-sweet-escape/shopping-cart")
                   : setRegistrationBlockVisibility(
-                      !registrationBlockVisibility
+                      !registrationBlockVisibility,
                     );
 
                 setOpenMenuBurger(false);

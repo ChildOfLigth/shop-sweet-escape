@@ -1,6 +1,6 @@
-import arowToTop from "./imgs/icons/arowTop.png";
+import arowToTop from "../../imgs/icons/arowTop.png";
 import { useEffect, useRef, useState } from "react";
-import "./styles/ArrowUp.css";
+import "../../styles/ArrowUp.css";
 
 export default function ArrowUp({ coordinat, coordinatesToHide }) {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -19,13 +19,15 @@ export default function ArrowUp({ coordinat, coordinatesToHide }) {
 
   useEffect(() => {
     if (scrollToUp.current) {
-      scrollToUp.current.style.opacity = scrollPosition >= coordinat ? "1" : "0";
+      scrollToUp.current.style.opacity =
+        scrollPosition >= coordinat ? "1" : "0";
     }
   }, [scrollPosition, coordinat]);
 
   useEffect(() => {
     if (scrollToUp.current) {
-      scrollToUp.current.style.opacity = scrollPosition <= coordinatesToHide ? "0" : "1";
+      scrollToUp.current.style.opacity =
+        scrollPosition <= coordinatesToHide ? "0" : "1";
     }
   }, [scrollPosition, coordinatesToHide]);
 

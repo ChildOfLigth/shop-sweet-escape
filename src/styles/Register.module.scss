@@ -25,14 +25,14 @@
 
 .orderProcessingForm {
   @include modalWindow(30px 20px);
-  z-index: 10000;
+  z-index: 1000;
 
   .closeForm {
     position: absolute;
     top: 15px;
     left: 90%;
     border: none;
-    width: 20px;
+    width: 16px;
     height: auto;
     img {
       width: 100%;
@@ -54,6 +54,7 @@
     align-items: center;
 
     .inputFieldWrapper__elem {
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -69,7 +70,6 @@
         border: 1px solid #5c4343;
         border-radius: 5px;
         padding: 8px 15px;
-        width: 400px;
         height: 25px;
         font-size: calc(20px + 4 * (100vw / 1912));
         color: #5c4343;
@@ -111,6 +111,7 @@
       justify-content: space-between;
       width: 90%;
       margin-top: 20px;
+      gap: 8px;
 
       .blockOptions__elem {
         display: flex;
@@ -150,7 +151,8 @@
 
 .wrapper__modal_completeRegistration {
   @include modalWindow(10px 20px);
-  width: 400px;
+  width: 50%;
+  min-width: 320px;
   z-index: 100000;
 
   h2 {
@@ -175,7 +177,7 @@
 }
 
 .blockIfRegistrAvailable {
-  z-index: 100001;
+  z-index: 1000;
   background-color: #5c4343;
   width: 500px;
   height: 300px;
@@ -195,6 +197,28 @@
     li {
       list-style: none;
       font-size: calc(19px + 3 * (100vw / 1912));
+    }
+  }
+}
+
+@media (max-width: 570px) {
+  .orderProcessingForm {
+    width: 80%;
+  }
+}
+
+@media (max-width: 440px) {
+  .orderProcessingForm {
+    width: 100%;
+    height: 90svh;
+
+    .closeForm {
+      left: 87%;
+    }
+
+    .orderProcessingForm__inputFieldWrapper {
+      margin: 0 auto;
+      width: 80%;
     }
   }
 }

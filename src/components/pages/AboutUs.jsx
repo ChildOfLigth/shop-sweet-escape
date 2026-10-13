@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import classes from "./styles/AboutUs.module.css";
-import presentPhoto from "./imgs/icons/presentPhoto.webp";
-import happyGirl from "./imgs/icons/happyGirl.avif";
-import photoOfCaféPresentation from "./imgs/icons/Konditorei.jpg";
-import servicePresentation from "./imgs/icons/present2.jpg";
-import CustomButton from "./CustomButton";
+import classes from "../../styles/AboutUs.module.css";
+import presentPhoto from "../../imgs/icons/presentPhoto.webp";
+import happyGirl from "../../imgs/icons/happyGirl.avif";
+import photoOfCaféPresentation from "../../imgs/icons/Konditorei.jpg";
+import servicePresentation from "../../imgs/icons/present2.jpg";
+import CustomButton from "../ui/CustomButton";
 
 export default function AboutUs() {
   const navigate = useNavigate();

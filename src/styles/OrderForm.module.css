@@ -1,19 +1,27 @@
 .orderingBlock {
   position: relative;
-  width: 70%;
-  margin: 55px auto;
-  border-radius: 24px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .orderingBlock .orderingBlock_productDataBlock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
   background-color: white;
-  border-radius: 15px;
-  padding: 6px 15px;
+  border-radius: 16px;
+  padding: 16px;
+  gap: 24px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo {
   display: -webkit-box;
@@ -23,39 +31,37 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 50%;
-  margin: 10px;
+  width: 100%;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo img {
   position: relative;
-  width: 80%;
-  height: 360px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
   border-radius: 14px;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-bottom: 7px;
+  margin-bottom: 12px;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo img::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-box-shadow: inset 0 -90px 100px #6e5454;
-          box-shadow: inset 0 -90px 100px #6e5454;
+  inset: 0;
+  -webkit-box-shadow: inset 0 -70px 80px #6e5454;
+          box-shadow: inset 0 -70px 80px #6e5454;
+  border-radius: 14px;
   z-index: 2;
   pointer-events: none;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo h3 {
-  font-size: calc(22px + 0.3205128205vw);
-  width: 80%;
+  font-size: clamp(18px, 4.5vw, 26px);
   color: #6e5454;
+  margin-bottom: 8px;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo p {
-  font-size: calc(20px + 0.2136752137vw);
+  font-size: clamp(16px, 4vw, 22px);
   font-weight: 600;
-  margin: 15px 0 10px 0;
+  margin: 12px 0 10px;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo .productInfo__quantityChange {
   display: -webkit-box;
@@ -67,29 +73,30 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 25%;
+  width: 140px;
+  max-width: 100%;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo .productInfo__quantityChange button {
   background-color: #6e5454;
-  width: 50px;
-  height: 40px;
+  width: 42px;
+  height: 38px;
   border: none;
   border-radius: 10px;
-  font-size: calc(18px + 0.1068376068vw);
+  font-size: 18px;
   color: white;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo .productInfo__quantityChange button:hover {
   background-color: #8f7979;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo .productInfo__quantityChange p {
   font-weight: 700;
-  font-size: calc(20px + 0.2136752137vw);
-  font-weight: 600;
+  font-size: 18px;
+  margin: 0;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__checkout {
-  margin: 20px 0 30px 0;
+  width: 100%;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__checkout form {
   display: -webkit-box;
@@ -101,35 +108,42 @@
           flex-direction: column;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__checkout form label {
-  font-size: calc(19px + 0.1602564103vw);
+  font-size: clamp(15px, 3.8vw, 19px);
+  margin-bottom: 4px;
+  color: #5c4343;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__checkout form input {
-  width: 400px;
-  height: 30px;
-  padding: 3px 10px;
+  width: 100%;
+  max-width: 100%;
+  height: 42px;
+  padding: 0 12px;
   border-radius: 10px;
-  font-size: calc(17px + 0.1068376068vw);
+  font-size: 16px;
   border: 2px solid #6e5454;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__checkout form .homeAdressData {
-  margin: 5px 0 20px 0;
+  margin: 8px 0 20px;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__checkout form .homeAdressData p {
-  font-size: calc(20px + 0.2136752137vw);
+  font-size: clamp(16px, 4vw, 20px);
   font-weight: 600;
+  color: #5c4343;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__checkout form .homeAdressData button {
   background-color: #6e5454;
-  width: 180px;
-  height: 40px;
-  margin-top: 5px;
-  font-size: calc(17px + 0.0534188034vw);
+  width: 100%;
+  max-width: 200px;
+  height: 42px;
+  margin-top: 8px;
+  font-size: 15px;
   color: white;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
   border: none;
   border-radius: 12px;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__checkout form .homeAdressData button:hover {
   background-color: #8f7979;
@@ -142,19 +156,19 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 30px;
-  width: 340px;
+  margin-top: 20px;
+  width: 100%;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__checkout form .homeAdressData .homeAdressData__addressChangeField label {
-  font-size: calc(18px + 0.1068376068vw);
-  line-height: 28px;
+  font-size: 15px;
+  line-height: 1.4;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__checkout form .homeAdressData .homeAdressData__addressChangeField input {
+  width: 100%;
   border: 2px solid #5c4343;
-  width: 250px;
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__checkout form .completionOfPayment p {
-  font-size: calc(19px + 0.1602564103vw);
+  font-size: clamp(15px, 3.8vw, 19px);
 }
 .orderingBlock .orderingBlock_productDataBlock .productDataBlock__checkout form .completionOfPayment p span {
   font-weight: 600;
@@ -164,10 +178,13 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
   width: 100%;
+  margin-top: 30px;
 }
 .orderingBlock .orderingBlock__wrapper .wrapper__productListBlock {
   display: -webkit-box;
@@ -177,28 +194,28 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 50%;
+  width: 100%;
+  gap: 14px;
 }
 .orderingBlock .orderingBlock__wrapper .wrapper__productListBlock .productListBlock__elem {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
-  height: 250px;
-  -o-object-fit: cover;
-     object-fit: cover;
   background-color: white;
-  margin-bottom: 15px;
-  border-radius: 20px;
+  border-radius: 16px;
+  overflow: hidden;
 }
 .orderingBlock .orderingBlock__wrapper .wrapper__productListBlock .productListBlock__elem img {
-  width: 200px;
-  height: 100%;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  border-radius: 15px 0 0 15px;
+  width: 100%;
+  height: 180px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 16px 16px 0 0;
 }
 .orderingBlock .orderingBlock__wrapper .wrapper__productListBlock .productListBlock__elem .elem__productInfo {
   display: -webkit-box;
@@ -208,22 +225,23 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 10px 20px;
+  padding: 14px 16px;
 }
 .orderingBlock .orderingBlock__wrapper .wrapper__productListBlock .productListBlock__elem .elem__productInfo h3 {
   color: #5c4343;
-  font-size: calc(19px + 0.1602564103vw);
-  margin-bottom: 7px;
+  font-size: clamp(16px, 4vw, 20px);
+  margin-bottom: 6px;
 }
 .orderingBlock .orderingBlock__wrapper .wrapper__productListBlock .productListBlock__elem .elem__productInfo p {
-  font-size: calc(18px + 0.1068376068vw);
-  line-height: 26px;
+  font-size: clamp(14px, 3.5vw, 17px);
+  line-height: 1.45;
 }
 .orderingBlock .orderingBlock__wrapper .wrapper__productListBlock .productListBlock__elem .elem__productInfo .price {
   font-weight: 600;
+  margin-top: 6px;
 }
 .orderingBlock .orderingBlock__wrapper .productDataBlock__checkout {
-  width: 47%;
+  width: 100%;
 }
 .orderingBlock .orderingBlock__wrapper .productDataBlock__checkout form {
   display: -webkit-box;
@@ -233,43 +251,46 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: fixed;
+  position: static;
 }
 .orderingBlock .orderingBlock__wrapper .productDataBlock__checkout form label {
-  font-size: calc(19px + 0.1602564103vw);
-  line-height: 32px;
+  font-size: clamp(15px, 3.8vw, 19px);
+  line-height: 1.4;
   color: #5c4343;
   font-weight: 500;
 }
 .orderingBlock .orderingBlock__wrapper .productDataBlock__checkout form input {
-  height: 35px;
-  width: 280px;
+  height: 42px;
+  width: 100%;
   border-radius: 10px;
   border: 2px solid #5c4343;
   background-color: white;
-  font-size: calc(19px + 0.1602564103vw);
-  padding: 2px 10px;
-  margin-bottom: 15px;
+  font-size: 16px;
+  padding: 0 12px;
+  margin-bottom: 14px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .orderingBlock .orderingBlock__wrapper .productDataBlock__checkout form .homeAdressData {
-  margin: 5px 0 20px 0;
+  margin: 8px 0 18px;
 }
 .orderingBlock .orderingBlock__wrapper .productDataBlock__checkout form .homeAdressData p {
-  font-size: calc(20px + 0.2136752137vw);
+  font-size: clamp(16px, 4vw, 20px);
   font-weight: 600;
   color: #5c4343;
 }
 .orderingBlock .orderingBlock__wrapper .productDataBlock__checkout form .homeAdressData button {
   background-color: #6e5454;
-  width: 180px;
-  height: 40px;
-  margin-top: 5px;
-  font-size: calc(17px + 0.0534188034vw);
+  width: 100%;
+  max-width: 200px;
+  height: 42px;
+  margin-top: 8px;
+  font-size: 15px;
   color: white;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
   border: none;
   border-radius: 12px;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
 }
 .orderingBlock .orderingBlock__wrapper .productDataBlock__checkout form .homeAdressData button:hover {
   background-color: #8f7979;
@@ -282,19 +303,18 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 30px;
-  width: 340px;
+  margin-top: 20px;
+  width: 100%;
 }
 .orderingBlock .orderingBlock__wrapper .productDataBlock__checkout form .homeAdressData .homeAdressData__addressChangeField label {
-  font-size: calc(18px + 0.1068376068vw);
-  line-height: 28px;
+  font-size: 15px;
 }
 .orderingBlock .orderingBlock__wrapper .productDataBlock__checkout form .homeAdressData .homeAdressData__addressChangeField input {
+  width: 100%;
   border: 2px solid #5c4343;
-  width: 250px;
 }
 .orderingBlock .orderingBlock__wrapper .productDataBlock__checkout .completionOfPayment p {
-  font-size: calc(19.5px + 0.186965812vw);
+  font-size: clamp(15px, 3.8vw, 19.5px);
   color: #6e5454;
 }
 .orderingBlock .orderingBlock__wrapper .productDataBlock__checkout .completionOfPayment p span {
@@ -311,47 +331,169 @@
       -ms-flex-pack: center;
           justify-content: center;
   position: fixed;
-  top: 40%;
+  top: 50%;
   left: 50%;
-  margin-right: -50%;
-  padding: 20px 10px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background-color: white;
-  width: 400px;
-  height: auto;
-  border-radius: 15px;
-  -webkit-box-shadow: 5px 10px 30px #5c4343;
-          box-shadow: 5px 10px 30px #5c4343;
+  width: calc(100% - 32px);
+  max-width: 400px;
+  padding: 24px 16px;
+  border-radius: 16px;
+  -webkit-box-shadow: 0 10px 40px rgba(92, 67, 67, 0.35);
+          box-shadow: 0 10px 40px rgba(92, 67, 67, 0.35);
+  z-index: 1000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .orderingBlock .orderingBlock__modalWindow_completingAnOrder img {
-  width: 100px;
+  width: 80px;
   height: auto;
-  margin: 0 auto;
+  margin: 0 auto 12px;
 }
 .orderingBlock .orderingBlock__modalWindow_completingAnOrder button {
   position: absolute;
-  top: 10px;
-  left: 90%;
-  width: 20px;
-  height: auto;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
   border: none;
+  background: transparent;
+  padding: 0;
 }
 .orderingBlock .orderingBlock__modalWindow_completingAnOrder button img {
   width: 20px;
   height: auto;
 }
 .orderingBlock .orderingBlock__modalWindow_completingAnOrder .modalWindow_completingAnOrder__textContent {
-  margin-top: 15px;
   text-align: center;
 }
 .orderingBlock .orderingBlock__modalWindow_completingAnOrder .modalWindow_completingAnOrder__textContent h3 {
-  font-size: calc(19px + 0.1602564103vw);
+  font-size: clamp(17px, 4vw, 22px);
+  margin-bottom: 8px;
 }
 .orderingBlock .orderingBlock__modalWindow_completingAnOrder .modalWindow_completingAnOrder__textContent p {
-  font-size: calc(17px + 0.0534188034vw);
+  font-size: clamp(14px, 3.5vw, 17px);
 }
 .orderingBlock .orderingBlock__modalWindow_completingAnOrder .modalWindow_completingAnOrder__textContent p span {
   font-weight: 600;
   color: #6e5454;
+}
+
+@media (min-width: 600px) {
+  .orderingBlock {
+    padding: 0 20px;
+    margin: 40px auto;
+  }
+  .orderingBlock .orderingBlock_productDataBlock {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 20px;
+    gap: 30px;
+  }
+  .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 45%;
+            flex: 1 1 45%;
+    max-width: 48%;
+  }
+  .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo img {
+    max-width: 100%;
+    height: 280px;
+  }
+  .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo .productInfo__quantityChange {
+    width: 160px;
+  }
+  .orderingBlock .orderingBlock_productDataBlock .productDataBlock__checkout {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 45%;
+            flex: 1 1 45%;
+    max-width: 48%;
+  }
+  .orderingBlock .orderingBlock__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 30px;
+  }
+  .orderingBlock .orderingBlock__wrapper .wrapper__productListBlock {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 52%;
+            flex: 1 1 52%;
+  }
+  .orderingBlock .orderingBlock__wrapper .wrapper__productListBlock .productListBlock__elem {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 160px;
+  }
+  .orderingBlock .orderingBlock__wrapper .wrapper__productListBlock .productListBlock__elem img {
+    width: 160px;
+    height: 100%;
+    border-radius: 16px 0 0 16px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+  .orderingBlock .orderingBlock__wrapper .wrapper__productListBlock .productListBlock__elem .elem__productInfo {
+    padding: 12px 16px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .orderingBlock .orderingBlock__wrapper .productDataBlock__checkout {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 42%;
+            flex: 1 1 42%;
+    position: sticky;
+    top: 20px;
+  }
+}
+@media (min-width: 900px) {
+  .orderingBlock {
+    margin: 50px auto;
+    padding: 0 24px;
+  }
+  .orderingBlock .orderingBlock_productDataBlock {
+    padding: 24px 30px;
+    gap: 40px;
+  }
+  .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo img {
+    height: 340px;
+  }
+  .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo h3 {
+    font-size: 24px;
+  }
+  .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo .productInfo__quantityChange {
+    width: 180px;
+  }
+  .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo .productInfo__quantityChange button {
+    width: 48px;
+    height: 42px;
+  }
+  .orderingBlock .orderingBlock__wrapper {
+    gap: 40px;
+  }
+  .orderingBlock .orderingBlock__wrapper .wrapper__productListBlock .productListBlock__elem {
+    height: 200px;
+  }
+  .orderingBlock .orderingBlock__wrapper .wrapper__productListBlock .productListBlock__elem img {
+    width: 200px;
+  }
+  .orderingBlock .orderingBlock__wrapper .productDataBlock__checkout form input {
+    max-width: 320px;
+  }
+}
+@media (min-width: 1200px) {
+  .orderingBlock .orderingBlock_productDataBlock .productDataBlock__productInfo img {
+    height: 380px;
+  }
 }

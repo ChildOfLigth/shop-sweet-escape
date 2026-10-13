@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import "./styles/IsNotDefined.css";
-import notDefinedIco from "./imgs/icons/empty-state.png";
+import "../../styles/IsNotDefined.css";
+import notDefinedIco from "../../imgs/icons/empty-state.png";
 export default function IsNotDefined() {
   const navigate = useNavigate();
   return (

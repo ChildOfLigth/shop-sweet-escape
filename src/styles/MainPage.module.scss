@@ -1,5 +1,6 @@
 $defoltFsz: calc(32px + 16 * (100vw / 1912));
 $defoltFszForP: calc(22px + 6 * (100vw / 1912));
+$marginBottom: clamp(6.25rem, calc(4.167rem + 10.417vw), 12.5rem);
 
 .presentingUnit {
   position: relative;
@@ -65,8 +66,7 @@ $defoltFszForP: calc(22px + 6 * (100vw / 1912));
   text-align: center;
   width: 100%;
   max-width: 1700px;
-  min-width: 0;
-  margin: 0 auto 180px auto;
+  margin: 0 auto $marginBottom auto;
 
   h2 {
     font-size: $defoltFsz;
@@ -87,7 +87,9 @@ $defoltFszForP: calc(22px + 6 * (100vw / 1912));
     z-index: -1;
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.5s, transform 0.5s;
+    transition:
+      opacity 0.5s,
+      transform 0.5s;
 
     &.hidden {
       opacity: 0;
@@ -183,9 +185,9 @@ $defoltFszForP: calc(22px + 6 * (100vw / 1912));
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 23%;
+      width: 25%;
       max-width: 370px;
-      min-width: 270px;
+      min-width: 310px;
       height: 520px;
       padding: 15px 20px;
       list-style: none;
@@ -198,7 +200,6 @@ $defoltFszForP: calc(22px + 6 * (100vw / 1912));
         white 100%
       );
       overflow: hidden;
-      margin: 20px 10px;
 
       .wrapperByPhoto {
         width: 100%;
@@ -233,6 +234,7 @@ $defoltFszForP: calc(22px + 6 * (100vw / 1912));
       }
 
       .dataProduct {
+        width: 100%;
         font-size: calc(18px + 2 * (100vw / 1912));
         color: #6e5454;
         height: 30px;
@@ -252,7 +254,7 @@ $defoltFszForP: calc(22px + 6 * (100vw / 1912));
 .presentGalery {
   width: 100%;
   height: auto;
-  margin-bottom: 200px;
+  margin-bottom: $marginBottom;
 
   .presentGalery_textBlock {
     text-align: center;
@@ -285,7 +287,6 @@ $defoltFszForP: calc(22px + 6 * (100vw / 1912));
       max-width: 350px;
       min-width: 300px;
       height: 550px;
-      min-height: 480px;
       list-style: none;
       overflow: hidden;
       transition: all 0.6s;
@@ -301,7 +302,7 @@ $defoltFszForP: calc(22px + 6 * (100vw / 1912));
       .infoProduct {
         position: absolute;
         top: 10%;
-        left: 50px;
+        left: 10%;
         width: 80%;
         transition: all 0.6s;
         opacity: 0;
@@ -323,7 +324,7 @@ $defoltFszForP: calc(22px + 6 * (100vw / 1912));
       }
 
       &:hover {
-        width: 350px;
+        cursor: pointer;
         img {
           filter: blur(8px);
           transform: scale(1.2);
@@ -599,11 +600,43 @@ $defoltFszForP: calc(22px + 6 * (100vw / 1912));
   }
 }
 
+@media (max-width: 670px) {
+  .presentingUnit {
+    .infoBlock {
+      top: 10%;
+    }
+  }
+}
+
 @media (max-width: 480px) {
   .listRecomendedProduct {
     .listRecomendedProduct__back_decor {
       img {
         opacity: 0.7;
+      }
+    }
+  }
+
+  .presentGalery {
+    .presentGalery_listElems,
+    .swipper_conteiner {
+      .listElems_elem,
+      .swipper_slide {
+        min-width: 260px;
+        height: 450px;
+      }
+    }
+  }
+
+  .reviews {
+    .listBlock {
+      .listBlock_comentBlock {
+        padding: 15px 15px 30px 15px;
+
+        p {
+          padding: 0 5px;
+          margin-left: 0;
+        }
       }
     }
   }
@@ -616,6 +649,12 @@ $defoltFszForP: calc(22px + 6 * (100vw / 1912));
         .wrapperElem_elem {
           flex-direction: column;
           justify-content: center;
+
+          .elem__textContent {
+            h3 {
+              color: black;
+            }
+          }
         }
       }
     }

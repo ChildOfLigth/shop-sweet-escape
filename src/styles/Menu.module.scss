@@ -3,8 +3,11 @@ $defaultFsz: calc(36px + 20 * (100vw / 1912));
 .presentableUnit {
   width: 70%;
   height: 60%;
-  margin: 95px auto 160px auto;
+  margin: clamp(2.1875rem, calc(0.795rem + 5.714vw), 5.9375rem) auto
+    clamp(5rem, calc(2.143rem + 7.143vw), 10rem) auto;
   display: flex;
+  align-items: center;
+  gap: clamp(1.5625rem, calc(0.982rem + 3.571vw), 3.125rem);
 
   .presentableUnit__card {
     width: 50%;
@@ -14,7 +17,7 @@ $defaultFsz: calc(36px + 20 * (100vw / 1912));
     align-items: center;
 
     .wrapperImg {
-      width: 80%;
+      width: 100%;
       height: 320px;
       overflow: visible;
       img {
@@ -29,7 +32,7 @@ $defaultFsz: calc(36px + 20 * (100vw / 1912));
     .card__textContent {
       display: flex;
       flex-direction: column;
-      width: 500px;
+      width: 100%;
       margin: 30px 0;
       h2 {
         font-size: $defaultFsz;
@@ -65,17 +68,18 @@ $defaultFsz: calc(36px + 20 * (100vw / 1912));
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 10px;
 
     .listElems__elem {
       position: relative;
-      width: 400px;
-      height: 400px;
+      width: 21%;
+      max-width: 500px;
+      min-width: 300px;
+      aspect-ratio: 1 / 1;
       list-style: none;
       border-radius: 10px;
-      margin: 0 10px;
       background-size: cover;
       overflow: hidden;
-
       cursor: pointer;
       &::before {
         content: "";
@@ -111,10 +115,15 @@ $defaultFsz: calc(36px + 20 * (100vw / 1912));
 
       .elem__productData {
         position: absolute;
-        top: 80%;
-        left: 15px;
+        top: 75%;
+        left: 3%;
         color: white;
         z-index: 10;
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        flex-direction: column;
+        gap: 8px;
 
         h3 {
           font-size: calc(13px + 5 * (100vw / 1912));
@@ -140,27 +149,37 @@ $defaultFsz: calc(36px + 20 * (100vw / 1912));
   top: 95px;
 
   .content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 80%;
+    max-width: 100%;
     margin: 0 auto;
-    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(1rem, 2vw, 2rem);
+
     .inputBlock {
-      width: 60%;
+      flex: 1 1 250px;
+      min-width: 0;
       height: 40px;
+      display: flex;
       align-items: center;
+      justify-content: center;
       position: relative;
-      img {
-        position: relative;
-        top: 4px;
-        width: 24px;
-        height: auto;
+
+      > img {
+        flex-shrink: 0;
+        width: 20px;
+        aspect-ratio: 1 / 1;
         margin-right: 10px;
         opacity: 0.3;
-        transition: all 0.4s;
+        transition: opacity 0.4s;
       }
+
       .searchInput {
-        width: 60%;
+        flex: 1;
+        min-width: 0;
+        width: 100%;
         height: 90%;
         padding: 0 14px;
         font-size: 19px;
@@ -169,37 +188,47 @@ $defaultFsz: calc(36px + 20 * (100vw / 1912));
       }
 
       .clearInputValue {
-        border: none;
-        width: 20px;
-        height: 20px;
+        flex-shrink: 0;
+        width: 16px;
+        aspect-ratio: 1 / 1;
         margin-left: 10px;
+        padding: 0;
+        border: none;
         position: absolute;
-        top: 4px;
-        left: 350px;
+        right: 10px;
+
         img {
           width: 100%;
           height: 100%;
+          margin: 0;
         }
-        &:hover {
-          img {
-            opacity: 1;
-          }
+
+        &:hover img {
+          opacity: 1;
         }
       }
     }
+
     .listSortingOptions {
-      width: 60%;
+      flex: 1 1 300px;
+      min-width: 0;
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px 20px;
+      padding: 0;
+      margin: 0;
+
       li {
         list-style: none;
         cursor: pointer;
-        font-size: calc(18px + 2 * (100vw / 1912));
+        white-space: nowrap;
+        font-size: clamp(16px, calc(18px + 2 * (100vw / 1912)), 20px);
 
         &.active {
           color: #6e5454;
           font-weight: 700;
-          font-size: calc(18px + 2 * (100vw / 1912));
         }
       }
     }
@@ -216,17 +245,18 @@ $defaultFsz: calc(36px + 20 * (100vw / 1912));
   .wrapperListProds {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
+
     h2 {
       font-size: $defaultFsz;
       color: #be9292;
       margin-bottom: 15px;
     }
+
     .wrapperListProds__textContent {
       position: relative;
-      width: 700px;
+      width: 45%;
       top: 0;
-      left: -290px;
       margin-bottom: 20px;
       h2 {
         font-size: $defaultFsz;
@@ -246,14 +276,15 @@ $defaultFsz: calc(36px + 20 * (100vw / 1912));
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: clamp(0.75rem, 0.464rem + 1.786vw, 2.5rem);
       width: 100%;
       margin: 20px auto 90px auto;
+
       li {
         position: relative;
         width: 390px;
         height: 350px;
         list-style: none;
-        margin: 0 30px 30px 30px;
         overflow: hidden;
         cursor: pointer;
         border-radius: 15px;
@@ -292,6 +323,7 @@ $defaultFsz: calc(36px + 20 * (100vw / 1912));
           }
           .price {
             margin: 10px 0;
+            font-weight: 600;
             font-size: calc(15px + 5 * (100vw / 1912));
           }
         }
@@ -299,6 +331,170 @@ $defaultFsz: calc(36px + 20 * (100vw / 1912));
         &:hover {
           .productImgBlock {
             transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1120px) {
+  .wrapperAllListsProducts {
+    .wrapperListProds {
+      .wrapperListProds__textContent {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1030px) {
+  .wrapperAllListsProducts {
+    .wrapperListProds {
+      .listProducts {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-rows: repeat(2, 350px);
+        grid-auto-columns: minmax(280px, 390px);
+        justify-content: start;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+
+        li {
+          width: 100%;
+          min-width: 0;
+          height: 350px;
+          box-sizing: border-box;
+          scroll-snap-align: start;
+
+          .productInfo {
+            top: auto;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            width: auto;
+            box-sizing: border-box;
+            overflow-wrap: anywhere;
+
+            h3 {
+              overflow-wrap: anywhere;
+            }
+
+            .price {
+              overflow-wrap: anywhere;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 930px) {
+  .productFinder {
+    .content {
+      width: 70%;
+      flex-direction: column;
+      align-items: stretch;
+
+      .inputBlock,
+      .listSortingOptions {
+        flex: 1 1 auto;
+        width: 100%;
+      }
+
+      .listSortingOptions {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .presentableUnit {
+    width: 90%;
+  }
+
+  .productFinder {
+    .content {
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .popularProducts {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 90px 0;
+    padding: 0 20px;
+    overflow: hidden;
+
+    .popularProducts__listElems {
+      gap: 20px;
+      flex-wrap: nowrap;
+      justify-content: start;
+      overflow-x: scroll;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .presentableUnit {
+    flex-direction: column;
+
+    .presentableUnit__card {
+      width: 100%;
+
+      .wrapperImg {
+        height: 200px;
+      }
+
+      &:nth-child(2) {
+        .wrapperImg {
+          order: 2;
+        }
+
+        .card__textContent {
+          order: 1;
+        }
+      }
+    }
+  }
+
+  .wrapperAllListsProducts {
+    width: 90%;
+    .wrapperListProds {
+      .wrapperListProds__textContent {
+        margin-bottom: 0;
+        p {
+          display: none;
+        }
+      }
+      .listProducts {
+        grid-template-rows: 350px;
+        grid-auto-flow: column;
+        grid-auto-columns: 100%;
+        gap: 12px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        justify-content: start;
+
+        li {
+          width: 100%;
+          height: 350px;
+          box-sizing: border-box;
+          scroll-snap-align: start;
+
+          .productInfo {
+            top: auto;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            width: auto;
+            overflow-wrap: anywhere;
           }
         }
       }

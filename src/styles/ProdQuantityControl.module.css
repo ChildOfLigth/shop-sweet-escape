@@ -13,8 +13,8 @@
 }
 .productQuantityControl button {
   background-color: #6e5454;
-  width: 50px;
-  height: 40px;
+  width: 40px;
+  aspect-ratio: 1/1;
   border: none;
   border-radius: 10px;
   font-size: calc(18px + 0.1046025105vw);

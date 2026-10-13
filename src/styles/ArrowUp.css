@@ -7,17 +7,13 @@
   z-index: 10000;
 }
 .buttonToScrollUp img {
-  width: 70px;
+  width: clamp(3.4375rem, calc(3.0625rem + 2.5vw), 4.375rem);
   height: auto;
 }
 
 @media (max-width: 1322px) {
   .buttonToScrollUp {
     left: 88%;
-  }
-  .buttonToScrollUp img {
-    width: 60px;
-    height: auto;
   }
 }
 

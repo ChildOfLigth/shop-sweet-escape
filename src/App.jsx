@@ -1,17 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./Header";
-import MainPage from "./MainPage";
+import Header from "./components/ui/Header";
+import MainPage from "./components/pages/MainPage";
 import "./styles/App.css";
-import AboutUs from "./AboutUs";
-import Menu from "./Menu";
-import Footer from "./Footer";
-import CartProduct from "./CartProduct";
-import ProductPage from "./ProductPage";
+import AboutUs from "./components/pages/MainPage";
+import Menu from "./components/pages/Menu";
+import Footer from "./components/ui/Footer";
+import CartProduct from "./components/pages/CartProduct";
+import ProductPage from "./components/pages/ProductPage";
 import { cakes, cake, chocolate, candies, macaroon } from "./listProducts";
-import OrderForm from "./OrderForm";
-import UserDataProvider from "./UserDataProvider";
-import IsNotDefined from "./IsNotDefined";
-import ScrollToTop from "./ScrollTop";
+import OrderForm from "./components/pages/OrderForm";
+import UserDataProvider from "./components/UserDataProvider";
+import IsNotDefined from "./components/pages/IsNotDefined";
+import ScrollToTop from "./components/ui/ScrollTop";
 
 function AppContent() {
   const allProducts = [...cakes, ...cake, ...chocolate, ...candies, ...macaroon];

@@ -1,11 +1,11 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useRef, useState } from "react";
-import closeModalIco from "./imgs/icons/cross.png";
-import deliveryConfirm from "./imgs/icons/delivery-scooter.gif";
-import classes from "./styles/OrderForm.module.css";
-import ProdQuantityControl from "./ProdQuantityControl";
-import CustomButton from "./CustomButton";
-import { UserDataContext } from "./UserDataProvider";
+import closeModalIco from "../../imgs/icons/cross.png";
+import deliveryConfirm from "../../imgs/icons/delivery-scooter.gif";
+import classes from "../../styles/OrderForm.module.css";
+import ProdQuantityControl from "../ui/ProdQuantityControl";
+import CustomButton from "../ui/CustomButton";
+import { UserDataContext } from "../UserDataProvider";
 
 export default function OrderForm() {
   const location = useLocation();
@@ -18,16 +18,18 @@ export default function OrderForm() {
   const addressUpdateInput = useRef();
   const receivedData = location.state;
   const [activeClass, setActiveClass] = useState(false);
+  const navigate = useNavigate();
+
   const [products, setProducts] = useState(
-    Array.isArray(receivedData) ? receivedData : []
+    Array.isArray(receivedData) ? receivedData : [],
   );
 
   const [quantityOfGoods, setQuantityOfGoods] = useState(
-    !Array.isArray(receivedData) ? receivedData.quantity : null
+    !Array.isArray(receivedData) ? receivedData.quantity : null,
   );
 
   const [productPrice, setProductPrice] = useState(
-    !Array.isArray(receivedData) ? receivedData.price : null
+    !Array.isArray(receivedData) ? receivedData.price : null,
   );
   const [userAdress, setUserAdress] = useState(userDataFromStorage.homeAdress);
 
@@ -133,7 +135,7 @@ export default function OrderForm() {
                         () =>
                           (modalWindCompletingAnOrder.current.style.display =
                             "none"),
-                        7000
+                        7000,
                       );
                     }
                   }}
@@ -166,8 +168,8 @@ export default function OrderForm() {
                                 price: product.price - prod.defPrice,
                                 quantity: product.quantity - 1,
                               }
-                            : product
-                        )
+                            : product,
+                        ),
                       );
                     }}
                     callbackSecond={() => {
@@ -179,8 +181,8 @@ export default function OrderForm() {
                                 price: product.price + prod.defPrice,
                                 quantity: product.quantity + 1,
                               }
-                            : product
-                        )
+                            : product,
+                        ),
                       );
                     }}
                   />
@@ -256,7 +258,7 @@ export default function OrderForm() {
                         () =>
                           (modalWindCompletingAnOrder.current.style.display =
                             "none"),
-                        7000
+                        7000,
                       );
                     }
                   }}
@@ -276,9 +278,10 @@ export default function OrderForm() {
           <img
             src={closeModalIco}
             alt=""
-            onClick={() =>
-              (modalWindCompletingAnOrder.current.style.display = "none")
-            }
+            onClick={() => {
+              modalWindCompletingAnOrder.current.style.display = "none";
+              navigate("/shop-sweet-escape");
+            }}
           />
         </button>
         <img src={deliveryConfirm} alt="" />

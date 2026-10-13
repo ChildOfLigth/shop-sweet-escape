@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
-import { UserDataContext } from "./UserDataProvider";
-import "./styles/ModalWindowIfOkRegister.css";
+import { UserDataContext } from "../UserDataProvider";
+import "../../styles/ModalWindowIfOkRegister.css";
 import CustomButton from "./CustomButton";
 import Register from "./Register";
-import closeModalWind from "./imgs/icons/cross.png";
+import closeModalWind from "../../imgs/icons/cross.png";
 
 export default function ModalWindowIfOkRegister({ modalWindVisibility, setModalWindVisibility }) {
   const { userDataFromStorage, setDataAvailabilityCheck } =

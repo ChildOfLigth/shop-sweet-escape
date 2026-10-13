@@ -1,16 +1,16 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useRef, useState } from "react";
-import classes from "./styles/ProductPage.module.css";
-import cartIcon from "./imgs/icons/shopping-cart.gif";
-import closeIco from "./imgs/icons/cross.png";
-import ProdQuantityControl from "./ProdQuantityControl";
+import classes from "../../styles/ProductPage.module.css";
+import cartIcon from "../../imgs/icons/shopping-cart.gif";
+import closeIco from "../../imgs/icons/cross.png";
+import ProdQuantityControl from "../ui/ProdQuantityControl";
 
 export default function ProductPage({ arrayProducts }) {
   const { name } = useParams();
   const navigate = useNavigate();
   const modalWindowForCart = useRef();
   const currentProduct = arrayProducts?.find(
-    (product) => product.name === name
+    (product) => product.name === name,
   );
   const [defPrice, setDefPrice] = useState(currentProduct?.price);
   const [quantity, setQuantity] = useState(1);
@@ -22,7 +22,7 @@ export default function ProductPage({ arrayProducts }) {
 
     if (isSelected) {
       setSelectedSupplements(
-        selectedSupplements.filter((id) => id !== supplement.id)
+        selectedSupplements.filter((id) => id !== supplement.id),
       );
       setDefPrice((prevPrice) => prevPrice - supplement.price * quantity);
     } else {
@@ -34,7 +34,7 @@ export default function ProductPage({ arrayProducts }) {
   const calculateSupplementsPrice = () => {
     return selectedSupplements.reduce((total, supplementId) => {
       const supplement = currentProduct.supplements.find(
-        (supp) => supp.id === supplementId
+        (supp) => supp.id === supplementId,
       );
       return total + (supplement ? supplement.price : 0);
     }, 0);
@@ -57,7 +57,7 @@ export default function ProductPage({ arrayProducts }) {
     }
 
     const searchForSimilarItem = allProducts.find(
-      (elem) => elem.name === currentProduct.name
+      (elem) => elem.name === currentProduct.name,
     );
     if (searchForSimilarItem) {
       searchForSimilarItem.quantity += 1;
@@ -128,7 +128,7 @@ export default function ProductPage({ arrayProducts }) {
                   setDefPrice(
                     (prevPrice) =>
                       prevPrice -
-                      (currentProduct.price + calculateSupplementsPrice())
+                      (currentProduct.price + calculateSupplementsPrice()),
                   );
                 }
               }}
@@ -137,7 +137,7 @@ export default function ProductPage({ arrayProducts }) {
                 setDefPrice(
                   (prevPrice) =>
                     prevPrice +
-                    (currentProduct.price + calculateSupplementsPrice())
+                    (currentProduct.price + calculateSupplementsPrice()),
                 );
               }}
             />

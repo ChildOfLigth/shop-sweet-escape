@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import classes from "./styles/CartProduct.module.css";
-import ProdQuantityControl from "./ProdQuantityControl";
-import CustomButton from "./CustomButton";
-import visibleIco from "./imgs/icons/visible.png";
-import cartEmpty from "./imgs/icons/empty-cart.png";
+import classes from "../../styles/CartProduct.module.css";
+import ProdQuantityControl from "../ui/ProdQuantityControl";
+import CustomButton from "../ui/CustomButton";
+import visibleIco from "../../imgs/icons/visible.png";
+import cartEmpty from "../../imgs/icons/empty-cart.png";
+import cross from "../../imgs/icons/cross.png";
 
 export default function CartProduct() {
   const navigate = useNavigate();
@@ -26,14 +27,14 @@ export default function CartProduct() {
     <>
       {goodsStoredInStorage && goodsStoredInStorage.length !== 0 ? (
         <div className={classes.wrapper}>
-          <ul className={classes.productLict}>
+          <ul className={classes.productList}>
             {goodsStoredInStorage?.map((elem) => (
-              <li key={elem.name} className={classes.productLict__productCard}>
+              <li key={elem.name} className={classes.productList__productCard}>
                 <button
                   className={classes.productCard__removeProduct}
                   onClick={() => removeItemFromCart(elem.name)}
                 >
-                  X
+                  <img src={cross} />
                 </button>
 
                 <div className={classes.productCard__photoWrap}>

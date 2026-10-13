@@ -5,6 +5,15 @@ header {
   top: 0;
   z-index: 1000;
   background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 header .header_content {
   display: -webkit-box;
@@ -88,7 +97,6 @@ header .header_content .header__iconForWebsite {
 }
 header .menu-burger {
   position: absolute;
-  top: 40px;
   right: 30px;
   display: none;
   -webkit-box-align: center;
@@ -102,9 +110,9 @@ header .menu-burger {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 50px;
-  height: 35%;
+  height: 25%;
   cursor: pointer;
-  z-index: 100000;
+  z-index: 100;
 }
 header .menu-burger span {
   width: 40px;
@@ -115,12 +123,14 @@ header .menu-burger span {
 }
 header .blockMenuBurger {
   display: block;
-  position: relative;
-  top: 0;
-  width: 100%;
-  height: auto;
-  padding: 70px 10px;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background-color: white;
+  padding: 20px 0;
 }
 header .blockMenuBurger .menu-burger_linkBlock {
   display: -webkit-box;
@@ -137,6 +147,7 @@ header .blockMenuBurger .menu-burger_linkBlock {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 header .blockMenuBurger .menu-burger_linkBlock a {
   font-size: calc(19px + 0.1569037657vw);
@@ -191,9 +202,7 @@ header .hiddenMenuBurgBlock {
 
 @media (max-width: 846px) {
   header {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    height: 80px;
   }
   header .menu-burger {
     display: -webkit-box;
@@ -208,5 +217,8 @@ header .hiddenMenuBurgBlock {
   }
   header .header_content .header_content_linkBlock {
     display: none;
+  }
+  header .header_content .header__iconForWebsite {
+    width: 60px;
   }
 }

@@ -7,15 +7,15 @@ import {
   cake,
   cakes,
   macaroon,
-} from "./listProducts";
-import classes from "./styles/Menu.module.css";
-import presentPhotoCakes from "./imgs/icons/cakesPresentForMenu.jpg";
-import presentPhotoCandies from "./imgs/icons/candiesPresentForMenu.jpg";
-import searchIco from "./imgs/icons/magnifying-glass.png";
-import clearInput from "./imgs/icons/cross.png";
-import { UserDataContext } from "./UserDataProvider";
-import ArrowUp from "./ArrowUp";
-import Register from "./Register";
+} from "../../listProducts";
+import classes from "../../styles/Menu.module.css";
+import presentPhotoCakes from "../../imgs/icons/cakesPresentForMenu.jpg";
+import presentPhotoCandies from "../../imgs/icons/candiesPresentForMenu.jpg";
+import searchIco from "../../imgs/icons/magnifying-glass.png";
+import clearInput from "../../imgs/icons/cross.png";
+import { UserDataContext } from "../UserDataProvider";
+import ArrowUp from "../ui/ArrowUp";
+import Register from "../ui/Register";
 
 export default function Menu() {
   const allProducts = [cakes, cake, candies, chocolate, macaroon];
@@ -106,6 +106,7 @@ export default function Menu() {
             <img src={presentPhotoCakes} alt="" />
           </div>
         </div>
+        
         <div className={classes.presentableUnit__card}>
           <div className={classes.wrapperImg}>
             <img src={presentPhotoCandies} alt="" />

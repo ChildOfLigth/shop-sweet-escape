@@ -1,4 +1,4 @@
-import classes from "./styles/ProdQuantityControl.module.css";
+import classes from "../../styles/ProdQuantityControl.module.css";
 export default function ProdQuantityControl({
   quantityProd,
   callbackFirst,

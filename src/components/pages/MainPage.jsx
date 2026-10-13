@@ -1,41 +1,41 @@
-import classes from "./styles/MainPage.module.css";
+import classes from "../../styles/MainPage.module.css";
 import { useState, useEffect, useContext } from "react";
-import { UserDataContext } from "./UserDataProvider";
+import { UserDataContext } from "../UserDataProvider";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/bundle";
-import { recomendedProduct } from "./listProducts";
-import presentChoco from "./imgs/icons/presentChocolate.jpg";
-import presentMaffins from "./imgs/icons/imgPresentProdMuffins.jpg";
-import presentMacaron from "./imgs/icons/presentMacaron.jpg";
-import presentCakes from "./imgs/icons/presentCakes.png";
-import presentCake from "./imgs/icons/cakeForPresentBlock.jpg";
-import fraisierCake from "./imgs/icons/presentCake.jpg";
-import homemadeChoco from "./imgs/icons/homemadeChocolate.jpg";
-import craftCandy from "./imgs/icons/craftCandy.jpg";
-import macaroonsForCard from "./imgs/icons/presentMacaronForCard.png";
-import icoNaturalProduct from "./imgs/icons/ingredients.png";
-import icoDelivery from "./imgs/icons/delivery.png";
-import icoHealth from "./imgs/icons/protection.png";
-import user1 from "./imgs/icons/manPhoto.jpg";
-import user2 from "./imgs/icons/manPhoto2.jpg";
-import user3 from "./imgs/icons/girlPhoto.jpg";
-import CustomButton from "./CustomButton";
-import ArrowUp from "./ArrowUp";
-import Register from "./Register";
-import strawberry_décor from "./imgs/icons/47690747a86124ad6934e8909eac1264-removebg-preview.png";
-import raspberry_décor from "./imgs/icons/c1db3ef5ab3a8eb886bdba00d70b0d81-removebg-preview.png";
-import blueberry_décor from "./imgs/icons/a1d28148e4cae4de493fd2872fd8f906-removebg-preview.png";
-import cakesPhoto from "./imgs/icons/cakes.svg";
-import location from "./imgs/icons/location.png";
-import schedule from "./imgs/icons/calendar.png";
-import contacts from "./imgs/icons/contact-mail.png";
-import cakesForMobile from "./imgs/icons/cakeForPhoneAdapt.jpg";
-import cakeForMobile from "./imgs/icons/cakesForMobileAdapt.jpg";
-import eclerForMobile from "./imgs/icons/eclersForModileAdapt.jpg";
-import candiesForMobile from "./imgs/icons/candiesForMobileAdapt.jpg";
+import { recomendedProduct } from "../../listProducts";
+import presentChoco from "../../imgs/icons/presentChocolate.jpg";
+import presentMaffins from "../../imgs/icons/imgPresentProdMuffins.jpg";
+import presentMacaron from "../../imgs/icons/presentMacaron.jpg";
+import presentCakes from "../../imgs/icons/presentCakes.png";
+import presentCake from "../../imgs/icons/cakeForPresentBlock.jpg";
+import fraisierCake from "../../imgs/icons/presentCake.jpg";
+import homemadeChoco from "../../imgs/icons/homemadeChocolate.jpg";
+import craftCandy from "../../imgs/icons/craftCandy.jpg";
+import macaroonsForCard from "../../imgs/icons/presentMacaronForCard.png";
+import icoNaturalProduct from "../../imgs/icons/ingredients.png";
+import icoDelivery from "../../imgs/icons/delivery.png";
+import icoHealth from "../../imgs/icons/protection.png";
+import user1 from "../../imgs/icons/manPhoto.jpg";
+import user2 from "../../imgs/icons/manPhoto2.jpg";
+import user3 from "../../imgs/icons/girlPhoto.jpg";
+import CustomButton from "../ui/CustomButton";
+import ArrowUp from "../ui/ArrowUp";
+import Register from "../ui/Register";
+import strawberry_décor from "../../imgs/icons/47690747a86124ad6934e8909eac1264-removebg-preview.png";
+import raspberry_décor from "../../imgs/icons/c1db3ef5ab3a8eb886bdba00d70b0d81-removebg-preview.png";
+import blueberry_décor from "../../imgs/icons/a1d28148e4cae4de493fd2872fd8f906-removebg-preview.png";
+import cakesPhoto from "../../imgs/icons/cakes.svg";
+import location from "../../imgs/icons/location.png";
+import schedule from "../../imgs/icons/calendar.png";
+import contacts from "../../imgs/icons/contact-mail.png";
+import cakesForMobile from "../../imgs/icons/cakeForPhoneAdapt.jpg";
+import cakeForMobile from "../../imgs/icons/cakesForMobileAdapt.jpg";
+import eclerForMobile from "../../imgs/icons/eclersForModileAdapt.jpg";
+import candiesForMobile from "../../imgs/icons/candiesForMobileAdapt.jpg";
 
 const arrayPresentProdPhoto = [
   presentCake,
@@ -219,7 +219,7 @@ export default function MainPage() {
                     onClick={() =>
                       dataAvailabilityCheck
                         ? navigate(
-                            `/shop-sweet-escape/product/${product.fullName}`
+                            `/shop-sweet-escape/product/${product.fullName}`,
                           )
                         : setIsVisibleForm(true)
                     }
@@ -230,7 +230,7 @@ export default function MainPage() {
                   onClick={() =>
                     dataAvailabilityCheck
                       ? navigate(
-                          `/shop-sweet-escape/product/${product.fullName}`
+                          `/shop-sweet-escape/product/${product.fullName}`,
                         )
                       : setIsVisibleForm(true)
                   }
@@ -268,7 +268,7 @@ export default function MainPage() {
                     onClick={() =>
                       dataAvailabilityCheck
                         ? navigate(
-                            `/shop-sweet-escape/product/${product.fullName}`
+                            `/shop-sweet-escape/product/${product.fullName}`,
                           )
                         : setIsVisibleForm(true)
                     }
@@ -279,7 +279,7 @@ export default function MainPage() {
                   onClick={() =>
                     dataAvailabilityCheck
                       ? navigate(
-                          `      /shop-sweet-escape/product/${product.fullName}`
+                          `      /shop-sweet-escape/product/${product.fullName}`,
                         )
                       : setIsVisibleForm(true)
                   }

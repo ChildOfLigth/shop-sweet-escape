@@ -1,12 +1,12 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
-import classes from "./styles/Register.module.css";
+import classes from "../../styles/Register.module.css";
 import CustomButton from "./CustomButton";
-import okLogo from "./imgs/icons/verified.gif";
-import closeModalWind from "./imgs/icons/cross.png";
-import appleLogo from "./imgs/icons/apple-logo.png";
-import googleLogo from "./imgs/icons/google-logo.png";
-import { UserDataContext } from "./UserDataProvider";
+import okLogo from "../../imgs/icons/verified.gif";
+import closeModalWind from "../../imgs/icons/cross.png";
+import appleLogo from "../../imgs/icons/apple-logo.png";
+import googleLogo from "../../imgs/icons/google-logo.png";
+import { UserDataContext } from "../UserDataProvider";
 
 export default function Register({ isFormVisible, setIsFormVisible }) {
   const registrForm = useRef();
@@ -135,7 +135,7 @@ export default function Register({ isFormVisible, setIsFormVisible }) {
           </li>
         </ul>
 
-        <CustomButton style={{ width: "400px", margin: "15px auto" }}>
+        <CustomButton style={{ width: "100%", margin: "15px auto", maxWidth: "200px" }}>
           Send
         </CustomButton>
 
@@ -169,7 +169,7 @@ export default function Register({ isFormVisible, setIsFormVisible }) {
               onClick={() => {
                 setIsFormVisible(false);
               }}
-              style={{ width: "370px" }}
+              style={{ width: "80%" }}
             >
               Continue
             </CustomButton>

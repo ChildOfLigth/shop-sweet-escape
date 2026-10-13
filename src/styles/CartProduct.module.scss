@@ -1,14 +1,14 @@
 .wrapper {
   width: 80%;
   margin: 0 auto;
-  .productLict {
+  .productList {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     width: 50%;
     margin: 30px auto;
 
-    .productLict__productCard {
+    .productList__productCard {
       list-style: none;
       display: flex;
       position: relative;
@@ -47,13 +47,13 @@
           z-index: 1000;
           transition: all 0.5s;
           img {
-            width: 60%;
-            height: 60%;
+            width: 50%;
+            height: 50%;
             opacity: 0;
             transition: all 0.5s;
             &:hover {
-              width: 90%;
-              height: 90%;
+              width: 65%;
+              height: 65%;
             }
           }
         }
@@ -72,13 +72,18 @@
 
       .productCard__removeProduct {
         position: absolute;
-        top: 8px;
-        left: 96%;
+        left: 95%;
         border: none;
-        width: 50px;
-        height: auto;
+        width: 16px;
+        aspect-ratio: 1 / 1;
         font-size: calc(19px + 3 * (100vw / 1912));
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
       }
+
       .productCard__productInfo {
         display: flex;
         flex-direction: column;
@@ -130,5 +135,78 @@
   img {
     width: 260px;
     height: auto;
+  }
+}
+
+@media (max-width: 1140px) {
+  .wrapper {
+    .productList {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .wrapper {
+    width: 95%;
+
+    .productList {
+      .productList__productCard {
+        .productCard__photoWrap {
+          width: 400px;
+        }
+
+        .productCard__productInfo {
+          h3 {
+            font-size: 18px;
+          }
+
+          p {
+            font-size: 16px;
+          }
+        }
+
+        .productCard__removeProduct {
+          width: 12px;
+        }
+      }
+    }
+  }
+
+  .inCaseOfAnEmptyCart {
+    padding: 0 40px;
+    h2 {
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 1900px) {
+  .wrapper {
+    width: 60%;
+    .productList {
+      width: 100%;
+      max-width: 1500px;
+      
+      .productList__productCard {
+        height: 350px;
+
+        .productCard__photoWrap {
+          width: 40%;
+        }
+
+        .productCard__productInfo {
+          justify-content: start;
+          gap: 20px;
+          h3 {
+            font-size: 35px;
+          }
+
+          p {
+            font-size: 28px;
+          }
+        }
+      }
+    }
   }
 }

@@ -13,7 +13,8 @@
   flex-direction: column;
   text-align: center;
   background-color: white;
-  width: 450px;
+  width: 80%;
+  max-width: 500px;
   height: auto;
   position: fixed;
   top: 45%;
@@ -25,10 +26,10 @@
 
   .closeModalWind {
     position: absolute;
-    top: 10px;
-    left: 93%;
-    width: 20px;
-    height: 20px;
+    top: 15px;
+    left: 89%;
+    width: 16px;
+    height: auto;
     border: none;
     img {
       width: 100%;
