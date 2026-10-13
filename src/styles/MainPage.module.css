@@ -75,7 +75,7 @@
 }
 .listRecomendedProduct .listRecomendedProduct__back_decor {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
@@ -201,7 +201,7 @@
   width: 100%;
   height: auto;
   margin: 50px auto;
-  z-index: 99;
+  gap: 15px;
 }
 .listRecomendedProduct .listProduct .listProduct_elem,
 .listRecomendedProduct .listProduct .swipper_slide,
@@ -224,6 +224,7 @@
   padding: 15px 20px;
   list-style: none;
   border-radius: 15px;
+  z-index: 10;
   background: -webkit-gradient(linear, left top, left bottom, from(#be9292), color-stop(40%, #e6c6c6), color-stop(80%, #f8eeee), to(white));
   background: linear-gradient(to bottom, #be9292 0%, #e6c6c6 40%, #f8eeee 80%, white 100%);
   overflow: hidden;
