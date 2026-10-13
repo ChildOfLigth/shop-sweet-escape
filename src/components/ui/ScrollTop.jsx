@@ -5,7 +5,7 @@ const ScrollToTop = () => {
   const { pathname, state } = useLocation();
 
   useEffect(() => {
-    if (pathname !== "/shop-sweet-escape/menu") {
+    if (pathname !== "/menu") {
       window.scrollTo(0, 0);
     } else if (state && state.scrollPosition) {
       window.scrollTo(0, state.scrollPosition);

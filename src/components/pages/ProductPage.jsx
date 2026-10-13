@@ -145,7 +145,7 @@ export default function ProductPage({ arrayProducts }) {
             <div className={classes.goodsProcessingOperations}>
               <button
                 onClick={() =>
-                  navigate("/shop-sweet-escape/checkout-page", {
+                  navigate("/checkout-page", {
                     state: productDataObject,
                   })
                 }

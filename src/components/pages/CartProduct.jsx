@@ -42,7 +42,7 @@ export default function CartProduct() {
                     className={classes.buttonToGoProductPage}
                     title="Go to product page"
                     onClick={() =>
-                      navigate(`/shop-sweet-escape/product/${elem.name}`)
+                      navigate(`/product/${elem.name}`)
                     }
                   >
                     <img src={visibleIco} alt="" />
@@ -101,7 +101,7 @@ export default function CartProduct() {
               </p>
               <CustomButton
                 onClick={() =>
-                  navigate("/shop-sweet-escape/checkout-page", {
+                  navigate("/checkout-page", {
                     state: goodsStoredInStorage,
                   })
                 }
@@ -116,7 +116,7 @@ export default function CartProduct() {
           <h2>There's nothing in your cart</h2>
           <p>Fill it out now!</p>
           <img src={cartEmpty} alt="" />
-          <CustomButton onClick={() => navigate("/shop-sweet-escape/menu")}>
+          <CustomButton onClick={() => navigate("/menu")}>
             To the menu
           </CustomButton>
         </div>

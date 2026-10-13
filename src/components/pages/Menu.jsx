@@ -35,7 +35,7 @@ export default function Menu() {
         key={elem.id}
         onClick={() =>
           dataAvailabilityCheck
-            ? navigate(`/shop-sweet-escape/product/${elem.name}`)
+            ? navigate(`/product/${elem.name}`)
             : setIsFormVisible(true)
         }
       >
@@ -129,7 +129,7 @@ export default function Menu() {
               className={classes.listElems__elem}
               onClick={() =>
                 dataAvailabilityCheck
-                  ? navigate(`/shop-sweet-escape/product/${elem.name}`)
+                  ? navigate(`/product/${elem.name}`)
                   : setIsFormVisible(true)
               }
             >

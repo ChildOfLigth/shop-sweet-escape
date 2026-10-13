@@ -179,7 +179,7 @@ export default function MainPage() {
             store is a corner of sweet happiness, for those who appreciate
             taste, quality and a cozy atmosphere.
           </h2>
-          <button onClick={() => navigate("/shop-sweet-escape/menu")}>
+          <button onClick={() => navigate("/menu")}>
             Order now
           </button>
         </div>
@@ -219,7 +219,7 @@ export default function MainPage() {
                     onClick={() =>
                       dataAvailabilityCheck
                         ? navigate(
-                            `/shop-sweet-escape/product/${product.fullName}`,
+                            `/product/${product.fullName}`,
                           )
                         : setIsVisibleForm(true)
                     }
@@ -230,7 +230,7 @@ export default function MainPage() {
                   onClick={() =>
                     dataAvailabilityCheck
                       ? navigate(
-                          `/shop-sweet-escape/product/${product.fullName}`,
+                          `/product/${product.fullName}`,
                         )
                       : setIsVisibleForm(true)
                   }
@@ -268,7 +268,7 @@ export default function MainPage() {
                     onClick={() =>
                       dataAvailabilityCheck
                         ? navigate(
-                            `/shop-sweet-escape/product/${product.fullName}`,
+                            `/product/${product.fullName}`,
                           )
                         : setIsVisibleForm(true)
                     }
@@ -279,7 +279,7 @@ export default function MainPage() {
                   onClick={() =>
                     dataAvailabilityCheck
                       ? navigate(
-                          `      /shop-sweet-escape/product/${product.fullName}`,
+                          `      /product/${product.fullName}`,
                         )
                       : setIsVisibleForm(true)
                   }
@@ -350,7 +350,7 @@ export default function MainPage() {
                   <p>{obg.data}</p>
                   <CustomButton
                     onClick={() => {
-                      navigate("/shop-sweet-escape/menu", {
+                      navigate("/menu", {
                         state: { types: obg.types, scrollPosition: 1480 },
                       });
                     }}
@@ -388,7 +388,7 @@ export default function MainPage() {
                   <p>{obg.data}</p>
                   <CustomButton
                     onClick={() => {
-                      navigate("/shop-sweet-escape/menu", {
+                      navigate("/menu", {
                         state: { types: obg.types, scrollPosition: 1480 },
                       });
                     }}

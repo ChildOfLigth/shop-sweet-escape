@@ -48,13 +48,13 @@ export default function Header() {
             Home
           </NavLink>
           <NavLink
-            to={"/shop-sweet-escape/menu"}
+            to={"/menu"}
             onClick={() => setOpenMenuBurger(false)}
           >
             Menu
           </NavLink>
           <NavLink
-            to={"/shop-sweet-escape/about-us"}
+            to={"/about-us"}
             onClick={() => setOpenMenuBurger(false)}
           >
             About us
@@ -64,7 +64,7 @@ export default function Header() {
             <button
               onClick={() => {
                 dataAvailabilityCheck
-                  ? navigate("/shop-sweet-escape/shopping-cart")
+                  ? navigate("/shopping-cart")
                   : setRegistrationBlockVisibility(
                       !registrationBlockVisibility,
                     );
@@ -106,14 +106,14 @@ export default function Header() {
 
         <div className="header_content_linkBlock">
           <NavLink to={"/shop-sweet-escape"}>Home</NavLink>
-          <NavLink to={"/shop-sweet-escape/menu"}>Menu</NavLink>
-          <NavLink to={"/shop-sweet-escape/about-us"}>About us</NavLink>
+          <NavLink to={"/menu"}>Menu</NavLink>
+          <NavLink to={"/about-us"}>About us</NavLink>
 
           <div className="linkBlock__buttonBlock">
             <button
               onClick={() =>
                 dataAvailabilityCheck
-                  ? navigate("/shop-sweet-escape/shopping-cart")
+                  ? navigate("/shopping-cart")
                   : setRegistrationBlockVisibility(!registrationBlockVisibility)
               }
               title="Go to cart"

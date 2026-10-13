@@ -23,24 +23,24 @@ function AppContent() {
           <ScrollToTop />
           <main className="App">
             <Routes>
-              <Route path="/shop-sweet-escape" element={<MainPage />} />
+              <Route path="/" element={<MainPage />} />
               <Route
-                path="/shop-sweet-escape/product/:name"
+                path="/product/:name"
                 element={<ProductPage arrayProducts={allProducts} />}
               />
 
               <Route
-                path="/shop-sweet-escape/about-us"
+                path="/about-us"
                 element={<AboutUs />}
               />
-              <Route path="/shop-sweet-escape/menu" element={<Menu />} />
+              <Route path="/menu" element={<Menu />} />
 
               <Route
-                path="/shop-sweet-escape/shopping-cart"
+                path="/shopping-cart"
                 element={<CartProduct />}
               />
               <Route
-                path="/shop-sweet-escape/checkout-page"
+                path="/checkout-page"
                 element={<OrderForm />}
               />
               <Route path="*" element={<IsNotDefined />} />
