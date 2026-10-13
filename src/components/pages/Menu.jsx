@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import { useCallback, useContext, useEffect, useRef, useState, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
   popularProd,
@@ -18,7 +18,7 @@ import ArrowUp from "../ui/ArrowUp";
 import Register from "../ui/Register";
 
 export default function Menu() {
-  const allProducts = [cakes, cake, candies, chocolate, macaroon];
+  const allProducts = useMemo(() => [cakes, cake, candies, chocolate, macaroon], []);
   const location = useLocation();
   const [productsArray, setProductArray] = useState(allProducts);
   const [indexLi, setIndexLi] = useState("all");
@@ -77,7 +77,7 @@ export default function Menu() {
     if (location.state && location.state.types) {
       filterProductsArrayByCategory(location.state.types);
     }
-  }, [location.state]);
+  }, [location.state, filterProductsArrayByCategory]);
 
   function searchProductByName() {
     if (inputElement.current.tagName === "INPUT") {
@@ -106,7 +106,6 @@ export default function Menu() {
             <img src={presentPhotoCakes} alt="" />
           </div>
         </div>
-        
         <div className={classes.presentableUnit__card}>
           <div className={classes.wrapperImg}>
             <img src={presentPhotoCandies} alt="" />

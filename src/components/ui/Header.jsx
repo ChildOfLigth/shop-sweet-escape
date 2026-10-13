@@ -17,7 +17,7 @@ export default function Header() {
   const [openMenuBurger, setOpenMenuBurger] = useState(false);
 
   useEffect(() => {
-    if (modalWindowvisibilite == true) {
+    if (modalWindowvisibilite === true) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "scroll";

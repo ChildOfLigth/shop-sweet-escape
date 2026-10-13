@@ -34,7 +34,7 @@ export default function CartProduct() {
                   className={classes.productCard__removeProduct}
                   onClick={() => removeItemFromCart(elem.name)}
                 >
-                  <img src={cross} />
+                  <img src={cross} alt="Deleted product"/>
                 </button>
 
                 <div className={classes.productCard__photoWrap}>
