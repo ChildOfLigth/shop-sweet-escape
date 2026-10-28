@@ -8,7 +8,7 @@ export default function IsNotDefined() {
       <h1>Error 404</h1>
       <h2>This page was not found.</h2>
       <p>click on the button below to go to the main page</p>
-      <button onClick={() => navigate("/shop-sweet-escape")}>
+      <button onClick={() => navigate("/")}>
         Go to main page
       </button>
       <img src={notDefinedIco} alt="" />

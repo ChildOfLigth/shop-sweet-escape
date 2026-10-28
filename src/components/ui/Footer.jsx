@@ -13,7 +13,7 @@ export default function Footer() {
       <footer>
         <div className="footer__content">
           <div className="footer__linkBlock">
-            <NavLink to={"/shop-sweet-escape"}>Home</NavLink>
+            <NavLink to={"/"}>Home</NavLink>
             <NavLink to={"/menu"}>Menu</NavLink>
             <NavLink to={"/about-us"}>About us</NavLink>
           </div>

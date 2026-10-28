@@ -42,7 +42,7 @@ export default function Header() {
       >
         <div className="menu-burger_linkBlock">
           <NavLink
-            to={"/shop-sweet-escape"}
+            to={"/"}
             onClick={() => setOpenMenuBurger(false)}
           >
             Home
@@ -99,13 +99,13 @@ export default function Header() {
           src={iconForwebsite}
           alt=""
           className="header__iconForWebsite"
-          onClick={() => navigate("/shop-sweet-escape")}
+          onClick={() => navigate("/")}
           title="Go to the main page"
           style={{ display: openMenuBurger ? "none" : "block" }}
         />
 
         <div className="header_content_linkBlock">
-          <NavLink to={"/shop-sweet-escape"}>Home</NavLink>
+          <NavLink to={"/"}>Home</NavLink>
           <NavLink to={"/menu"}>Menu</NavLink>
           <NavLink to={"/about-us"}>About us</NavLink>
 

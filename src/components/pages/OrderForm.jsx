@@ -280,7 +280,7 @@ export default function OrderForm() {
             alt=""
             onClick={() => {
               modalWindCompletingAnOrder.current.style.display = "none";
-              navigate("/shop-sweet-escape");
+              navigate("/");
             }}
           />
         </button>
