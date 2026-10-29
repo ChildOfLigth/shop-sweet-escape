@@ -333,12 +333,19 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   gap: clamp(0.75rem, 0.464rem + 1.786vw, 2.5rem);
   width: 100%;
   margin: 20px auto 90px auto;
+}
+.wrapperAllListsProducts .wrapperListProds .listProducts.justifyCent {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.wrapperAllListsProducts .wrapperListProds .listProducts.justifyStart {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
 }
 .wrapperAllListsProducts .wrapperListProds .listProducts li {
   position: relative;
@@ -408,13 +415,23 @@
     -ms-grid-rows: (350px)[2];
     grid-template-rows: repeat(2, 350px);
     grid-auto-columns: minmax(280px, 390px);
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
     overflow-x: auto;
     overflow-y: hidden;
     -ms-scroll-snap-type: x mandatory;
         scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #be9292 transparent;
+    padding-bottom: 20px;
+  }
+  .wrapperAllListsProducts .wrapperListProds .listProducts::-webkit-scrollbar {
+    height: 6px;
+  }
+  .wrapperAllListsProducts .wrapperListProds .listProducts::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .wrapperAllListsProducts .wrapperListProds .listProducts::-webkit-scrollbar-thumb {
+    background-color: #be9292;
+    border-radius: 10px;
   }
   .wrapperAllListsProducts .wrapperListProds .listProducts li {
     width: 100%;

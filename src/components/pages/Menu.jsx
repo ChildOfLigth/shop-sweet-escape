@@ -1,4 +1,11 @@
-import { useCallback, useContext, useEffect, useRef, useState, useMemo } from "react";
+import {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+  useMemo,
+} from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
   popularProd,
@@ -18,7 +25,10 @@ import ArrowUp from "../ui/ArrowUp";
 import Register from "../ui/Register";
 
 export default function Menu() {
-  const allProducts = useMemo(() => [cakes, cake, candies, chocolate, macaroon], []);
+  const allProducts = useMemo(
+    () => [cakes, cake, candies, chocolate, macaroon],
+    [],
+  );
   const location = useLocation();
   const [productsArray, setProductArray] = useState(allProducts);
   const [indexLi, setIndexLi] = useState("all");
@@ -65,12 +75,12 @@ export default function Menu() {
         return;
       }
       const filterArr = allProducts.map((array) =>
-        array.filter((product) => product.typeProd === category)
+        array.filter((product) => product.typeProd === category),
       );
       setProductArray(filterArr);
       setIndexLi(category);
     },
-    [allProducts]
+    [allProducts],
   );
 
   useEffect(() => {
@@ -84,7 +94,7 @@ export default function Menu() {
       const currentValue = inputElement.current.value.toLowerCase();
       const mergedArray = allProducts.flat();
       const filterArrByInputValue = mergedArray.filter((elem) =>
-        elem.name.toLowerCase().includes(currentValue)
+        elem.name.toLowerCase().includes(currentValue),
       );
       setIsSearching(true);
       setProductArray(filterArrByInputValue);
@@ -247,7 +257,9 @@ export default function Menu() {
         {isSearching ? (
           <div className={classes.wrapperListProds}>
             <h2>Search Results</h2>
-            <ul className={classes.listProducts}>
+            <ul
+              className={`${classes.listProducts} ${productsArray.length > 2 ? classes.justifyStart : classes.justifyCent}`}
+            >
               {generateLiElementForLists(productsArray)}
             </ul>
           </div>
@@ -290,7 +302,10 @@ export default function Menu() {
       </div>
 
       {isFormVisible && (
-        <Register isFormVisible={isFormVisible} setIsFormVisible={setIsFormVisible} />
+        <Register
+          isFormVisible={isFormVisible}
+          setIsFormVisible={setIsFormVisible}
+        />
       )}
       <ArrowUp coordinat={1400} coordinatesToHide={1500} />
     </>

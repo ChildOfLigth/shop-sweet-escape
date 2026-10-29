@@ -275,10 +275,16 @@ $defaultFsz: calc(36px + 20 * (100vw / 1912));
     .listProducts {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: clamp(0.75rem, 0.464rem + 1.786vw, 2.5rem);
       width: 100%;
       margin: 20px auto 90px auto;
+
+      &.justifyCent {
+        justify-content: center;
+      }
+      &.justifyStart {
+        justify-content: start;
+      }
 
       li {
         position: relative;
@@ -356,10 +362,25 @@ $defaultFsz: calc(36px + 20 * (100vw / 1912));
         grid-auto-flow: column;
         grid-template-rows: repeat(2, 350px);
         grid-auto-columns: minmax(280px, 390px);
-        justify-content: start;
         overflow-x: auto;
         overflow-y: hidden;
         scroll-snap-type: x mandatory;
+        scrollbar-width: thin;
+        scrollbar-color: #be9292 transparent;
+        padding-bottom: 20px;
+
+        &::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: #be9292;
+          border-radius: 10px;
+        }
 
         li {
           width: 100%;
